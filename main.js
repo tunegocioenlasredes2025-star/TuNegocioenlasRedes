@@ -4,28 +4,49 @@ window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 50);
 }, { passive: true });
 
-// MOBILE NAV
+// MOBILE NAV — con bloqueo de scroll a prueba de iOS Safari
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 let menuOpen = false;
+let scrollLockY = 0;
+
+function lockScroll() {
+    scrollLockY = window.scrollY || document.documentElement.scrollTop;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollLockY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
+}
+
+function unlockScroll() {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    // Restaurar la posición sin animación (evita el "salto" al cerrar)
+    const prevBehavior = document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior = 'auto';
+    window.scrollTo(0, scrollLockY);
+    document.documentElement.style.scrollBehavior = prevBehavior;
+}
 
 function setMenu(open) {
     menuOpen = open;
     navMenu.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    const [s1, s2, s3] = navToggle.querySelectorAll('span');
-    if (open) {
-        s1.style.transform = 'rotate(45deg) translate(5px, 5px)';
-        s2.style.opacity = '0';
-        s3.style.transform = 'rotate(-45deg) translate(5px, -5px)';
-    } else {
-        s1.style.transform = s2.style.opacity = s3.style.transform = '';
-        s2.style.opacity = '';
-    }
+    navToggle.classList.toggle('active', open);
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.classList.toggle('menu-open', open);
+
+    if (open) lockScroll();
+    else unlockScroll();
 }
 
 navToggle.addEventListener('click', () => setMenu(!menuOpen));
 navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+// Cerrar con Escape
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menuOpen) setMenu(false); });
 
 // SCROLL REVEAL
 const revealObserver = new IntersectionObserver((entries) => {
@@ -54,17 +75,8 @@ function animateCounter(el) {
 }
 
 const statsEl = document.querySelector('.stats');
-if (statsEl) {
-    new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-            document.querySelectorAll('.stat-number').forEach(animateCounter);
-            entries[0].target._obs.disconnect();
-        }
-    }, { threshold: 0.5 }).observe(statsEl);
-    statsEl._obs = statsEl._obs || new IntersectionObserver(() => {});
-}
 
-// Better counter observer
+// COUNTER OBSERVER
 const counterObs = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
         document.querySelectorAll('.stat-number').forEach(animateCounter);
