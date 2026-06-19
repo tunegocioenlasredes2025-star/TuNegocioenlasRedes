@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tu Negocio En Las Redes - Agencia de marketing digital, automatización e inteligencia artificial. Modernizamos negocios en la Zona Oeste de Buenos Aires.">
+    <meta name="description" content="Agencia de marketing digital, automatización e inteligencia artificial. Modernizamos negocios en la Zona Oeste de Buenos Aires con páginas web, IA, branding y publicidad.">
     <meta name="keywords" content="marketing digital, páginas web, automatización, inteligencia artificial, chatbots, publicidad digital, branding, zona oeste, buenos aires, agencia digital">
     <title>Tu Negocio En Las Redes | Agencia de Marketing Digital e IA</title>
+    <link rel="canonical" href="https://tu-negocioenlas-redes.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Tu Negocio En Las Redes">
+    <meta property="og:title" content="Tu Negocio En Las Redes | Agencia de Marketing Digital e IA">
+    <meta property="og:description" content="Modernizamos negocios con marketing, automatización e inteligencia artificial. Demo de tu página web gratis y sin compromiso.">
+    <meta property="og:image" content="https://tu-negocioenlas-redes.vercel.app/Logo.png">
+    <meta property="og:url" content="https://tu-negocioenlas-redes.vercel.app/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tu Negocio En Las Redes | Agencia de Marketing Digital e IA">
+    <meta name="twitter:description" content="Modernizamos negocios con marketing, automatización e inteligencia artificial.">
+    <meta name="twitter:image" content="https://tu-negocioenlas-redes.vercel.app/Logo.png">
+    <link rel="icon" href="Logo.png">
+    <link rel="apple-touch-icon" href="Logo.png">
+    <meta name="theme-color" content="#060d1e">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -22,18 +36,19 @@
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">
+            <a href="index.html" class="nav-logo">
                 <img src="Logo.png" alt="Tu Negocio En Las Redes" class="nav-logo-img">
             </a>
             <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#servicios" class="nav-link">Servicios</a></li>
-                <li><a href="#ia" class="nav-link">IA & Automatización</a></li>
-                <li><a href="#trabajos" class="nav-link">Trabajos</a></li>
-                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+                <li><a href="ia.html" class="nav-link">IA & Automatización</a></li>
+                <li><a href="trabajos.html" class="nav-link">Trabajos</a></li>
+                <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
                 <li><a href="https://wa.me/5491150089069?text=Quiero%20una%20demo%20gratis" class="nav-cta" target="_blank">Demo Gratis →</a></li>
             </ul>
         </div>
@@ -63,7 +78,7 @@
                         Quiero una demo gratis
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
-                    <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
+                    <a href="servicios.html" class="btn btn-ghost">Ver servicios</a>
                 </div>
                 <div class="hero-social-proof animate-fade-up delay-4">
                     <span>Zona Oeste, Buenos Aires</span>
@@ -122,7 +137,7 @@
                             <p>Tienen una página web que no genera nada</p>
                         </div>
                     </div>
-                    <a href="https://wa.me/5491150089069?text=Quiero%20modernizar%20mi%20negocio" class="btn btn-primary" target="_blank">Quiero cambiar eso →</a>
+                    <a href="contacto.html" class="btn btn-primary">Quiero cambiar eso →</a>
                 </div>
             </div>
         </div>
@@ -148,13 +163,18 @@
         </div>
     </section>
 
-    <!-- SERVICIOS -->
-    <section class="servicios section-dark" id="servicios">
+    <!-- SERVICIOS (teaser) -->
+    <section class="servicios section-dark">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">Nuestros servicios</span>
-                <h2>Todo lo que tu negocio<br>necesita en <span class="gradient-text">un solo lugar.</span></h2>
-                <p class="section-subtitle">No tercerizamos ni trabajamos con plantillas. Cada solución es pensada para tu negocio.</p>
+            <div class="teaser-head reveal">
+                <div class="section-header">
+                    <span class="section-tag">Nuestros servicios</span>
+                    <h2>Todo lo que tu negocio<br>necesita en <span class="gradient-text">un solo lugar.</span></h2>
+                    <p class="section-subtitle">No tercerizamos ni trabajamos con plantillas. Cada solución es pensada para tu negocio.</p>
+                </div>
+                <a href="servicios.html" class="link-arrow">Ver todos los servicios
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
             </div>
             <div class="servicios-grid">
                 <div class="servicio-card reveal">
@@ -170,146 +190,54 @@
                     <span class="servicio-tag">Estrategia + Diseño + Copy</span>
                 </div>
                 <div class="servicio-card reveal delay-2">
-                    <div class="servicio-icon"><svg viewBox="0 0 24 24"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2"/></svg></div>
-                    <h3>Reels & Contenido</h3>
-                    <p>Videos que paran el scroll y generan alcance masivo. Guión, edición y estrategia incluida.</p>
-                    <span class="servicio-tag">Formato viral</span>
-                </div>
-                <div class="servicio-card reveal delay-1">
-                    <div class="servicio-icon"><svg viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 13"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
-                    <h3>Publicidad Digital</h3>
-                    <p>Campañas en Meta e Instagram que traen clientes reales, no solo clics.</p>
-                    <span class="servicio-tag">ROI medible</span>
-                </div>
-                <div class="servicio-card reveal delay-2">
-                    <div class="servicio-icon"><svg viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .962 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.962 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/></svg></div>
-                    <h3>Branding</h3>
-                    <p>Identidad visual que transmite lo que querés sin decirlo. Logo, paleta, tipografías y manual de marca.</p>
-                    <span class="servicio-tag">Identidad premium</span>
-                </div>
-                <div class="servicio-card reveal delay-3">
-                    <div class="servicio-icon"><svg viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></div>
-                    <h3>Automatización</h3>
-                    <p>Procesos que corren solos. Respuestas automáticas, seguimiento de leads, recordatorios y más.</p>
-                    <span class="servicio-tag">Ahorrá tiempo y dinero</span>
-                </div>
-                <div class="servicio-card reveal delay-2">
                     <div class="servicio-icon"><svg viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
                     <h3>ChatBots</h3>
                     <p>Tu negocio responde en segundos, 24/7, sin que tengas que estar presente.</p>
                     <span class="servicio-tag">WhatsApp + Instagram</span>
                 </div>
-                <div class="servicio-card reveal delay-3">
-                    <div class="servicio-icon"><svg viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg></div>
-                    <h3>Soluciones con IA</h3>
-                    <p>Inteligencia artificial aplicada a tu negocio de forma práctica: generación de contenido, análisis y automatización.</p>
-                    <span class="servicio-tag">Tecnología aplicada</span>
+                <div class="servicio-card reveal">
+                    <div class="servicio-icon"><svg viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 13"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+                    <h3>Publicidad Digital</h3>
+                    <p>Campañas en Meta e Instagram que traen clientes reales, no solo clics.</p>
+                    <span class="servicio-tag">ROI medible</span>
                 </div>
                 <div class="servicio-card reveal delay-1">
-                    <div class="servicio-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-                    <h3>Asesoría de Contenido</h3>
-                    <p>Te enseñamos a crear contenido que funciona, con estrategia real y sin perder tiempo.</p>
-                    <span class="servicio-tag">Capacitación práctica</span>
+                    <div class="servicio-icon"><svg viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .962 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.962 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/></svg></div>
+                    <h3>Branding</h3>
+                    <p>Identidad visual que transmite lo que querés sin decirlo. Logo, paleta, tipografías y manual de marca.</p>
+                    <span class="servicio-tag">Identidad premium</span>
                 </div>
-            </div>
-            <div class="servicios-cta reveal">
-                <a href="https://wa.me/5491150089069?text=Quiero%20saber%20m%C3%A1s%20sobre%20los%20servicios" class="btn btn-primary" target="_blank">Consultar por un servicio →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- IA & AUTOMATIZACIÓN -->
-    <section class="ia-section" id="ia">
-        <div class="container">
-            <div class="ia-grid">
-                <div class="ia-content reveal">
-                    <span class="section-tag">Inteligencia Artificial</span>
-                    <h2>Mientras algunos responden<br>mensajes manualmente,<br><span class="gradient-text">otros automatizan todo.</span></h2>
-                    <p>La IA no es el futuro. Es lo que ya está separando a los negocios que crecen de los que se quedan atrás.</p>
-                    <ul class="ia-list">
-                        <li><span class="ia-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>ChatBots que atienden, venden y filtran consultas solos</span></li>
-                        <li><span class="ia-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Automatización de respuestas en WhatsApp e Instagram</span></li>
-                        <li><span class="ia-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Generación de contenido con IA aplicada a tu nicho</span></li>
-                        <li><span class="ia-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Sistemas de seguimiento de leads automáticos</span></li>
-                        <li><span class="ia-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Análisis de métricas y reportes automatizados</span></li>
-                    </ul>
-                    <a href="https://wa.me/5491150089069?text=Quiero%20automatizar%20mi%20negocio" class="btn btn-primary" target="_blank">Quiero automatizar mi negocio →</a>
-                </div>
-                <div class="ia-visual reveal delay-2">
-                    <div class="ia-card-stack">
-                        <div class="ia-float-card ia-card-1">
-                            <span class="ia-card-icon"><svg viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>
-                            <div><strong>Bot activo</strong><p>Respondiendo consultas...</p></div>
-                            <span class="pulse-dot"></span>
-                        </div>
-                        <div class="ia-float-card ia-card-2">
-                            <span class="ia-card-icon"><svg viewBox="0 0 24 24"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></span>
-                            <div><strong>+47 leads esta semana</strong><p>Sistema automático</p></div>
-                        </div>
-                        <div class="ia-float-card ia-card-3">
-                            <span class="ia-card-icon"><svg viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></span>
-                            <div><strong>Respuesta en 3 seg</strong><p>Sin intervención humana</p></div>
-                        </div>
-                        <div class="ia-main-card">
-                            <div class="ia-main-top">
-                                <span>Sistema activo 24/7</span>
-                                <span class="status-green">●</span>
-                            </div>
-                            <div class="ia-stat-row">
-                                <span>Mensajes respondidos hoy</span>
-                                <strong>284</strong>
-                            </div>
-                            <div class="ia-stat-row">
-                                <span>Conversiones</span>
-                                <strong class="text-blue">12</strong>
-                            </div>
-                            <div class="ia-progress"><div class="ia-progress-bar" style="width:78%"></div></div>
-                            <span class="ia-progress-label">78% tasa de respuesta</span>
-                        </div>
-                    </div>
+                <div class="servicio-card reveal delay-2">
+                    <div class="servicio-icon"><svg viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg></div>
+                    <h3>Soluciones con IA</h3>
+                    <p>Inteligencia artificial aplicada a tu negocio: generación de contenido, análisis y automatización.</p>
+                    <span class="servicio-tag">Tecnología aplicada</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- DEMO GRATIS -->
-    <section class="demo-section reveal">
+    <!-- TRABAJOS (teaser) -->
+    <section class="trabajos section-mid">
         <div class="container">
-            <div class="demo-card">
-                <div class="demo-badge">GRATIS</div>
-                <h2>¿Cómo sería tu negocio con una web<br>que <span class="gradient-text">vende de verdad?</span></h2>
-                <p>Te hacemos una demo real de tu página web sin costo y sin compromiso.<br>La ves funcionando antes de decidir cualquier cosa.</p>
-                <div class="demo-features">
-                    <div class="demo-feature"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Diseño personalizado para tu rubro</div>
-                    <div class="demo-feature"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Optimizada para mobile</div>
-                    <div class="demo-feature"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Con tu logo, colores y contenido</div>
-                    <div class="demo-feature"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Lista en menos de 72 horas</div>
+            <div class="teaser-head reveal">
+                <div class="section-header">
+                    <span class="section-tag">Casos reales</span>
+                    <h2>Negocios que ya<br><span class="gradient-text">modernizamos.</span></h2>
+                    <p class="section-subtitle">No mostramos plantillas. Proyectos reales, online y funcionando hoy.</p>
                 </div>
-                <a href="https://wa.me/5491150089069?text=Quiero%20mi%20demo%20gratis%20de%20p%C3%A1gina%20web" class="btn btn-primary btn-large" target="_blank">Quiero mi demo gratis →</a>
-                <span class="demo-note">Sin costo. Sin compromiso. Con resultado.</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- TRABAJOS / PORTFOLIO -->
-    <section class="trabajos section-dark" id="trabajos">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">Casos reales</span>
-                <h2>Negocios que ya<br><span class="gradient-text">modernizamos.</span></h2>
-                <p class="section-subtitle">No mostramos plantillas. Estos son proyectos reales, online y funcionando hoy.</p>
+                <a href="trabajos.html" class="link-arrow">Ver todos los trabajos
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
             </div>
             <div class="trabajos-grid">
-                <!-- Las imágenes usan un screenshot en vivo del sitio (mShots).
-                     Para usar una captura propia, guardala como trabajos/pasion-matera.png
-                     y cambiá el src por "trabajos/pasion-matera.png". -->
                 <article class="trabajo-card reveal">
                     <div class="trabajo-media">
                         <div class="trabajo-bar">
                             <span class="trabajo-dot r"></span><span class="trabajo-dot y"></span><span class="trabajo-dot g"></span>
                             <span class="trabajo-url">pasionmatera7.com</span>
                         </div>
-                        <img src="trabajos/pasion-matera.png" alt="Sitio web de Pasión Matera" loading="lazy"
+                        <img src="trabajos/pasionmatera7.png" alt="Sitio web de Pasión Matera" loading="lazy"
                              onerror="this.onerror=null;this.src='https://image.thum.io/get/width/1280/crop/800/https://pasionmatera7.com';">
                     </div>
                     <div class="trabajo-body">
@@ -348,140 +276,24 @@
                     </div>
                 </article>
             </div>
-            <div class="trabajos-cta reveal">
-                <a href="https://wa.me/5491150089069?text=Quiero%20una%20web%20como%20estas" class="btn btn-primary" target="_blank">Quiero una web así →</a>
-            </div>
         </div>
     </section>
 
-    <!-- NOSOTROS -->
-    <section class="nosotros section-mid" id="nosotros">
+    <!-- DEMO GRATIS -->
+    <section class="demo-section reveal">
         <div class="container">
-            <div class="nosotros-header reveal">
-                <span class="section-tag">El equipo</span>
-                <h2>Jóvenes, sí.<br>Pero los resultados<br><span class="gradient-text">no mienten.</span></h2>
-                <p class="section-subtitle">No tenemos décadas de historia. Tenemos algo más valioso: velocidad de adaptación, dominio de las últimas herramientas y ganas reales de que tu negocio crezca.</p>
-            </div>
-            <div class="team-grid">
-                <div class="team-card reveal">
-                    <div class="avatar-circle">M</div>
-                    <h3>Mateo De Rosa</h3>
-                    <span class="team-role">CEO & Co-Fundador</span>
-                    <a href="https://wa.me/5491150089069" class="team-contact" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        11 5008-9069
-                    </a>
+            <div class="demo-card">
+                <div class="demo-badge">GRATIS</div>
+                <h2>¿Cómo sería tu negocio con una web<br>que <span class="gradient-text">vende de verdad?</span></h2>
+                <p>Te hacemos una demo real de tu página web sin costo y sin compromiso.<br>La ves funcionando antes de decidir cualquier cosa.</p>
+                <div class="demo-features">
+                    <div class="demo-feature"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Diseño personalizado para tu rubro</div>
+                    <div class="demo-feature"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Optimizada para mobile</div>
+                    <div class="demo-feature"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Con tu logo, colores y contenido</div>
+                    <div class="demo-feature"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Lista en menos de 72 horas</div>
                 </div>
-                <div class="team-card reveal delay-2">
-                    <div class="avatar-circle">S</div>
-                    <h3>Santiago Stalla</h3>
-                    <span class="team-role">CEO & Co-Fundador</span>
-                    <a href="https://wa.me/5491122883750" class="team-contact" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        11 2288-3750
-                    </a>
-                </div>
-            </div>
-            <div class="diferencial-grid reveal">
-                <div class="diferencial-item">
-                    <span class="dif-icon"><svg viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></span>
-                    <strong>Velocidad</strong>
-                    <p>Entregamos en días, no en meses</p>
-                </div>
-                <div class="diferencial-item">
-                    <span class="dif-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
-                    <strong>Resultados reales</strong>
-                    <p>No hacemos cosas lindas, hacemos cosas que funcionan</p>
-                </div>
-                <div class="diferencial-item">
-                    <span class="dif-icon"><svg viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg></span>
-                    <strong>IA integrada</strong>
-                    <p>Usamos las herramientas más nuevas del mercado</p>
-                </div>
-                <div class="diferencial-item">
-                    <span class="dif-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg></span>
-                    <strong>Trato directo</strong>
-                    <p>Trabajás con quien te va a atender, sin intermediarios</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROCESO -->
-    <section class="proceso section-dark">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">Cómo trabajamos</span>
-                <h2>Simple, rápido y con<br><span class="gradient-text">resultados medibles.</span></h2>
-            </div>
-            <div class="proceso-steps">
-                <div class="proceso-step reveal">
-                    <div class="step-number">01</div>
-                    <h3>Diagnóstico gratuito</h3>
-                    <p>Analizamos tu negocio y tu presencia digital actual. Sin costo y sin compromiso.</p>
-                </div>
-                <div class="proceso-arrow reveal delay-1">→</div>
-                <div class="proceso-step reveal delay-2">
-                    <div class="step-number">02</div>
-                    <h3>Estrategia + Sistema</h3>
-                    <p>Diseñamos la solución específica para tu tipo de negocio. No templates, no genéricos.</p>
-                </div>
-                <div class="proceso-arrow reveal delay-3">→</div>
-                <div class="proceso-step reveal delay-4">
-                    <div class="step-number">03</div>
-                    <h3>Implementación y crecimiento</h3>
-                    <p>Ejecutamos, medimos y optimizamos. Resultados con números reales.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section class="contacto section-mid" id="contacto">
-        <div class="container">
-            <div class="contacto-grid">
-                <div class="contacto-left reveal">
-                    <span class="section-tag">Contacto</span>
-                    <h2>Tu presencia digital puede hacerte<br><span class="gradient-text">perder clientes o multiplicarlos.</span></h2>
-                    <p>La diferencia está en lo que hacés hoy. Empezá con una conversación.</p>
-                    <div class="contacto-options">
-                        <a href="https://wa.me/5491150089069?text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n" class="contacto-option" target="_blank">
-                            <span class="co-icon"><svg viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
-                            <div><strong>WhatsApp — Mateo</strong><span>11 5008-9069</span></div>
-                        </a>
-                        <a href="https://wa.me/5491122883750?text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n" class="contacto-option" target="_blank">
-                            <span class="co-icon"><svg viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
-                            <div><strong>WhatsApp — Santiago</strong><span>11 2288-3750</span></div>
-                        </a>
-                        <a href="https://instagram.com/tunegocioenlasredes_" class="contacto-option" target="_blank">
-                            <span class="co-icon"><svg viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></span>
-                            <div><strong>Instagram</strong><span>@tunegocioenlasredes_</span></div>
-                        </a>
-                    </div>
-                </div>
-                <div class="contacto-right reveal delay-2">
-                    <form class="contacto-form" id="contactForm">
-                        <h3>Escribinos</h3>
-                        <div class="form-group"><input type="text" placeholder="Nombre" required></div>
-                        <div class="form-group"><input type="text" placeholder="Nombre de tu negocio"></div>
-                        <div class="form-group"><input type="tel" placeholder="WhatsApp / Teléfono" required></div>
-                        <div class="form-group">
-                            <select required>
-                                <option value="" disabled selected>¿Qué necesitás?</option>
-                                <option>Página Web</option>
-                                <option>Gestión de Redes</option>
-                                <option>Publicidad Digital</option>
-                                <option>ChatBot / Automatización</option>
-                                <option>Branding</option>
-                                <option>Soluciones con IA</option>
-                                <option>Reels y Contenido</option>
-                                <option>No sé por dónde empezar</option>
-                            </select>
-                        </div>
-                        <div class="form-group"><textarea placeholder="Contanos brevemente sobre tu negocio..." rows="4"></textarea></div>
-                        <button type="submit" class="btn btn-primary btn-full">Enviar consulta →</button>
-                    </form>
-                </div>
+                <a href="https://wa.me/5491150089069?text=Quiero%20mi%20demo%20gratis%20de%20p%C3%A1gina%20web" class="btn btn-primary btn-large" target="_blank">Quiero mi demo gratis →</a>
+                <span class="demo-note">Sin costo. Sin compromiso. Con resultado.</span>
             </div>
         </div>
     </section>
@@ -498,19 +310,19 @@
                 <div class="footer-links">
                     <h4>Servicios</h4>
                     <ul>
-                        <li><a href="#servicios">Páginas Web</a></li>
-                        <li><a href="#servicios">Gestión de Redes</a></li>
-                        <li><a href="#servicios">Publicidad Digital</a></li>
-                        <li><a href="#ia">ChatBots & IA</a></li>
-                        <li><a href="#servicios">Branding</a></li>
+                        <li><a href="servicios.html">Páginas Web</a></li>
+                        <li><a href="servicios.html">Gestión de Redes</a></li>
+                        <li><a href="servicios.html">Publicidad Digital</a></li>
+                        <li><a href="ia.html">ChatBots & IA</a></li>
+                        <li><a href="servicios.html">Branding</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Empresa</h4>
                     <ul>
-                        <li><a href="#nosotros">Nosotros</a></li>
-                        <li><a href="#trabajos">Trabajos</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="trabajos.html">Trabajos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
                         <li><a href="https://wa.me/5491150089069?text=Quiero%20mi%20demo%20gratis">Demo Gratis</a></li>
                     </ul>
                 </div>
