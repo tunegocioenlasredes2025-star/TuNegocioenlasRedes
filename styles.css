@@ -1237,3 +1237,172 @@ section[id] { scroll-margin-top: 88px; }
     .teaser-head { flex-direction: column; align-items: flex-start; gap: 14px; }
     .page-hero { padding: 130px 0 56px; }
 }
+
+/* ============================================================= */
+/* ===== TRABAJOS — 3 BLOQUES (WEB · CRM · APPS) =============== */
+/* ============================================================= */
+
+/* Encabezado de bloque */
+.block-head { max-width: 760px; margin: 0 auto 52px; text-align: center; }
+.block-num {
+    display: inline-block;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--blue);
+    margin-bottom: 14px;
+}
+.block-head h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 14px; }
+.block-head p { color: var(--gray); font-size: 1rem; line-height: 1.7; max-width: 600px; margin: 0 auto; }
+
+/* Grilla de 3 columnas para muchos trabajos */
+.trabajos-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.trabajos-grid--3 .trabajo-body { padding: 22px 22px 26px; }
+.trabajos-grid--3 .trabajo-body h3 { font-size: 1.15rem; }
+.trabajos-grid--3 .trabajo-body > p { font-size: 0.88rem; }
+
+/* ===== BLOQUE CRM (estética SaaS) ===== */
+.crm-section { background: linear-gradient(180deg, var(--bg-mid) 0%, var(--bg) 100%); }
+.crm-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: center; }
+.crm-content h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; line-height: 1.18; letter-spacing: -0.02em; margin-bottom: 16px; }
+.crm-content > p { color: var(--gray); margin-bottom: 26px; line-height: 1.7; }
+.crm-features { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 30px; }
+.crm-feature {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--white);
+    background: rgba(13,153,255,0.06);
+    border: 1px solid rgba(13,153,255,0.18);
+    padding: 8px 14px;
+    border-radius: 100px;
+}
+.crm-feature svg { width: 15px; height: 15px; stroke: var(--blue); fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+.crm-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Marco de video / demo SaaS */
+.video-frame {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(13,153,255,0.25);
+    background: var(--bg-accent);
+    box-shadow: 0 40px 80px -30px rgba(0,0,0,0.7), 0 0 60px rgba(13,153,255,0.08);
+}
+.video-frame .trabajo-bar { position: absolute; top: 0; left: 0; right: 0; }
+.video-frame video,
+.video-frame img {
+    display: block;
+    width: 100%;
+    margin-top: 36px;
+    background: var(--bg-accent);
+}
+.video-play {
+    position: absolute;
+    top: calc(50% + 18px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--blue-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 40px rgba(13,153,255,0.5);
+    z-index: 4;
+    pointer-events: none;
+    animation: waPulse 2.5s ease-in-out infinite;
+}
+.video-play svg { width: 30px; height: 30px; fill: #fff; margin-left: 4px; }
+.video-frame.has-video .video-play { display: none; }
+
+/* Banda CTA del CRM */
+.crm-cta-band {
+    margin-top: 72px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(6,60,121,0.3), rgba(13,153,255,0.05));
+    border: 1px solid rgba(13,153,255,0.25);
+    border-radius: 24px;
+    padding: 56px 40px;
+}
+.crm-cta-band h3 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; line-height: 1.2; margin-bottom: 14px; }
+.crm-cta-band p { color: var(--gray); max-width: 560px; margin: 0 auto 28px; line-height: 1.7; }
+.crm-cta-band .hero-ctas { justify-content: center; }
+
+/* ===== BLOQUE APPS (capacidades) ===== */
+.apps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.app-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+.app-card:hover { transform: translateY(-4px); border-color: rgba(13,153,255,0.3); box-shadow: var(--shadow-blue); background: rgba(13,153,255,0.04); }
+.app-card .servicio-icon { margin-bottom: 16px; }
+.app-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+.app-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+
+.apps-message {
+    text-align: center;
+    max-width: 680px;
+    margin: 56px auto 0;
+    font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+}
+
+@media (max-width: 1024px) {
+    .trabajos-grid--3 { grid-template-columns: repeat(2, 1fr); }
+    .apps-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+    .crm-grid { grid-template-columns: 1fr; gap: 36px; }
+    .crm-content { order: 1; }
+    .video-frame { order: 2; }
+}
+@media (max-width: 680px) {
+    .trabajos-grid--3 { grid-template-columns: 1fr; }
+    .crm-cta-band { padding: 40px 24px; }
+    .crm-cta-band .hero-ctas .btn { width: 100%; justify-content: center; }
+    .video-play { width: 60px; height: 60px; }
+    .video-play svg { width: 24px; height: 24px; }
+}
+@media (max-width: 480px) {
+    .apps-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== MOCKUP CRM (visual SaaS dentro del video-frame) ===== */
+.crm-mockup { margin-top: 36px; padding: 22px; background: var(--bg-accent); }
+.crm-mock-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px; }
+.crm-mock-label { font-size: 0.7rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.1em; }
+.crm-mock-title { display: block; font-size: 1.05rem; font-weight: 700; margin-top: 3px; }
+.crm-mock-badge { display: inline-flex; align-items: center; gap: 7px; font-size: 0.72rem; font-weight: 600; color: #22c55e; background: rgba(34,197,94,0.1); padding: 5px 11px; border-radius: 100px; white-space: nowrap; }
+.crm-mock-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+.crm-mock-stat { background: var(--glass); border: 1px solid var(--border); border-radius: 12px; padding: 13px; }
+.crm-mock-stat span { font-size: 0.7rem; color: var(--gray); display: block; margin-bottom: 6px; }
+.crm-mock-stat strong { font-size: 1.25rem; font-weight: 800; }
+.crm-mock-rows { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+.crm-mock-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 0.82rem; color: var(--gray); background: var(--glass); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; padding: 11px 14px; }
+.crm-pill { font-size: 0.68rem; font-weight: 600; padding: 3px 10px; border-radius: 100px; white-space: nowrap; }
+.crm-pill.ok { color: #22c55e; background: rgba(34,197,94,0.12); }
+.crm-pill.wait { color: var(--blue); background: rgba(13,153,255,0.12); }
+.crm-mock-chart { display: flex; align-items: flex-end; gap: 8px; height: 60px; }
+.crm-mock-chart span { flex: 1; background: linear-gradient(180deg, var(--blue), var(--blue-light)); border-radius: 4px 4px 0 0; opacity: 0.85; }
+.crm-mock-chart span:nth-child(1) { height: 38%; }
+.crm-mock-chart span:nth-child(2) { height: 56%; }
+.crm-mock-chart span:nth-child(3) { height: 44%; }
+.crm-mock-chart span:nth-child(4) { height: 72%; }
+.crm-mock-chart span:nth-child(5) { height: 60%; }
+.crm-mock-chart span:nth-child(6) { height: 88%; }
+.crm-mock-chart span:nth-child(7) { height: 100%; }
+@media (max-width: 420px) {
+    .crm-mock-stats { grid-template-columns: 1fr 1fr; }
+    .crm-mock-stat:last-child { grid-column: 1 / -1; }
+}
