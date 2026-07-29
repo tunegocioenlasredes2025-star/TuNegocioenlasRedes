@@ -57,6 +57,14 @@ def head(*, title, description, path, schema, og_title=None, og_desc=None, page_
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#060d1e">
     <meta name="google-site-verification" content="4Of5Hx8LEJC8QyjvEbFUF_-j8gUQ2gm2ILo7uYJ9NiU">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRDYX4PKY6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+      gtag('config', 'G-SRDYX4PKY6');
+    </script>
     <script>document.documentElement.classList.add('js')</script>
     <link rel="preload" href="/fonts/jakarta/PlusJakartaSans-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts.css">
