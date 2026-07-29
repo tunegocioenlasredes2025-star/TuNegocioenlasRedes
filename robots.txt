@@ -1,0 +1,10 @@
+# robots.txt - Tu Negocio En Las Redes
+# https://www.tunegocioenlasredes.com.ar
+
+User-agent: *
+Allow: /
+
+# Sin trampas para el crawler: todo el sitio es indexable.
+# Los archivos de build no se publican (ver .vercelignore).
+
+Sitemap: https://www.tunegocioenlasredes.com.ar/sitemap.xml

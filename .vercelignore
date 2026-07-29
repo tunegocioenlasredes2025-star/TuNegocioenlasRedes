@@ -1,0 +1,13 @@
+# Herramientas de build: no se publican
+_build/
+carrusel-studio/
+carrusel-studio.skill.zip
+carousel_generator.py
+Carruseles_Generados/
+IMAGENES PARA CARRUSELSE ESTETICAS/
+Publicaciones, logo, etc/
+*.pdf
+Mejooras pagina tnr.md.txt
+
+# Fuentes fuente (las .ttf de Poppins solo se usan para generar la og-image)
+fonts/*.ttf

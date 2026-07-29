@@ -49,6 +49,9 @@ navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => set
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menuOpen) setMenu(false); });
 
 // SCROLL REVEAL
+// threshold 0 (no 0.1): un bloque de texto largo puede medir varios miles de px,
+// y entonces el 10% de su alto nunca entra en pantalla y nunca se revelaba.
+// Con 0 + rootMargin, se revela apenas su borde superior cruza el pliegue.
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -56,7 +59,7 @@ const revealObserver = new IntersectionObserver((entries) => {
             revealObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+}, { threshold: 0, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 

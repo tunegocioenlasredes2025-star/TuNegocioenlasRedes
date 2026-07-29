@@ -3,3 +3,13 @@ Publicaciones, logo, etc/
 *.zip
 *.mp4
 *.exe
+
+# Material de contenido y herramientas que no son parte del sitio
+.claude/
+Carruseles_Generados/
+IMAGENES PARA CARRUSELSE ESTETICAS/
+carrusel-studio/
+carousel_generator.py
+Mejooras pagina tnr.md.txt
+__pycache__/
+*.pyc

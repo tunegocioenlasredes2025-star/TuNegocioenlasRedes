@@ -1,0 +1,16 @@
+{
+  "name": "Tu Negocio En Las Redes — Agencia de Marketing Digital e IA",
+  "short_name": "TNR",
+  "description": "Agencia de marketing digital, desarrollo web, automatización e inteligencia artificial en Zona Oeste, Buenos Aires.",
+  "lang": "es-AR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#060d1e",
+  "theme_color": "#060d1e",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
