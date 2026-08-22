@@ -171,3 +171,30 @@ async function copyLink(url, btn) {
     btn.textContent = '¡Link copiado!';
     setTimeout(() => { btn.innerHTML = original; }, 1800);
 }
+
+// VIDEO DE FONDO DEL HERO
+// El <source> se inyecta desde acá y no en el HTML: así el navegador no baja
+// medio mega en un celular, donde el video ni se muestra.
+(() => {
+    const video = document.getElementById('heroVideo');
+    if (!video) return;
+
+    const quiereMenosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const pantallaChica = window.matchMedia('(max-width: 768px)').matches;
+    // Si el usuario está con datos limitados o ahorro de datos, no lo cargamos
+    const con = navigator.connection || {};
+    const conexionPobre = con.saveData === true || /^([23]g|slow-2g)$/.test(con.effectiveType || '');
+
+    if (quiereMenosMovimiento || pantallaChica || conexionPobre) return;
+
+    [['/videos/hero-web.webm', 'video/webm'], ['/videos/hero-web.mp4', 'video/mp4']]
+        .forEach(([src, type]) => {
+            const s = document.createElement('source');
+            s.src = src;
+            s.type = type;
+            video.appendChild(s);
+        });
+
+    video.load();
+    video.play().catch(() => { /* si el navegador lo bloquea, queda el poster */ });
+})();

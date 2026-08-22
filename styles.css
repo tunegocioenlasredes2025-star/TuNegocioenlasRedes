@@ -1804,3 +1804,37 @@ section[id] { scroll-margin-top: 88px; }
     /* Con el menú abierto la barra estorba */
     body.menu-open .mobile-cta { display: none; }
 }
+
+/* ===== VIDEO DE FONDO DEL HERO =====
+   Es una grabacion de una web que hicimos. Va muy atenuado: esta para dar
+   textura y movimiento, no para competir con el titular. */
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.13;
+    filter: saturate(0.35) contrast(1.1) brightness(0.9);
+    pointer-events: none;
+    z-index: 0;
+}
+/* Velo mas oscuro del lado del texto para que el H1 siempre se lea */
+.hero-veil {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        linear-gradient(90deg, var(--bg) 0%, rgba(6, 13, 30, 0.95) 42%, rgba(6, 13, 30, 0.72) 100%),
+        linear-gradient(0deg, var(--bg) 0%, transparent 26%),
+        linear-gradient(180deg, var(--bg) 0%, transparent 18%);
+}
+@media (max-width: 768px) {
+    /* En el celular el video no aporta y cuesta datos */
+    .hero-video { display: none; }
+    .hero-veil { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-video { display: none; }
+}
