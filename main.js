@@ -196,5 +196,20 @@ async function copyLink(url, btn) {
         });
 
     video.load();
-    video.play().catch(() => { /* si el navegador lo bloquea, queda el poster */ });
+
+    // Algunos navegadores (Brave, Safari con ahorro de energia) bloquean el
+    // autoplay igual estando muteado. Si pasa, reintentamos al primer gesto:
+    // mientras tanto se ve el poster, asi que nunca queda un hueco negro.
+    const intentar = () => video.play().catch(() => false);
+
+    intentar().then(ok => {
+        if (ok !== false) return;
+        const reintento = () => {
+            intentar();
+            ['pointerdown', 'keydown', 'scroll', 'touchstart']
+                .forEach(ev => window.removeEventListener(ev, reintento));
+        };
+        ['pointerdown', 'keydown', 'scroll', 'touchstart']
+            .forEach(ev => window.addEventListener(ev, reintento, { once: true, passive: true }));
+    });
 })();
