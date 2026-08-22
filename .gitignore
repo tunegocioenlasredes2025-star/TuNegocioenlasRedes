@@ -2,6 +2,7 @@ Publicaciones, logo, etc/
 *.pdf
 *.zip
 *.mp4
+!videos/*.mp4   # los videos del sitio si van al repo
 *.exe
 
 # Material de contenido y herramientas que no son parte del sitio
