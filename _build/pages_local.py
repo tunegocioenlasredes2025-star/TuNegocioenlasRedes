@@ -151,6 +151,12 @@ def moron():
          "Administrativamente sí: <strong>Castelar y Haedo pertenecen al partido de Morón</strong>. Pero para el buscador son localidades distintas y la gente busca por el nombre de su barrio, no por el partido. Si estás en Castelar conviene trabajar esa localidad específicamente; mirá la <a href=\"/marketing-digital-castelar\">página de Castelar</a>."),
         ("¿Sirve tener local a la calle y además web?",
          "Muchísimo, y es la combinación que mejor rinde. El local te da algo que la competencia puramente online no tiene: <strong>ficha de Google Maps con dirección real y reseñas</strong>. Sumarle una web propia potencia esa ficha y te deja captar también a quien busca sin saber todavía dónde queda tu negocio."),
+        ("¿Cuánto tarda en posicionar un negocio de Morón en Google?",
+         "Depende de por qué búsqueda. La <strong>ficha de Google Business Profile</strong> puede empezar a moverse en semanas, porque no depende de la antigüedad del sitio. El posicionamiento orgánico de una web nueva en una zona competitiva como Morón es más lento: primeros movimientos entre el <strong>segundo y el tercer mes</strong>, consolidación entre el <strong>cuarto y el sexto</strong>. Cualquiera que te prometa primer puesto en un mes en Morón no conoce el mercado o te está mintiendo."),
+        ("Mi competencia aparece primero en el mapa. ¿Cómo los paso?",
+         "Casi siempre por tres cosas, en este orden: <strong>cantidad y frescura de reseñas</strong>, qué tan completa está la ficha (categoría principal correcta, servicios cargados, fotos recientes, horarios exactos) y si tenés <strong>sitio web propio</strong> enlazado. En Morón lo que más se descuida es responder las reseñas: un negocio con 40 reseñas respondidas le suele ganar a uno con 120 mudas."),
+        ("¿Conviene invertir en Google Ads en una zona tan competitiva?",
+         "Sí, pero con precisión. En Morón el costo por clic es más alto que en localidades vecinas, así que trabajar con términos genéricos quema presupuesto rápido. La estrategia que funciona es ir por <strong>búsquedas específicas con intención concreta</strong>, sumar palabras clave negativas para no pagar clics que nunca iban a comprar, y apoyarse fuerte en remarketing."),
         ("¿Trabajan con profesionales, no solo con comercios?",
          "Sí. Estudios contables, abogados, consultorios, arquitectos e inmobiliarias son de los casos donde la web pesa más, porque la decisión se toma por confianza: la persona compara tres opciones, mira quién transmite más solidez y escribe. Ahí una web bien hecha define la consulta."),
     ]
@@ -169,6 +175,32 @@ def moron():
 
                 <h2>Publicidad en un mercado caro</h2>
                 <p>En Morón la pauta cuesta más porque hay más gente pujando por las mismas palabras. La respuesta no es poner más presupuesto: es <strong>ser más preciso</strong>. Búsquedas específicas en vez de genéricas, palabras clave negativas para no pagar clics que nunca iban a comprar, y remarketing sobre quien ya te visitó. Un presupuesto chico bien dirigido rinde más que uno grande mal segmentado. Lo desarrollamos en <a href="/publicidad-digital">publicidad digital</a>.</p>
+
+                <h2>Morón no es una sola zona comercial</h2>
+                <p>Una confusión que sale cara al segmentar publicidad: <strong>el partido de Morón incluye Castelar, Haedo, El Palomar y Villa Sarmiento</strong>, además del casco céntrico. Son mercados con perfiles distintos y precios distintos.</p>
+                <ul>
+                    <li><strong>Centro de Morón.</strong> La mayor densidad comercial del oeste, con la peatonal, el Palacio Municipal y la Catedral. Mucho tránsito peatonal, mucha competencia por las mismas búsquedas y costo por clic más alto.</li>
+                    <li><strong>Haedo y Villa Sarmiento.</strong> Más residenciales, con comercio de cercanía y clientela de barrio que vuelve. Acá pesa muchísimo más la reseña y el boca a boca digital que la pauta.</li>
+                    <li><strong>Castelar.</strong> Tiene identidad propia y la gente lo busca por su nombre, no por el partido. Si estás ahí, mirá la <a href="/marketing-digital-castelar">página de Castelar</a>.</li>
+                    <li><strong>El Palomar.</strong> Zona con movimiento propio alrededor de la estación, con menos competencia digital que el centro.</li>
+                </ul>
+                <p>Si segmentás una campaña a "Morón" a secas, le estás pagando a Google o a Meta por mostrarle tu negocio a gente que quizás no cruza nunca hasta tu local. Nosotros trabajamos con <strong>radio real desde tu dirección</strong>, no con el nombre del partido.</p>
+
+                <h2>Qué buscan realmente los clientes en Morón</h2>
+                <p>Hay una diferencia grande entre lo que un negocio cree que la gente busca y lo que efectivamente escribe. En una zona con esta densidad comercial, las búsquedas que convierten casi nunca son las genéricas:</p>
+                <table>
+                    <thead>
+                        <tr><th>Lo que el negocio quiere posicionar</th><th>Lo que la gente realmente escribe</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>peluquería</td><td>peluquería cerca abierta ahora</td></tr>
+                        <tr><td>estudio contable</td><td>contador monotributo Morón</td></tr>
+                        <tr><td>gimnasio</td><td>gimnasio Morón precios</td></tr>
+                        <tr><td>cerrajería</td><td>cerrajero urgente 24hs Morón</td></tr>
+                        <tr><td>agencia de marketing</td><td>quién me hace una página web en Morón</td></tr>
+                    </tbody>
+                </table>
+                <p>La columna de la derecha tiene menos volumen, pero <strong>mucha más intención de compra y muchísima menos competencia</strong>. Es donde se gana. La columna de la izquierda es donde todos pelean y casi nadie convierte.</p>
 
                 <h2>El contenido como diferencial</h2>
                 <p>Cuando todos tus competidores hacen lo mismo, el contenido propio es lo que rompe el empate. Un estudio contable que publica sobre monotributo, un gimnasio que muestra rutinas y resultados reales, una veterinaria que explica planes de vacunación: eso genera búsquedas que la competencia no está capturando y construye autoridad. Es lo que trabajamos en <a href="/gestion-de-redes">gestión de redes</a> y en el <a href="/blog">blog</a>.</p>'''
