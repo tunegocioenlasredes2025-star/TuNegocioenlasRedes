@@ -2,9 +2,12 @@
 :root {
     /* Paleta tomada del logo: azul de la marca + el celeste del avioncito.
        Se corrio hacia el celeste para salir del azul generico. */
-    --bg: #040a17;
-    --bg-mid: #071324;
-    --bg-accent: #0a1c36;
+    /* Fondo bastante mas claro que el navy casi negro original.
+       Contraste verificado: blanco 15:1 y gris 6.3:1, muy por encima
+       del 4.5 que pide WCAG AA. */
+    --bg: #0e2139;
+    --bg-mid: #142b47;
+    --bg-accent: #1b3557;
     --navy: #0a3a72;
     /* Azul corrido hacia el celeste: menos "azul de plantilla", mas cian. */
     --blue: #35b6f5;
@@ -1789,7 +1792,7 @@ section[id] { scroll-margin-top: 88px; }
         bottom: 0;
         z-index: 1200;
         padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
-        background: rgba(6, 13, 30, 0.94);
+        background: rgba(14, 33, 57, 0.94);
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
         border-top: 1px solid var(--border);
@@ -1914,11 +1917,11 @@ section[id] { scroll-margin-top: 88px; }
     display: grid;
     place-items: center;
     border: 0;
-    background: linear-gradient(180deg, rgba(4,10,23,0.15), rgba(4,10,23,0.55));
+    background: linear-gradient(180deg, rgba(14,33,57,0.15), rgba(14,33,57,0.55));
     cursor: pointer;
     transition: var(--transition);
 }
-.reel-play:hover { background: linear-gradient(180deg, rgba(4,10,23,0.05), rgba(4,10,23,0.45)); }
+.reel-play:hover { background: linear-gradient(180deg, rgba(14,33,57,0.05), rgba(14,33,57,0.45)); }
 .reel-play span {
     width: 74px;
     height: 74px;

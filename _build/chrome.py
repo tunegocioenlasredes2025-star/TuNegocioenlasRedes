@@ -55,7 +55,7 @@ def head(*, title, description, path, schema, og_title=None, og_desc=None, page_
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#060d1e">
+    <meta name="theme-color" content="#0e2139">
     <meta name="google-site-verification" content="4Of5Hx8LEJC8QyjvEbFUF_-j8gUQ2gm2ILo7uYJ9NiU">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRDYX4PKY6"></script>
