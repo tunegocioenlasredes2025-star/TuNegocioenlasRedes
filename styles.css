@@ -1838,3 +1838,45 @@ section[id] { scroll-margin-top: 88px; }
 @media (prefers-reduced-motion: reduce) {
     .hero-video { display: none; }
 }
+
+/* ===== FRANJA DE CLIENTES =====
+   Reemplaza al viejo ticker de servicios. Aquel enumeraba lo que vendemos
+   (lo dice cualquier web); este muestra a quien le trabajamos, que es
+   prueba concreta. */
+.clientes {
+    padding: 44px 0;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+}
+.clientes-label {
+    display: block;
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gray);
+    opacity: 0.7;
+    margin-bottom: 22px;
+}
+.clientes-lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 34px;
+}
+.clientes-lista li {
+    font-size: 1.02rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    opacity: 0.5;
+    transition: var(--transition);
+}
+.clientes-lista li:hover { opacity: 1; }
+@media (max-width: 700px) {
+    .clientes { padding: 32px 0; }
+    .clientes-lista { gap: 8px 20px; }
+    .clientes-lista li { font-size: 0.88rem; }
+}
