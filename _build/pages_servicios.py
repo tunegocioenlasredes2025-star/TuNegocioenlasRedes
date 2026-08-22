@@ -4,6 +4,7 @@
 import chrome as C
 import schemas as S
 import icons as I
+import components as CO
 
 
 def _prose(inner, cls="section-dark"):
@@ -20,7 +21,8 @@ def _prose(inner, cls="section-dark"):
 
 def _page(*, path, title, description, og_title, tag, h1, lead, bread_mid,
           prose, cards, cards_head, faq_items, related_title, related, cta,
-          service_kw, extra_sections=""):
+          service_kw, extra_sections="", tldr=None, cta_top=None):
+    prose = CO.lead_block(prose, tldr, cta_top)
     schema = S.dump([
         S.breadcrumb([("Inicio", "/"), bread_mid[0], (bread_mid[1][0], path)]),
         S.webpage(path, og_title, description),
@@ -77,6 +79,18 @@ def paginas_web():
                 <h3>Tienda online</h3>
                 <p>Carrito, medios de pago y envíos. Si querés vender 24/7 sin intervenir en cada operación, mirá <a href="/tiendas-online">cómo trabajamos las tiendas online</a>.</p>
 
+                <table>
+                    <thead>
+                        <tr><th>Tipo de web</th><th>Qué resuelve</th><th>Cuándo conviene</th><th>Plazo</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Landing page</strong></td><td>Un solo objetivo: que te escriban, reserven o compren</td><td>Si vas a hacer publicidad o recién arrancás</td><td>Días</td></tr>
+                        <tr><td><strong>Web institucional</strong></td><td>Varias secciones que dan solidez a la marca</td><td>Servicios que se eligen por confianza</td><td>1 a 2 semanas</td></tr>
+                        <tr><td><strong>Web con catálogo</strong></td><td>Muestra productos; la venta cierra por WhatsApp</td><td>Comercios con muchos productos</td><td>1 a 2 semanas</td></tr>
+                        <tr><td><strong>Tienda online</strong></td><td>Carrito, cobro y envíos sin que intervengas</td><td>Volumen alto y productos que no requieren asesoramiento</td><td>3 semanas o más</td></tr>
+                    </tbody>
+                </table>
+
                 <h2>Cómo trabajamos</h2>
                 <ol>
                     <li><strong>Charla inicial.</strong> Entendemos qué hace tu negocio, a quién le vendés y qué querés que pase cuando alguien entra a tu web.</li>
@@ -105,6 +119,14 @@ def paginas_web():
 
     return _page(
         path="/paginas-web",
+        tldr=[
+            "Hay <strong>cuatro tipos de web</strong> y elegir mal es el error más caro: landing, institucional, catálogo o tienda online.",
+            "Desarrollamos con <strong>código propio</strong>, no plantillas: sitios más livianos, más rápidos y sin plugins que se rompen.",
+            "Cada sitio sale con <strong>SEO técnico de base</strong>: metadatos, Schema, sitemap, URLs limpias e imágenes optimizadas.",
+            "Ves una <strong>demo real funcionando en 72 horas</strong> antes de que hablemos de precio.",
+        ],
+        cta_top=("<strong>Antes de leer todo esto:</strong> te armamos la demo de tu página con tu logo y tus colores, sin costo.",
+                 "Quiero mi demo gratis", "Quiero%20una%20demo%20gratis%20de%20p%C3%A1gina%20web"),
         title="Diseño y Desarrollo de Páginas Web | Tu Negocio En Las Redes",
         description="Diseño y desarrollo de páginas web profesionales en Zona Oeste: landing pages, webs institucionales y catálogos. Demo gratis en 72 horas.",
         og_title="Páginas Web Profesionales | Demo Gratis en 72 hs",
@@ -173,6 +195,19 @@ def tiendas_online():
                 <p>Mercado Libre te da tráfico, y eso es real. Pero también te cobra una comisión sobre cada venta, te pone a competir por precio contra otros vendedores dentro de la misma pantalla y, sobre todo, <strong>no te deja construir marca</strong>: el cliente le compró a Mercado Libre, no a vos, y la próxima vez va a buscar el producto, no tu nombre.</p>
                 <p>Una tienda propia no reemplaza a Mercado Libre: la mayoría de nuestros clientes usan las dos. La diferencia es que en la tuya el margen es tuyo, los datos de tus clientes son tuyos y la experiencia de compra la definís vos.</p>
 
+                <table>
+                    <thead>
+                        <tr><th></th><th>Tienda propia</th><th>Mercado Libre</th><th>Catálogo + WhatsApp</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Comisión por venta</strong></td><td>Ninguna</td><td>Sí, sobre cada venta</td><td>Ninguna</td></tr>
+                        <tr><td><strong>Tráfico</strong></td><td>Lo traés vos</td><td>Ya lo tiene la plataforma</td><td>Lo traés vos</td></tr>
+                        <tr><td><strong>Marca</strong></td><td>Es tuya</td><td>Competís dentro de la plataforma</td><td>Es tuya</td></tr>
+                        <tr><td><strong>Datos del cliente</strong></td><td>Tuyos</td><td>De la plataforma</td><td>Tuyos</td></tr>
+                        <tr><td><strong>Atención por venta</strong></td><td>Automática</td><td>Automática</td><td>Manual</td></tr>
+                    </tbody>
+                </table>
+
                 <h2>Una tienda sin visitas no vende</h2>
                 <p>Esto es lo que casi nadie te dice antes de venderte un ecommerce: publicar la tienda es la mitad del trabajo. Si nadie la visita, no hay conversión posible. Por eso cada tienda sale con <strong>SEO de producto</strong> (URLs propias, datos estructurados de precio y stock) y, si tiene sentido para tu negocio, la combinamos con <a href="/publicidad-digital">campañas de publicidad digital</a> y <a href="/gestion-de-redes">gestión de redes</a> para llevarle tráfico desde el primer mes.</p>
 
@@ -191,6 +226,14 @@ def tiendas_online():
 
     return _page(
         path="/tiendas-online",
+        tldr=[
+            "El techo de vender por WhatsApp no es conseguir clientes: es <strong>no dar abasto para atenderlos</strong>.",
+            "Te dejamos el circuito completo: catálogo con stock, carrito, <strong>Mercado Pago</strong>, envíos por zona y panel propio.",
+            "Una tienda propia no reemplaza a Mercado Libre: la diferencia es que <strong>el margen y los datos son tuyos</strong>.",
+            "Publicar la tienda es la mitad del trabajo: sin visitas no hay conversión posible.",
+        ],
+        cta_top=("<strong>Te lo mostramos con tus productos:</strong> armamos la demo con algunos de tus artículos reales cargados.",
+                 "Quiero ver mi tienda", "Quiero%20una%20demo%20de%20tienda%20online"),
         title="Tiendas Online y E-commerce a Medida | Tu Negocio En Las Redes",
         description="Desarrollo de tiendas online y ecommerce en Zona Oeste: carrito, Mercado Pago, control de stock, envíos y panel propio. Demo gratis con tus productos cargados.",
         og_title="Tiendas Online y E-commerce | Demo Gratis",
@@ -278,6 +321,14 @@ def gestion_de_redes():
 
     return _page(
         path="/gestion-de-redes",
+        tldr=[
+            "Si publicás seguido y no entra ninguna consulta, el problema no es la frecuencia: es que <strong>el contenido no pide una acción</strong>.",
+            "Los <strong>guardados y compartidos</strong> pesan más que los likes: son la señal que usa Instagram para mostrarte a gente nueva.",
+            "Los reels siguen regalando alcance orgánico, pero necesitan <strong>gancho en los primeros dos segundos</strong>.",
+            "Primeros movimientos de alcance en 3 o 4 semanas; consultas sostenidas entre el segundo y el tercer mes.",
+        ],
+        cta_top=("<strong>Diagnóstico gratis:</strong> miramos tu cuenta y te damos tres cambios concretos para aplicar esta semana.",
+                 "Quiero mi diagnóstico", "Quiero%20un%20diagn%C3%B3stico%20de%20mis%20redes"),
         title="Gestión de Redes Sociales e Instagram | Tu Negocio En Las Redes",
         description="Gestión de redes sociales en Zona Oeste: estrategia, diseño, reels y reportes. Manejo de Instagram que genera consultas, no solo likes.",
         og_title="Gestión de Redes e Instagram para Negocios",
@@ -339,6 +390,19 @@ def publicidad_digital():
                 <p>En Instagram y Facebook nadie está buscando tu negocio. Están mirando el celular. Tu anuncio tiene que ganarse la atención en el primer segundo y dar una razón concreta para frenar el scroll.</p>
                 <p>Es el canal ideal para productos que se venden mostrándolos: gastronomía, indumentaria, estética, gimnasios, eventos. También es donde mejor funciona el <strong>remarketing</strong>: volver a impactar a quien ya visitó tu web o vio tu video y no terminó de escribirte. Esa audiencia es la más barata y la que más convierte, y es la que casi nadie trabaja.</p>
 
+                <table>
+                    <thead>
+                        <tr><th></th><th>Google Ads</th><th>Meta Ads</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Qué resuelve</strong></td><td>Captura demanda que ya existe</td><td>Genera demanda donde no la había</td></tr>
+                        <tr><td><strong>Intención de compra</strong></td><td>Alta: ya te está buscando</td><td>Baja: está mirando el celular</td></tr>
+                        <tr><td><strong>Mejor para</strong></td><td>Servicios urgentes y búsquedas concretas</td><td>Productos que se venden mostrándolos</td></tr>
+                        <tr><td><strong>Costo por clic</strong></td><td>Más alto</td><td>Más bajo</td></tr>
+                        <tr><td><strong>Velocidad</strong></td><td>Rápida</td><td>Media: necesita fase de aprendizaje</td></tr>
+                    </tbody>
+                </table>
+
                 <h2>Qué hacemos concretamente</h2>
                 <ol>
                     <li><strong>Configuración técnica.</strong> Pixel de Meta, etiqueta de Google, eventos de conversión y verificación de dominio. Si esto está mal, todo lo demás mide mal.</li>
@@ -364,6 +428,14 @@ def publicidad_digital():
 
     return _page(
         path="/publicidad-digital",
+        tldr=[
+            "El botón de promocionar publicación es la forma <strong>más cara y menos precisa</strong> de anunciar.",
+            "<strong>Google Ads captura demanda</strong> que ya existe; <strong>Meta Ads genera demanda</strong> nueva. Resuelven cosas distintas.",
+            "El <strong>remarketing</strong> es la audiencia más barata y la que más convierte, y es la que casi nadie trabaja.",
+            "Los primeros 7 a 14 días son de aprendizaje: cortar antes es tirar el presupuesto.",
+        ],
+        cta_top=("<strong>¿Sabés cuánto te cuesta cada cliente hoy?</strong> Si no lo sabés, ese es exactamente el problema.",
+                 "Analizar mis campañas", "Quiero%20hacer%20publicidad%20para%20mi%20negocio"),
         title="Meta Ads y Google Ads | Tu Negocio En Las Redes",
         description="Campañas de Meta Ads y Google Ads para negocios de Zona Oeste: segmentación local, remarketing y reporte de costo por consulta.",
         og_title="Publicidad Digital: Meta Ads y Google Ads",
@@ -433,6 +505,19 @@ def automatizacion_whatsapp():
                 <p>Un <strong>bot con IA</strong> entiende lenguaje natural: el cliente escribe "hola, tenés turno el jueves a la tarde para color?" y lo resuelve sin obligarlo a navegar un menú. Responde solo con la información real de tu negocio que le cargamos, así que no inventa. Conviene cuando el volumen es alto y las preguntas son variadas.</p>
                 <p>No siempre la IA es la respuesta correcta. Te vamos a recomendar la opción más simple que resuelva tu caso, porque un bot más complejo de lo necesario es más caro de mantener y falla más.</p>
 
+                <table>
+                    <thead>
+                        <tr><th></th><th>Bot por menú</th><th>Bot con IA</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Cómo interactúa</strong></td><td>Opciones numeradas</td><td>El cliente escribe como quiere</td></tr>
+                        <tr><td><strong>Costo</strong></td><td>Más bajo</td><td>Más alto</td></tr>
+                        <tr><td><strong>Margen de error</strong></td><td>Ninguno</td><td>Bajo: responde solo con lo que le cargamos</td></tr>
+                        <tr><td><strong>Implementación</strong></td><td>1 a 2 semanas</td><td>Algo más: hay que ordenar la información</td></tr>
+                        <tr><td><strong>Conviene cuando</strong></td><td>Tus consultas entran en 5 o 6 categorías</td><td>Alto volumen y preguntas impredecibles</td></tr>
+                    </tbody>
+                </table>
+
                 <h2>Automatizar no es solo responder</h2>
                 <p>La parte que más plata deja no es la respuesta automática: es <strong>el seguimiento</strong>. La mayoría de los negocios pierden ventas no porque no contestan, sino porque nadie vuelve a escribirle al que preguntó el precio y no respondió más.</p>
                 <p>Podemos automatizar recordatorios de turno (que bajan muchísimo el ausentismo), seguimiento a las 48 horas de una consulta sin cerrar, avisos de carrito abandonado y pedidos de reseña después de una compra. Todo eso se conecta naturalmente con un <a href="/crm-para-pymes">CRM</a> para que quede registrado quién es quién y en qué estado está cada conversación.</p>
@@ -452,6 +537,14 @@ def automatizacion_whatsapp():
 
     return _page(
         path="/automatizacion-whatsapp",
+        tldr=[
+            "El 80% de los mensajes que respondés son <strong>las mismas cinco preguntas</strong>: precio, horario, ubicación, turno y forma de pago.",
+            "El costo real no es tu tiempo: es <strong>la consulta que llega a la medianoche</strong> y contestás a la mañana siguiente.",
+            "Empezá por un <strong>bot de menú</strong>: es más barato, no se equivoca y te muestra con datos qué preguntas se repiten.",
+            "Lo que más plata deja no es responder, es el <strong>seguimiento automático</strong> al que preguntó y no volvió.",
+        ],
+        cta_top=("<strong>Probalo antes de contratarlo:</strong> te armamos un bot de demostración con las preguntas reales de tu negocio.",
+                 "Quiero probarlo", "Quiero%20automatizar%20mi%20WhatsApp"),
         title="Chatbots de WhatsApp con IA | Tu Negocio En Las Redes",
         description="Automatización de WhatsApp para empresas: chatbots con IA que responden 24/7, agendan turnos y hacen seguimiento. Sobre API oficial de Meta.",
         og_title="Automatización de WhatsApp y Chatbots con IA",
@@ -515,6 +608,19 @@ def crm_para_pymes():
                 <p>Cada contacto tiene un estado y una próxima acción con fecha. El sistema avisa cuando algo está vencido. Esto solo, en la mayoría de los negocios, recupera más ventas de las que cuesta el desarrollo.</p>
                 <h3>Saber de dónde viene cada cliente</h3>
                 <p>Si registrás el origen de cada consulta (Instagram, Google, recomendación, <a href="/publicidad-digital">publicidad</a>), a los tres meses sabés exactamente en qué canal conviene invertir y cuál estás sosteniendo por costumbre.</p>
+                <table>
+                    <thead>
+                        <tr><th></th><th>Excel</th><th>CRM comercial</th><th>CRM a medida</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Costo inicial</strong></td><td>Cero</td><td>Bajo</td><td>Más alto</td></tr>
+                        <tr><td><strong>Costo mensual</strong></td><td>Cero</td><td>Por usuario, en dólares</td><td>Ninguno</td></tr>
+                        <tr><td><strong>Se adapta a tu proceso</strong></td><td>A mano y con esfuerzo</td><td>Parcialmente</td><td>Totalmente</td></tr>
+                        <tr><td><strong>Varias personas a la vez</strong></td><td>Se complica</td><td>Sí</td><td>Sí</td></tr>
+                        <tr><td><strong>Alertas automáticas</strong></td><td>No</td><td>Sí</td><td>Sí</td></tr>
+                    </tbody>
+                </table>
+
                 <h3>Dejar de depender de una persona</h3>
                 <p>Si el que atiende se enferma o se va, el historial de cada cliente sigue estando. Esto es especialmente crítico en negocios familiares, donde toda la información suele vivir en la cabeza del dueño.</p>
 
@@ -547,6 +653,14 @@ def crm_para_pymes():
 
     return _page(
         path="/crm-para-pymes",
+        tldr=[
+            "El problema no es conseguir clientes: es <strong>no perderlos</strong> en presupuestos que quedaron en visto.",
+            "Un CRM te muestra <strong>dónde se cae la venta</strong>: si entran pocas consultas es marketing, si entran muchas y no cierran es proceso.",
+            "Las <strong>alertas de seguimiento</strong> suelen recuperar más ventas de lo que cuesta el desarrollo.",
+            "Si tu caso entra en una herramienta que ya existe, te lo decimos en vez de venderte un desarrollo.",
+        ],
+        cta_top=("<strong>Primera charla sin costo:</strong> contanos cómo manejás hoy tus clientes y te decimos con franqueza qué necesitás.",
+                 "Quiero ordenar mis clientes", "Quiero%20un%20CRM%20para%20mi%20negocio"),
         title="CRM para PyMEs y Software a Medida | Tu Negocio En Las Redes",
         description="CRM para PyMEs y software a medida: seguimiento de clientes, embudo de ventas, alertas e integración con WhatsApp. Sin cuota por usuario.",
         og_title="CRM para PyMEs y Software a Medida",

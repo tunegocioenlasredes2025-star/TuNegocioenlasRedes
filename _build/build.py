@@ -7,7 +7,8 @@ Build completo del sitio.
 Orden (importa):
   1. generate.py       genera landings, blog y 404
   2. seo_files.py      sitemap.xml + robots.txt a partir de los HTML reales
-  3. version_assets.py estampa ?v=<hash> en css/js para que el cache largo sea seguro
+  3. llms_file.py      llms.txt para modelos de lenguaje
+  4. version_assets.py estampa ?v=<hash> en css/js para que el cache largo sea seguro
 """
 
 import pathlib
@@ -18,17 +19,21 @@ sys.path.insert(0, str(HERE))
 
 import generate
 import seo_files
+import llms_file
 import version_assets
 
 
 def main():
-    print("== 1/3  Generando páginas ==")
+    print("== 1/4  Generando páginas ==")
     generate.main()
 
-    print("\n== 2/3  sitemap.xml y robots.txt ==")
+    print("\n== 2/4  sitemap.xml y robots.txt ==")
     seo_files.main()
 
-    print("\n== 3/3  Versionando assets ==")
+    print("\n== 3/4  llms.txt ==")
+    llms_file.main()
+
+    print("\n== 4/4  Versionando assets ==")
     version_assets.main()
 
     print("\nBuild completo.")

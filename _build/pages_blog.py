@@ -3,13 +3,15 @@
 
 import chrome as C
 import schemas as S
+import components as CO
 
 PUB = "2026-07-28"
 
 
 def _post(*, slug, title, description, h1, lead, read, prose, faq_items=None,
-          keywords=None, related=None):
+          keywords=None, related=None, tldr=None, cta_top=None):
     path = f"/blog/{slug}"
+    prose = CO.lead_block(prose, tldr, cta_top)
     graph = [
         S.breadcrumb([("Inicio", "/"), ("Blog", "/blog"), (h1, path)]),
         S.article(path, h1, description, PUB, keywords=keywords),
@@ -53,6 +55,7 @@ def _post(*, slug, title, description, h1, lead, read, prose, faq_items=None,
         + C.breadcrumb([("Inicio", "/"), ("Blog", "/blog"), (h1, None)])
         + body
     )
+    out += CO.share_bar(path, h1)
     if faq_items:
         out += C.faq_section(faq_items, heading='Preguntas<br><span class="gradient-text">frecuentes.</span>')
     if related:
@@ -120,6 +123,15 @@ def precio_pagina_web():
 
     return _post(
         slug="cuanto-cuesta-una-pagina-web-argentina",
+        tldr=[
+            "No hay un precio único: <strong>landing, institucional y tienda online</strong> son tres productos distintos.",
+            "Lo que más explica las diferencias de presupuesto es <strong>plantilla contra diseño a medida</strong>.",
+            "Preguntá siempre si <strong>incluye SEO técnico</strong>: sin eso la web puede quedar invisible para Google.",
+            "Costos mensuales reales: solo <strong>dominio y hosting</strong>. Desconfiá de cuotas altas obligatorias.",
+            "La cuenta que importa no es cuánto sale, es <strong>cuánto te devuelve por mes</strong>.",
+        ],
+        cta_top=("<strong>Nuestra postura:</strong> te hacemos la demo de tu web antes de que pongas un peso. Recién ahí hablamos de precio.",
+                 "Quiero mi demo gratis", "Quiero%20una%20demo%20gratis%20de%20p%C3%A1gina%20web"),
         title="¿Cuánto cuesta una página web en Argentina? Guía 2026",
         description="De qué depende el precio de una página web en Argentina: plantilla vs diseño a medida, SEO técnico y costos. Qué preguntar antes de contratar.",
         h1="¿Cuánto cuesta una página web en Argentina?",
@@ -198,6 +210,15 @@ def clientes_instagram():
 
     return _post(
         slug="como-conseguir-clientes-por-instagram",
+        tldr=[
+            "Tu perfil es una landing page: en segundos tiene que decir <strong>qué vendés, a quién y cómo te compran</strong>.",
+            "Los <strong>guardados y compartidos</strong> predicen el alcance mucho mejor que los likes.",
+            "En reels, los <strong>primeros dos segundos</strong> deciden todo. Arrancá por el conflicto o el resultado.",
+            "Tu mayor ventaja como negocio local es el <strong>contenido de tu zona</strong>: menos alcance, mucha más conversión.",
+            "Cerrá siempre con <strong>una sola</strong> instrucción concreta.",
+        ],
+        cta_top=("<strong>¿Querés una mano?</strong> Te hacemos un diagnóstico gratis de tu cuenta con tres cambios para esta semana.",
+                 "Quiero mi diagnóstico", "Quiero%20un%20diagn%C3%B3stico%20de%20mis%20redes"),
         title="Cómo conseguir clientes por Instagram: guía práctica 2026",
         description="Cómo conseguir clientes reales por Instagram: optimizar el perfil, contenido que se guarda, ganchos en reels y prueba social. Guía práctica.",
         h1="Cómo conseguir clientes por Instagram",
@@ -287,6 +308,15 @@ def chatbot_whatsapp():
 
     return _post(
         slug="chatbot-whatsapp-para-negocios",
+        tldr=[
+            "Automatizá <strong>lo predecible</strong>; dejá en manos de una persona lo que requiere criterio.",
+            "Nunca automatices reclamos, negociaciones ni presupuestos que exigen evaluar un caso.",
+            "<strong>Empezá por un bot de menú.</strong> Es más barato, no falla y te muestra qué preguntas se repiten.",
+            "Todo menú necesita una salida visible a un humano. Sin eso, el bot es una trampa.",
+            "La parte que más vende es el <strong>seguimiento</strong>, y es la que casi nadie implementa.",
+        ],
+        cta_top=("<strong>Probalo primero:</strong> te armamos un bot de demostración con las preguntas reales de tu negocio.",
+                 "Quiero probarlo", "Quiero%20automatizar%20mi%20WhatsApp"),
         title="Chatbot de WhatsApp para negocios: qué automatizar y qué no",
         description="Qué conviene automatizar en WhatsApp y qué no, cuándo usar IA o un menú simple, y los 5 errores que arruinan un chatbot de negocio.",
         h1="Chatbot de WhatsApp: qué automatizar y qué no",
@@ -362,6 +392,15 @@ def google_maps():
 
     return _post(
         slug="aparecer-en-google-maps",
+        tldr=[
+            "Es <strong>gratis</strong>, se hace en una tarde y la mayoría de tus competidores lo tiene a medias.",
+            "El campo más importante de toda la ficha es la <strong>categoría principal</strong>. Elegí la específica, no la general.",
+            "Podés aparecer <strong>sin local a la calle</strong>: se configura como negocio de servicio a domicilio.",
+            "Las <strong>reseñas respondidas</strong> son lo que más mueve tu posición, y lo que menos hace la competencia.",
+            "Nunca compres reseñas: Google las detecta y puede suspenderte la ficha.",
+        ],
+        cta_top=("<strong>Si no querés hacerlo vos:</strong> lo configuramos y optimizamos nosotros. Escribinos y lo revisamos juntos.",
+                 "Quiero que lo hagan ustedes", "Quiero%20optimizar%20mi%20ficha%20de%20Google"),
         title="Cómo aparecer en Google Maps con tu negocio (guía 2026)",
         description="Guía paso a paso para aparecer en Google Maps: crear y verificar tu ficha de Google Business Profile, elegir bien la categoría y sumar reseñas.",
         h1="Cómo hacer que tu negocio aparezca en Google Maps",

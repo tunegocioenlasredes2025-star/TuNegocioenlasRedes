@@ -134,3 +134,40 @@ if (progressBar) {
         }
     }, { threshold: 0.5 }).observe(progressBar);
 }
+
+// COMPARTIR ARTÍCULO
+// Usa la hoja de compartir nativa del celular; en escritorio copia el link.
+document.querySelectorAll('.js-share').forEach(btn => {
+    btn.addEventListener('click', async () => {
+        const url = btn.dataset.url;
+        const title = btn.dataset.title || document.title;
+        if (navigator.share) {
+            try { await navigator.share({ title, url }); } catch (e) { /* el usuario canceló */ }
+        } else {
+            copyLink(url, btn);
+        }
+    });
+});
+
+document.querySelectorAll('.js-copy').forEach(btn => {
+    btn.addEventListener('click', () => copyLink(btn.dataset.url, btn));
+});
+
+async function copyLink(url, btn) {
+    const original = btn.innerHTML;
+    try {
+        await navigator.clipboard.writeText(url);
+    } catch (e) {
+        // Fallback para navegadores sin permiso de portapapeles
+        const ta = document.createElement('textarea');
+        ta.value = url;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (_) {}
+        document.body.removeChild(ta);
+    }
+    btn.textContent = '¡Link copiado!';
+    setTimeout(() => { btn.innerHTML = original; }, 1800);
+}

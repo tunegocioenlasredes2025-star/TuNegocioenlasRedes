@@ -79,6 +79,11 @@ def head(*, title, description, path, schema, og_title=None, og_desc=None, page_
         {WA_SVG}
         <span class="whatsapp-tooltip">¡Escribinos!</span>
     </a>
+
+    <div class="mobile-cta">
+        <span class="mobile-cta-text"><strong>Demo gratis de tu web</strong>La ves andando en 72 hs</span>
+        <a href="https://wa.me/{WA_MATEO}?text=Quiero%20una%20demo%20gratis%20de%20p%C3%A1gina%20web" class="btn btn-primary" target="_blank" rel="noopener">Pedirla →</a>
+    </div>
 '''
 
 

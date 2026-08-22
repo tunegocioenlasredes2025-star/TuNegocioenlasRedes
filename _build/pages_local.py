@@ -10,6 +10,7 @@ real de su localidad y tiene FAQ, ejemplos y ángulo propios.
 import chrome as C
 import schemas as S
 import icons as I
+import components as CO
 
 HUB = "/marketing-digital-zona-oeste"
 
@@ -27,7 +28,8 @@ def _prose(inner, cls="section-dark"):
 
 
 def _page(*, path, city, title, description, og_title, h1, lead, prose, cards,
-          cards_head, faq_items, related, areas, parent=True):
+          cards_head, faq_items, related, areas, parent=True, tldr=None, cta_top=None):
+    prose = CO.lead_block(prose, tldr, cta_top)
     trail = [("Inicio", "/")]
     if parent:
         trail.append(("Zona Oeste", HUB))
@@ -109,6 +111,14 @@ def ituzaingo():
 
     return _page(
         path="/marketing-digital-ituzaingo",
+        tldr=[
+            "Ituzaingó tiene un comercio de barrio fuerte y <strong>muy poco digitalizado</strong>: hacer lo básico bien ya te pone adelante.",
+            "El orden que mejor rinde: <strong>ficha de Google primero</strong>, después web propia, después Instagram, y recién ahí publicidad.",
+            "<strong>Parque Leloir juega distinto</strong> al centro: perfil residencial de quintas y servicios de mayor ticket.",
+            "Somos de acá: podemos juntarnos a charlarlo en persona.",
+        ],
+        cta_top=("<strong>¿Arrancamos?</strong> Te hacemos la demo de tu página web, con tu logo y tus colores, sin costo.",
+                 "Quiero mi demo gratis", "Quiero%20una%20demo%20gratis%20de%20p%C3%A1gina%20web"),
         city="Ituzaingó",
         title="Agencia de Marketing Digital en Ituzaingó | Páginas Web y Redes",
         description="Agencia de marketing digital en Ituzaingó: páginas web, gestión de redes, Google Business Profile y publicidad local. Demo de tu web gratis.",
@@ -165,6 +175,14 @@ def moron():
 
     return _page(
         path="/marketing-digital-moron",
+        tldr=[
+            "Morón es el <strong>mercado más competitivo del oeste</strong>: hay muchos más negocios peleando por las mismas búsquedas.",
+            "Tres factores explican casi todo el resultado local: <strong>reseñas respondidas, ficha completa y sitio web propio</strong>.",
+            "La pauta cuesta más acá. La respuesta no es más presupuesto, es <strong>más precisión</strong>.",
+            "Cuando todos hacen lo mismo, el <strong>contenido propio</strong> es lo que rompe el empate.",
+        ],
+        cta_top=("<strong>¿Competís en Morón?</strong> Revisamos tu ficha de Google y tu web, y te decimos qué te está frenando.",
+                 "Quiero que lo revisen", "Quiero%20una%20demo%20gratis%20de%20p%C3%A1gina%20web"),
         city="Morón",
         title="Agencia de Marketing Digital en Morón | Páginas Web y Publicidad",
         description="Agencia de marketing digital en Morón: páginas web, SEO local, ficha de Google y campañas segmentadas para el mercado más competitivo del oeste.",
@@ -222,6 +240,14 @@ def castelar():
 
     return _page(
         path="/marketing-digital-castelar",
+        tldr=[
+            "Castelar pertenece al partido de Morón, pero <strong>la gente busca “Castelar”</strong>, no el partido.",
+            "Hay muchísimos emprendedores vendiendo <strong>solo por Instagram</strong>, y ahí aparece el techo.",
+            "Ese techo tiene tres partes: no controlás el alcance, no aparecés en Google y atendés cada venta a mano.",
+            "Para gastronomía, la <strong>ficha de Google impecable</strong> rinde más que cualquier otra acción, y es gratis.",
+        ],
+        cta_top=("<strong>¿Vendés solo por Instagram?</strong> Te mostramos cómo se vería tu web propia, sin costo.",
+                 "Quiero mi demo gratis", "Quiero%20una%20demo%20gratis%20de%20p%C3%A1gina%20web"),
         city="Castelar",
         title="Agencia de Marketing Digital en Castelar | Páginas Web y Redes",
         description="Agencia de marketing digital en Castelar: páginas web, tiendas online y gestión de Instagram para comercios y emprendedores. Demo gratis.",
@@ -288,6 +314,14 @@ def zona_oeste():
 
     return _page(
         path=HUB,
+        tldr=[
+            "El corredor oeste es uno de los tejidos comerciales más densos del país y sigue <strong>muy poco digitalizado</strong>.",
+            "En la mayoría de los rubros locales, <strong>hacer lo básico bien ya te pone adelante</strong> de casi toda tu competencia.",
+            "Lo básico son cinco cosas: ficha de Google, sitio propio, datos de contacto consistentes, reseñas y contenido local.",
+            "La ficha de Google puede mover el amperímetro en <strong>semanas</strong>; el orgánico, entre el segundo y el sexto mes.",
+        ],
+        cta_top=("<strong>Empezá por lo que más rinde:</strong> te armamos la demo de tu web y revisamos tu ficha de Google, sin costo.",
+                 "Quiero mi demo gratis", "Quiero%20una%20demo%20gratis%20de%20p%C3%A1gina%20web"),
         city="Zona Oeste",
         title="Marketing Digital en Zona Oeste | Tu Negocio En Las Redes",
         description="Agencia de marketing digital en Zona Oeste: páginas web, SEO local, redes, publicidad e IA. Ituzaingó, Morón, Castelar, Haedo y alrededores.",

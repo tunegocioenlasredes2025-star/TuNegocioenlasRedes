@@ -8,3 +8,6 @@ Allow: /
 # Los archivos de build no se publican (ver .vercelignore).
 
 Sitemap: https://www.tunegocioenlasredes.com.ar/sitemap.xml
+
+# Mapa del sitio para modelos de lenguaje (ChatGPT, Claude, Perplexity)
+# https://www.tunegocioenlasredes.com.ar/llms.txt

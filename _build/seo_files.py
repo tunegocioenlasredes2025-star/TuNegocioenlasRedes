@@ -84,6 +84,9 @@ Allow: /
 # Los archivos de build no se publican (ver .vercelignore).
 
 Sitemap: {SITE}/sitemap.xml
+
+# Mapa del sitio para modelos de lenguaje (ChatGPT, Claude, Perplexity)
+# {SITE}/llms.txt
 """
 
 
