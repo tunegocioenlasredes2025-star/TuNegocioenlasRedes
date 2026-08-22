@@ -49,19 +49,42 @@ navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => set
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menuOpen) setMenu(false); });
 
 // SCROLL REVEAL
-// threshold 0 (no 0.1): un bloque de texto largo puede medir varios miles de px,
-// y entonces el 10% de su alto nunca entra en pantalla y nunca se revelaba.
-// Con 0 + rootMargin, se revela apenas su borde superior cruza el pliegue.
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0, rootMargin: '0px 0px -50px 0px' });
+// Antes esto usaba IntersectionObserver y tenia un bug grave: si el visitante
+// scrolleaba rapido (una rueda de mouse mueve 2000px de una), las secciones
+// pasaban volando entre frames, el observer no llegaba a registrarlas y
+// quedaban invisibles PARA SIEMPRE. La pagina se veia con huecos negros.
+//
+// Ahora se revisa la posicion real en cada scroll: si el borde superior de un
+// elemento ya cruzo el pliegue, se revela. No se puede "perder" nada, porque
+// los que quedaron arriba tienen top negativo y tambien entran.
+const revealPendientes = [...document.querySelectorAll('.reveal')];
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+function revisarReveal() {
+    const limite = window.innerHeight - 60;
+    for (let i = revealPendientes.length - 1; i >= 0; i--) {
+        if (revealPendientes[i].getBoundingClientRect().top < limite) {
+            revealPendientes[i].classList.add('visible');
+            revealPendientes.splice(i, 1);
+        }
+    }
+    if (!revealPendientes.length) {
+        window.removeEventListener('scroll', pedirRevision);
+        window.removeEventListener('resize', pedirRevision);
+    }
+}
+
+let revisionPedida = false;
+function pedirRevision() {
+    if (revisionPedida) return;
+    revisionPedida = true;
+    requestAnimationFrame(() => { revisionPedida = false; revisarReveal(); });
+}
+
+window.addEventListener('scroll', pedirRevision, { passive: true });
+window.addEventListener('resize', pedirRevision, { passive: true });
+revisarReveal();
+// Red de seguridad: si algo sale mal, a los 4 segundos se muestra todo igual.
+setTimeout(() => revealPendientes.splice(0).forEach(el => el.classList.add('visible')), 4000);
 
 // COUNTER ANIMATION
 function animateCounter(el) {
@@ -171,45 +194,3 @@ async function copyLink(url, btn) {
     btn.textContent = '¡Link copiado!';
     setTimeout(() => { btn.innerHTML = original; }, 1800);
 }
-
-// VIDEO DE FONDO DEL HERO
-// El <source> se inyecta desde acá y no en el HTML: así el navegador no baja
-// medio mega en un celular, donde el video ni se muestra.
-(() => {
-    const video = document.getElementById('heroVideo');
-    if (!video) return;
-
-    const quiereMenosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const pantallaChica = window.matchMedia('(max-width: 768px)').matches;
-    // Si el usuario está con datos limitados o ahorro de datos, no lo cargamos
-    const con = navigator.connection || {};
-    const conexionPobre = con.saveData === true || /^([23]g|slow-2g)$/.test(con.effectiveType || '');
-
-    if (quiereMenosMovimiento || pantallaChica || conexionPobre) return;
-
-    [['/videos/hero-web.webm', 'video/webm'], ['/videos/hero-web.mp4', 'video/mp4']]
-        .forEach(([src, type]) => {
-            const s = document.createElement('source');
-            s.src = src;
-            s.type = type;
-            video.appendChild(s);
-        });
-
-    video.load();
-
-    // Algunos navegadores (Brave, Safari con ahorro de energia) bloquean el
-    // autoplay igual estando muteado. Si pasa, reintentamos al primer gesto:
-    // mientras tanto se ve el poster, asi que nunca queda un hueco negro.
-    const intentar = () => video.play().catch(() => false);
-
-    intentar().then(ok => {
-        if (ok !== false) return;
-        const reintento = () => {
-            intentar();
-            ['pointerdown', 'keydown', 'scroll', 'touchstart']
-                .forEach(ev => window.removeEventListener(ev, reintento));
-        };
-        ['pointerdown', 'keydown', 'scroll', 'touchstart']
-            .forEach(ev => window.addEventListener(ev, reintento, { once: true, passive: true }));
-    });
-})();

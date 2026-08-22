@@ -38,7 +38,7 @@
     <script>document.documentElement.classList.add('js')</script>
     <link rel="preload" href="/fonts/jakarta/PlusJakartaSans-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts.css?v=4f57da79">
-    <link rel="stylesheet" href="/styles.css?v=153976ea">
+    <link rel="stylesheet" href="/styles.css?v=4ccfc61f">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -163,12 +163,6 @@
     <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero-bg">
-            <!-- Fondo: scroll de una web real que hicimos. El <source> lo inyecta
-                 main.js solo en escritorio y si el usuario no pidio menos animacion,
-                 asi no gastamos datos del celular. -->
-            <video class="hero-video" id="heroVideo" muted loop playsinline preload="none"
-                   poster="/videos/hero-web-poster.jpg" aria-hidden="true" tabindex="-1"></video>
-            <div class="hero-veil"></div>
             <div class="hero-orb hero-orb-1"></div>
             <div class="hero-orb hero-orb-2"></div>
             <div class="hero-grid"></div>
@@ -197,28 +191,6 @@
                     <span>Zona Oeste, Buenos Aires</span>
                 </div>
             </div>
-        </div>
-        <div class="hero-scroll-hint"><div class="scroll-line"></div></div>
-    </section>
-
-
-    <!-- CLIENTES -->
-    <section class="clientes">
-        <div class="container">
-            <span class="clientes-label">Negocios que ya trabajan con nosotros</span>
-            <ul class="clientes-lista">
-                    <li>Pasión Matera</li>
-                    <li>Estudio Contable GICI</li>
-                    <li>Compugatti</li>
-                    <li>Addware</li>
-                    <li>Expocart Automotores</li>
-                    <li>ATS Seguridad</li>
-                    <li>Bite Club</li>
-                    <li>LOFT</li>
-                    <li>Consultorios VEC</li>
-                    <li>Monitoreo Inteligente</li>
-                    <li>After Gym</li>
-            </ul>
         </div>
     </section>
     <!-- PROBLEMA -->
@@ -334,30 +306,28 @@
             <div class="teaser-head reveal">
                 <div class="section-header">
                     <span class="section-tag">Casos reales</span>
-                    <h2>Negocios que ya<br><span class="gradient-text">modernizamos.</span></h2>
-                    <p class="section-subtitle">No mostramos plantillas. Proyectos reales, online y funcionando hoy.</p>
+                    <h2>Nos adaptamos a<br><span class="gradient-text">cada negocio.</span></h2>
+                    <p class="section-subtitle">Estos tres sitios los hicimos nosotros y no se parecen en nada entre sí. Es a propósito: el diseño sale del negocio, no de una plantilla que reciclamos. Y no trabajamos solo en Zona Oeste.</p>
                 </div>
                 <a href="/trabajos" class="link-arrow">Ver todos los trabajos
                     <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
             </div>
-            <div class="trabajos-grid">
+            <div class="trabajos-grid trabajos-grid--3">
                 <article class="trabajo-card reveal">
                     <div class="trabajo-media">
                         <div class="trabajo-bar">
                             <span class="trabajo-dot r"></span><span class="trabajo-dot y"></span><span class="trabajo-dot g"></span>
-                            <span class="trabajo-url">pasionmatera7.com</span>
+                            <span class="trabajo-url">mundo-cortinas.vercel.app</span>
                         </div>
-                        <img src="/trabajos/pasion-matera-tienda-online-mates.jpg" alt="Sitio web de Pasión Matera" loading="lazy" decoding="async" width="1280" height="800">
+                        <img src="/trabajos/mundo-cortinas-tienda-web.jpg" alt="Sitio web de Mundo Cortinas, cortinas a medida en Castelar" loading="lazy" decoding="async" width="1280" height="800">
                     </div>
                     <div class="trabajo-body">
-                        <span class="trabajo-tag">E-commerce</span>
-                        <h3>Pasión Matera</h3>
-                        <p>Tienda de mates artesanales premium. Catálogo, carrito y contacto directo por WhatsApp para vender sin fricción.</p>
-                        <div class="trabajo-stack">
-                            <span>Diseño Web</span><span>Catálogo</span><span>Responsive</span><span>WhatsApp</span>
-                        </div>
-                        <a href="https://pasionmatera7.com" class="trabajo-link" target="_blank" rel="noopener">
+                        <span class="trabajo-tag">Cálido y artesanal</span>
+                        <h3>Mundo Cortinas</h3>
+                        <p>Cortinas y toldos a medida en Castelar. Acá el diseño pedía calidez: tipografía con serifas, naranjas terrosos y fotos de ambientes reales. Nada que ver con la estética de esta misma página.</p>
+                        <div class="trabajo-stack"><span>Diseño a medida</span><span>Catálogo</span><span>Presupuestos</span><span>WhatsApp</span></div>
+                        <a href="https://mundo-cortinas.vercel.app/" class="trabajo-link" target="_blank" rel="noopener">
                             Ver sitio
                             <svg viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         </a>
@@ -367,18 +337,35 @@
                     <div class="trabajo-media">
                         <div class="trabajo-bar">
                             <span class="trabajo-dot r"></span><span class="trabajo-dot y"></span><span class="trabajo-dot g"></span>
-                            <span class="trabajo-url">estudiocontablegici.com</span>
+                            <span class="trabajo-url">toncars.com.ar</span>
                         </div>
-                        <img src="/trabajos/estudio-contable-gici-sitio-web.jpg" alt="Sitio web del Estudio Contable GICI" loading="lazy" decoding="async" width="1280" height="800">
+                        <img src="/trabajos/toncars-automotores-catalogo-web.jpg" alt="Sitio web de TonCars Automotores" loading="lazy" decoding="async" width="1280" height="800">
                     </div>
                     <div class="trabajo-body">
-                        <span class="trabajo-tag">Página institucional</span>
-                        <h3>Estudio Contable GICI</h3>
-                        <p>Sitio profesional para un estudio contable e impositivo. Imagen de autoridad, servicios claros y captación de consultas.</p>
-                        <div class="trabajo-stack">
-                            <span>Diseño Web</span><span>Institucional</span><span>Responsive</span><span>SEO</span>
+                        <span class="trabajo-tag">Catálogo automotor</span>
+                        <h3>TonCars Automotores</h3>
+                        <p>Concesionaria con catálogo de vehículos. El foco está en que cada auto se vea grande y en que la consulta salga en un clic, que es como se compra un usado.</p>
+                        <div class="trabajo-stack"><span>Catálogo</span><span>Fichas de producto</span><span>Responsive</span><span>Consultas</span></div>
+                        <a href="https://toncars.com.ar/" class="trabajo-link" target="_blank" rel="noopener">
+                            Ver sitio
+                            <svg viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                        </a>
+                    </div>
+                </article>
+                <article class="trabajo-card reveal delay-2">
+                    <div class="trabajo-media">
+                        <div class="trabajo-bar">
+                            <span class="trabajo-dot r"></span><span class="trabajo-dot y"></span><span class="trabajo-dot g"></span>
+                            <span class="trabajo-url">medisur-rg.com.ar</span>
                         </div>
-                        <a href="https://estudiocontablegici.com" class="trabajo-link" target="_blank" rel="noopener">
+                        <img src="/trabajos/medisur-rio-gallegos-salud-web.jpg" alt="Sitio web de Medisur, centro médico en Río Gallegos" loading="lazy" decoding="async" width="1280" height="800">
+                    </div>
+                    <div class="trabajo-body">
+                        <span class="trabajo-tag">Salud · Santa Cruz</span>
+                        <h3>Medisur</h3>
+                        <p>Centro médico en <strong>Río Gallegos, Santa Cruz</strong>: a 2.600 km de acá. Celestes limpios, turnos a la vista y lenguaje claro, que es lo que se espera de un sitio de salud.</p>
+                        <div class="trabajo-stack"><span>Institucional</span><span>Turnos</span><span>Accesible</span><span>SEO</span></div>
+                        <a href="https://medisur-rg.com.ar/" class="trabajo-link" target="_blank" rel="noopener">
                             Ver sitio
                             <svg viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         </a>
@@ -539,6 +526,6 @@
         </div>
     </footer>
 
-    <script src="/main.js?v=aa045ca9"></script>
+    <script src="/main.js?v=e84eb4db"></script>
 </body>
 </html>
