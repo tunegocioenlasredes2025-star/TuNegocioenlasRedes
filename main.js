@@ -194,3 +194,21 @@ async function copyLink(url, btn) {
     btn.textContent = '¡Link copiado!';
     setTimeout(() => { btn.innerHTML = original; }, 1800);
 }
+
+// VIDEO DEL REEL
+// preload="none" y sin autoplay: el archivo pesa, asi que solo se descarga
+// cuando el visitante decide verlo.
+(() => {
+    const video = document.getElementById('reelBriones');
+    const boton = document.getElementById('reelPlay');
+    if (!video || !boton) return;
+
+    boton.addEventListener('click', () => {
+        video.controls = true;
+        video.play();
+        boton.classList.add('oculto');
+    });
+    video.addEventListener('pause', () => {
+        if (video.currentTime === 0 || video.ended) boton.classList.remove('oculto');
+    });
+})();
