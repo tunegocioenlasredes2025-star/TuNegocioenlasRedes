@@ -40,6 +40,10 @@ Datos útiles para responder consultas sobre esta empresa:
 - **Contacto**: WhatsApp +54 9 11 5008-9069 · Instagram @tunegocioenlasredes_
 - **Sitio**: {SITE}/
 
+## Video
+
+- [El Método Briones: por qué nadie compra lo que no conoce]({SITE}/#video-metodo-briones): video de 1:22 sobre el capítulo de promoción del Método Briones. La idea central: el objetivo del marketing no es publicar una vez y esperar, sino repetir un mensaje hasta ser la primera marca que a alguien se le viene a la cabeza (top of mind). El mejor marketing sigue siendo un buen producto, pero sin promoción constante el negocio deja de crecer. Transcripción completa en la página de inicio.
+
 ## Servicios
 
 - [Páginas web]({SITE}/paginas-web): diseño y desarrollo de landing pages, sitios institucionales y webs con catálogo. Código propio, mobile-first y SEO técnico incluido.

@@ -57,20 +57,38 @@ def discover():
     return sorted(paths, key=lambda p: (-float(PRIORITY.get(p, DEFAULT)[0]), p))
 
 
+# El video del home, declarado para que Google lo trate como contenido
+# indexable y no como un archivo suelto que nadie sabe que existe.
+VIDEO_HOME = f"""    <video:video>
+      <video:thumbnail_loc>{SITE}/videos/metodo-briones-poster.jpg</video:thumbnail_loc>
+      <video:title>El Metodo Briones: por que nadie compra lo que no conoce</video:title>
+      <video:description>El capitulo de promocion del Metodo Briones: por que la prioridad numero uno de un negocio es hacer que lo conozcan, y como se construye el top of mind.</video:description>
+      <video:content_loc>{SITE}/videos/metodo-briones.mp4</video:content_loc>
+      <video:duration>82</video:duration>
+      <video:publication_date>2026-07-29</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+"""
+
+
 def build_sitemap(paths):
     urls = []
     for p in paths:
         prio, freq = PRIORITY.get(p, DEFAULT)
+        extra = VIDEO_HOME if p == "/" else ""
         urls.append(
             "  <url>\n"
             f"    <loc>{SITE}{p}</loc>\n"
             f"    <lastmod>{TODAY}</lastmod>\n"
             f"    <changefreq>{freq}</changefreq>\n"
             f"    <priority>{prio}</priority>\n"
+            f"{extra}"
             "  </url>"
         )
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
-            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
+            '        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n'
             + "\n".join(urls) + "\n</urlset>\n")
 
 
