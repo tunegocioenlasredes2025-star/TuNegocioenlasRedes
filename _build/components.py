@@ -44,7 +44,7 @@ def cta_inline(text, btn="Quiero mi demo gratis",
     return ('                <div class="cta-inline">\n'
             '                    <p>' + text + '</p>\n'
             '                    <a href="https://wa.me/' + WA_MATEO + '?text=' + wa_text +
-            '" class="btn btn-primary" target="_blank" rel="noopener">' + btn + '</a>\n'
+            '" class="btn btn-primary" target="_blank" rel="noopener noreferrer">' + btn + '</a>\n'
             '                </div>')
 
 
@@ -72,10 +72,10 @@ def share_bar(path, title):
             '                <span class="share-label">Compartir</span>\n'
             '                <button type="button" class="js-share" data-url="' + url + '" data-title="' + t + '">'
             + SHARE_ICON + 'Compartir</button>\n'
-            '                <a class="share-btn" href="https://wa.me/?text=' + wa + '" target="_blank" rel="noopener">'
+            '                <a class="share-btn" href="https://wa.me/?text=' + wa + '" target="_blank" rel="noopener noreferrer">'
             + WA_ICON + 'WhatsApp</a>\n'
             '                <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=' + enc +
-            '" target="_blank" rel="noopener">'
+            '" target="_blank" rel="noopener noreferrer">'
             '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04'
             '-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 '
             '5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 '

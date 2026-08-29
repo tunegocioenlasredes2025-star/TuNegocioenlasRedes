@@ -1204,6 +1204,29 @@ section[id] { scroll-margin-top: 88px; }
     margin: 0 9px 0 0;
     opacity: 0.5;
 }
+/* Dos acciones por caso. El primario es el nuestro ("Quiero algo asi"); el
+   secundario manda al sitio del cliente. Antes la unica salida de la tarjeta
+   era irse a otra web, y desde ahi nadie vuelve. */
+.trabajo-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+}
+.trabajo-cta {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #06182c;
+    padding: 11px 22px;
+    border-radius: 100px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-light));
+    transition: var(--transition);
+}
+.trabajo-cta:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
 .trabajo-link {
     align-self: flex-start;
     display: inline-flex;
@@ -1216,7 +1239,6 @@ section[id] { scroll-margin-top: 88px; }
     border: 1px solid rgba(53, 182, 245,0.3);
     border-radius: 100px;
     transition: var(--transition);
-    margin-top: auto;
 }
 .trabajo-link svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.3s; }
 .trabajo-card:hover .trabajo-link { background: rgba(53, 182, 245,0.1); border-color: rgba(53, 182, 245,0.5); }

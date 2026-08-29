@@ -75,14 +75,14 @@ def head(*, title, description, path, schema, og_title=None, og_desc=None, page_
 </head>
 <body>
 
-    <a href="https://wa.me/{WA_MATEO}?text=Hola!%20Quiero%20saber%20m%C3%A1s%20sobre%20sus%20servicios" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/{WA_MATEO}?text=Hola!%20Quiero%20saber%20m%C3%A1s%20sobre%20sus%20servicios" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
         {WA_SVG}
         <span class="whatsapp-tooltip">¡Escribinos!</span>
     </a>
 
     <div class="mobile-cta">
         <span class="mobile-cta-text"><strong>Demo gratis de tu web</strong>La ves andando en 72 hs</span>
-        <a href="https://wa.me/{WA_MATEO}?text=Quiero%20una%20demo%20gratis%20de%20p%C3%A1gina%20web" class="btn btn-primary" target="_blank" rel="noopener">Pedirla →</a>
+        <a href="https://wa.me/{WA_MATEO}?text=Quiero%20una%20demo%20gratis%20de%20p%C3%A1gina%20web" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Pedirla →</a>
     </div>
 '''
 
@@ -100,7 +100,7 @@ def nav(active=""):
             <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
             <ul class="nav-menu" id="navMenu">
 {lis}
-                <li><a href="https://wa.me/{WA_MATEO}?text=Quiero%20una%20demo%20gratis" class="nav-cta" target="_blank">Demo Gratis →</a></li>
+                <li><a href="https://wa.me/{WA_MATEO}?text=Quiero%20una%20demo%20gratis" class="nav-cta" target="_blank" rel="noopener noreferrer">Demo Gratis →</a></li>
             </ul>
         </div>
     </nav>
@@ -132,7 +132,7 @@ def page_hero(tag, h1, lead, ctas=None):
         (f"https://wa.me/{WA_MATEO}?text=Quiero%20una%20demo%20gratis", "Quiero mi demo gratis →", "btn-primary", True),
         ("/contacto", "Hablar con el equipo", "btn-ghost", False),
     ]
-    blank = ' target="_blank" rel="noopener"'
+    blank = ' target="_blank" rel="noopener noreferrer"'
     btns = "\n".join(
         f'                <a href="{href}" class="btn {cls}"{blank if ext else ""}>{label}</a>'
         for href, label, cls, ext in ctas)
@@ -207,7 +207,7 @@ def cta_section(h2, p, btn_text="Quiero mi demo gratis →", wa_text="Quiero%20m
                 <div class="demo-badge">GRATIS</div>
                 <h2>{h2}</h2>
                 <p>{p}</p>
-                <a href="https://wa.me/{WA_MATEO}?text={wa_text}" class="btn btn-primary btn-large" target="_blank" rel="noopener">{btn_text}</a>
+                <a href="https://wa.me/{WA_MATEO}?text={wa_text}" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">{btn_text}</a>
                 <span class="demo-note">Sin costo. Sin compromiso. Con resultado.</span>
             </div>
         </div>
@@ -222,7 +222,7 @@ FOOTER = f'''
                 <div class="footer-brand">
                     <img src="/logo-256.png" alt="Tu Negocio En Las Redes" class="footer-logo-img" width="256" height="256" loading="lazy" decoding="async">
                     <p>Modernizamos negocios con marketing, automatización e inteligencia artificial.</p>
-                    <a href="https://instagram.com/tunegocioenlasredes_" class="footer-ig" target="_blank" rel="noopener">@tunegocioenlasredes_</a>
+                    <a href="https://instagram.com/tunegocioenlasredes_" class="footer-ig" target="_blank" rel="noopener noreferrer">@tunegocioenlasredes_</a>
                 </div>
                 <div class="footer-links">
                     <h4>Servicios</h4>
@@ -255,10 +255,10 @@ FOOTER = f'''
                 </div>
                 <div class="footer-contact">
                     <h4>Contacto directo</h4>
-                    <a href="https://wa.me/{WA_MATEO}" target="_blank" rel="noopener">Mateo: 11 5008-9069</a>
-                    <a href="https://wa.me/{WA_SANTI}" target="_blank" rel="noopener">Santiago: 11 2288-3750</a>
-                    <a href="https://instagram.com/tunegocioenlasredes_" target="_blank" rel="noopener">Instagram</a>
-                    <a href="https://wa.me/{WA_MATEO}?text=Quiero%20mi%20demo%20gratis" class="footer-cta-btn" target="_blank" rel="noopener">Demo Gratis →</a>
+                    <a href="https://wa.me/{WA_MATEO}" target="_blank" rel="noopener noreferrer">Mateo: 11 5008-9069</a>
+                    <a href="https://wa.me/{WA_SANTI}" target="_blank" rel="noopener noreferrer">Santiago: 11 2288-3750</a>
+                    <a href="https://instagram.com/tunegocioenlasredes_" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://wa.me/{WA_MATEO}?text=Quiero%20mi%20demo%20gratis" class="footer-cta-btn" target="_blank" rel="noopener noreferrer">Demo Gratis →</a>
                 </div>
             </div>
             <div class="footer-bottom">
