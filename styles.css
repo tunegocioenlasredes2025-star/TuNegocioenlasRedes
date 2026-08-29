@@ -665,7 +665,7 @@ section { padding: 100px 0; }
 }
 
 /* ===== DEMO SECTION ===== */
-.demo-section { padding: 100px 0; background: var(--bg-mid); }
+.demo-section { padding: 100px 0; background: var(--bg-accent); }
 .demo-card {
     background: linear-gradient(135deg, rgba(6,60,121,0.25), rgba(53, 182, 245,0.04));
     border: 1px solid rgba(53, 182, 245,0.22);
@@ -1834,7 +1834,7 @@ section[id] { scroll-margin-top: 88px; }
 }
 .related a:hover strong { color: var(--blue); }
 .related a strong::after {
-    content: " 92";
+    content: " \2192";
     opacity: 0;
     transition: var(--transition);
 }
@@ -2172,4 +2172,70 @@ section[id] { scroll-margin-top: 88px; }
 .transcripcion-cuerpo strong { color: var(--white); font-weight: 600; }
 @media (max-width: 860px) {
     .transcripcion { margin-left: auto; margin-right: auto; text-align: left; }
+}
+
+/* ===================================================================
+   COMPRESION MOBILE DEL HOME
+   El home medía 12.268px de scroll en 390x844: catorce pantallas y media.
+   Acá se recorta SOLO aire — padding de seccion, gaps y margenes entre
+   bloques. Ninguna frase, ningun caso y ninguna imagen se van.
+   Va al final del archivo a proposito: junto en un solo lugar todo lo que
+   se apreto, para que se pueda revisar (o revertir) de una sola pasada.
+   =================================================================== */
+@media (max-width: 768px) {
+    /* 1. Padding de seccion: estaba entre 140 y 200px por seccion */
+    section { padding: 54px 0; }
+    .problema { padding: 54px 0; }
+    .trabajos { padding: 54px 0; }
+    .demo-section { padding: 54px 0; }
+    .prueba { padding: 34px 0; }
+
+    /* 2. El hero no necesita ocupar la pantalla entera si el contenido
+          termina antes: el min-height solo agregaba vacio abajo. */
+    .hero { min-height: 0; padding-bottom: 34px; }
+
+    /* 3. Encabezados de seccion */
+    .section-header { margin-bottom: 26px; }
+    .section-header h2 { margin-bottom: 10px; }
+    .teaser-head { margin-bottom: 24px; gap: 14px; }
+
+    /* 4. "La realidad": el objetivo era que entre en una pantalla */
+    .problema-grid { gap: 22px; }
+    .problema-items { gap: 6px; margin-bottom: 20px; }
+    .problema-item { padding: 12px 0; }
+
+    /* 5. Tarjetas de caso */
+    .trabajos-grid { gap: 18px; }
+    .trabajo-body { padding: 18px 18px 20px; }
+    .caso-lineas { gap: 11px; margin-bottom: 16px; }
+    .trabajo-stack { margin-bottom: 16px; }
+
+    /* 6. Video */
+    .video-reel-grid { gap: 24px; }
+
+    /* 7. Demo */
+    .demo-card { padding: 32px 20px; }
+    .demo-card h2 { margin-bottom: 12px; }
+    .demo-card > p { margin-bottom: 24px; }
+    .demo-recibis { margin-bottom: 22px; }
+    .demo-features { gap: 11px; }
+    .demo-condicion { margin-bottom: 24px; }
+
+    /* 8. FAQ y zonas */
+    .faq-list { gap: 8px; }
+    .faq-item summary { padding: 1.05rem 0; font-size: 1rem; }
+    .related { gap: 10px; }
+    .related a { padding: 0.9rem 0; }
+
+    /* 9. Footer: es navegacion, no contenido. Era la seccion mas alta
+          del home despues de los casos. */
+    .footer { padding: 44px 0 24px; }
+    /* En 390px el footer caia a UNA sola columna: cinco bloques apilados,
+       1.227px de alto para lo que es navegacion. Con dos columnas entra la
+       misma informacion en la mitad del scroll. */
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px 18px; margin-bottom: 26px; }
+    .footer-brand { grid-column: 1 / -1; }
+    .footer-links h4, .footer-contact h4 { margin-bottom: 10px; }
+    .footer-links ul { gap: 7px; }
+    .footer-brand { gap: 8px; }
 }
