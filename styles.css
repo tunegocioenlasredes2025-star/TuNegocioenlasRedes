@@ -1245,6 +1245,22 @@ section[id] { scroll-margin-top: 88px; }
 }
 .trabajo-body h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
 .trabajo-body > p { font-size: 0.92rem; color: var(--gray); line-height: 1.65; margin-bottom: 18px; }
+/* Un caso ahora cuenta tres cosas, no una descripcion estetica:
+   que se juega el negocio, que construimos y que tiene hoy. Todo lo de las
+   dos ultimas lineas se puede chequear abriendo el sitio del cliente. */
+.caso-lineas { display: grid; gap: 13px; margin-bottom: 20px; }
+.caso-lineas dt {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 4px;
+}
+.caso-lineas dd { font-size: 0.9rem; color: var(--gray); line-height: 1.6; }
+.caso-lineas dd strong { color: var(--white); font-weight: 600; }
+.trabajos-grid--3 .caso-lineas dd { font-size: 0.86rem; }
+
 .trabajo-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
 .trabajo-stack span {
     font-size: 0.74rem;
