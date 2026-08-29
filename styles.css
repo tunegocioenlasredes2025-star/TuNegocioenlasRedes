@@ -405,7 +405,6 @@ section { padding: 100px 0; }
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 .problema-item:first-child { border-top: 1px solid rgba(255, 255, 255, 0.07); }
-.problema-icon { color: #ff4444; font-size: 1rem; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
 .problema-item p { color: var(--gray); font-size: 0.92rem; }
 
 /* ===== STATS ===== */
@@ -589,7 +588,6 @@ section { padding: 100px 0; }
 
 .ia-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
 .ia-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 0.92rem; color: var(--gray); }
-.ia-check { color: var(--blue); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
 
 .ia-visual { position: relative; height: 420px; }
 .ia-card-stack { position: relative; height: 100%; }
@@ -648,7 +646,6 @@ section { padding: 100px 0; }
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
 }
-.ia-card-icon { font-size: 1.4rem; flex-shrink: 0; }
 .ia-float-card strong { font-size: 0.82rem; font-weight: 700; display: block; }
 .ia-float-card p { font-size: 0.72rem; color: var(--gray); margin: 0; }
 
@@ -842,7 +839,6 @@ section { padding: 100px 0; }
     transition: var(--transition);
 }
 .diferencial-item:hover { border-color: rgba(53, 182, 245,0.25); }
-.dif-icon { font-size: 1.8rem; display: block; margin-bottom: 12px; }
 .diferencial-item strong { font-size: 0.92rem; display: block; margin-bottom: 8px; }
 .diferencial-item p { font-size: 0.82rem; color: var(--gray); }
 
@@ -893,7 +889,6 @@ section { padding: 100px 0; }
     transition: var(--transition);
 }
 .contacto-option:hover { background: rgba(53, 182, 245,0.05); border-color: rgba(53, 182, 245,0.3); transform: translateX(4px); }
-.co-icon { font-size: 1.4rem; flex-shrink: 0; }
 .contacto-option strong { font-size: 0.88rem; display: block; }
 .contacto-option span { font-size: 0.82rem; color: var(--gray); }
 
@@ -1156,11 +1151,6 @@ section[id] { scroll-margin-top: 88px; }
 }
 .ia-check svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
 
-.demo-feature {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
 .demo-feature svg { width: 15px; height: 15px; margin-top: 3px; stroke: var(--blue); fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
 
 /* ----- IA float cards: iconos ----- */
@@ -2172,6 +2162,24 @@ section[id] { scroll-margin-top: 88px; }
 .transcripcion-cuerpo strong { color: var(--white); font-weight: 600; }
 @media (max-width: 860px) {
     .transcripcion { margin-left: auto; margin-right: auto; text-align: left; }
+}
+
+/* ===== FOCO VISIBLE =====
+   El unico foco visible del sitio era el de los campos del formulario. Quien
+   navega con teclado no tenia forma de saber donde estaba parado en los links
+   ni en los botones. :focus-visible y no :focus, para que el anillo no
+   aparezca al hacer click con el mouse. */
+:focus-visible {
+    outline: 2px solid var(--blue-light);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+/* Los campos traen outline:none con mas especificidad, hay que ganarles. */
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+    outline: 2px solid var(--blue-light);
+    outline-offset: 1px;
 }
 
 /* ===================================================================
