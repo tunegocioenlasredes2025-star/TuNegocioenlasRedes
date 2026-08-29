@@ -212,3 +212,105 @@ async function copyLink(url, btn) {
         if (video.currentTime === 0 || video.ended) boton.classList.remove('oculto');
     });
 })();
+
+// ─────────────────────────────────────────────────────────────────────
+// MEDICIÓN GA4
+// Un único listener delegado en document. No hace falta tocar el HTML ni
+// volver a enganchar nada cuando se agrega un botón nuevo: cualquier link a
+// wa.me que aparezca mañana se mide solo.
+//
+// IMPORTANTE: en GA4 hay que marcar a mano como conversión los eventos
+// "click_whatsapp" y "form_submit" (Administrar → Eventos → marcar como
+// evento clave). Enviarlos no alcanza para que cuenten como conversión.
+// ─────────────────────────────────────────────────────────────────────
+
+function tnrEvento(nombre, params) {
+    // Si el visitante bloquea el script de Google (bloqueadores, Brave), gtag
+    // no existe: se ignora en silencio en vez de romper el click.
+    if (typeof gtag === 'function') gtag('event', nombre, params || {});
+}
+
+// De qué parte de la página salió el click. Sirve para saber cuál de los
+// ocho botones de WhatsApp es el que realmente trae las consultas.
+function tnrUbicacion(el) {
+    const marcado = el.closest('[data-ga-ubicacion]');
+    if (marcado) return marcado.dataset.gaUbicacion;
+    if (el.closest('.mobile-cta')) return 'barra_mobile';
+    if (el.classList.contains('whatsapp-float') || el.closest('.whatsapp-float')) return 'boton_flotante';
+    if (el.closest('.navbar')) return 'navbar';
+    if (el.closest('.footer')) return 'footer';
+    if (el.closest('.hero')) return 'hero';
+    if (el.closest('.demo-section')) return 'demo';
+    if (el.closest('.video-reel')) return 'video';
+    if (el.closest('.trabajos, .trabajo-card')) return 'casos';
+    if (el.closest('.problema')) return 'la_realidad';
+    if (el.closest('.contacto-form')) return 'formulario';
+    const seccion = el.closest('section');
+    return seccion ? (seccion.className.trim().split(/\s+/)[0] || 'seccion') : 'otro';
+}
+
+document.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (!a) return;
+    const href = a.getAttribute('href') || '';
+
+    if (href.indexOf('wa.me') !== -1 || href.indexOf('api.whatsapp.com') !== -1) {
+        tnrEvento('click_whatsapp', {
+            ubicacion: tnrUbicacion(a),
+            pagina: location.pathname
+        });
+        return;
+    }
+
+    // Salida al sitio de un cliente desde el portfolio
+    const tarjeta = a.closest('.trabajo-card, .portfolio-card');
+    if (tarjeta && /^https?:/i.test(href) && href.indexOf('tunegocioenlasredes') === -1) {
+        const titulo = tarjeta.querySelector('h3, h2');
+        tnrEvento('click_ver_sitio', {
+            proyecto: titulo ? titulo.textContent.trim() : href,
+            pagina: location.pathname
+        });
+    }
+}, true);
+
+// Envío del formulario de contacto (el detalle de qué se manda está en el
+// handler del formulario; acá solo se mide que ocurrió).
+document.addEventListener('submit', (e) => {
+    const f = e.target;
+    if (f && f.id === 'contactForm') {
+        tnrEvento('form_submit', { pagina: location.pathname });
+    }
+}, true);
+
+// Reproducción del video del método
+(() => {
+    const video = document.getElementById('reelBriones');
+    if (!video) return;
+    video.addEventListener('play', () => {
+        tnrEvento('play_video', { video: 'metodo-briones' });
+    }, { once: true });
+})();
+
+// Scroll al 90% de la página: una sola vez por sesión y por página.
+(() => {
+    const clave = 'tnr_scroll90_' + location.pathname;
+    let yaFue = false;
+    try { yaFue = sessionStorage.getItem(clave) === '1'; } catch (_) { /* modo privado */ }
+    if (yaFue) return;
+
+    let pedido = false;
+    function revisar() {
+        if (pedido) return;
+        pedido = true;
+        requestAnimationFrame(() => {
+            pedido = false;
+            const alto = document.documentElement.scrollHeight - window.innerHeight;
+            if (alto <= 0) return;
+            if ((window.scrollY / alto) < 0.9) return;
+            window.removeEventListener('scroll', revisar);
+            try { sessionStorage.setItem(clave, '1'); } catch (_) {}
+            tnrEvento('scroll_90', { pagina: location.pathname });
+        });
+    }
+    window.addEventListener('scroll', revisar, { passive: true });
+})();
