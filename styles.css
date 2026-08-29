@@ -431,7 +431,9 @@ section { padding: 100px 0; }
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-.stat-label { font-size: 0.82rem; color: var(--gray); font-weight: 500; }
+/* La etiqueta va ARRIBA del numero: asi "Demo lista en menos de" + "72 hs"
+   se lee como una frase y no como dos datos sueltos en orden invertido. */
+.stat-label { font-size: 0.82rem; color: var(--gray); font-weight: 500; line-height: 1.4; }
 
 /* ===== SERVICIOS ===== */
 /* ===== SERVICIOS: lista editorial, no grilla de tarjetas =====

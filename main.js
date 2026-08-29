@@ -94,7 +94,8 @@ function animateCounter(el) {
     const update = (now) => {
         const progress = Math.min((now - start) / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.round(eased * target);
+        // toLocaleString para que 2600 se lea 2.600 y no 2600
+        el.textContent = Math.round(eased * target).toLocaleString('es-AR');
         if (progress < 1) requestAnimationFrame(update);
     };
     requestAnimationFrame(update);
