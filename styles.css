@@ -503,7 +503,7 @@ section { padding: 100px 0; }
     display: grid;
     /* La ultima columna va fija: si fuera auto, cada tag tendria un ancho
        distinto y las descripciones arrancarian desalineadas. */
-    grid-template-columns: 64px minmax(190px, 0.85fr) minmax(0, 1.6fr) 200px;
+    grid-template-columns: 64px minmax(190px, 0.9fr) minmax(0, 1.5fr) 230px;
     align-items: baseline;
     gap: 8px 28px;
     padding: 30px 8px 30px 4px;
@@ -536,6 +536,25 @@ section { padding: 100px 0; }
     line-height: 1.65;
     margin: 0;
 }
+/* La ultima columna ya no es una etiqueta decorativa: son los servicios de
+   ese grupo, con link a su pagina. */
+.servicio-links {
+    justify-self: end;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 7px 14px;
+}
+.servicio-links a {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--gray);
+    border-bottom: 1px solid rgba(53, 182, 245, 0.3);
+    padding-bottom: 2px;
+    transition: var(--transition);
+}
+.servicio-links a:hover { color: var(--blue); border-bottom-color: var(--blue); }
+
 .servicio-tag {
     justify-self: end;
     white-space: nowrap;
@@ -554,6 +573,7 @@ section { padding: 100px 0; }
     }
     .servicio-card p { grid-column: 2; }
     .servicio-tag { grid-column: 2; justify-self: start; margin-top: 4px; }
+    .servicio-links { grid-column: 2; justify-self: start; justify-content: flex-start; margin-top: 10px; }
 }
 
 .servicios-cta { text-align: center; }
