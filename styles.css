@@ -435,6 +435,59 @@ section { padding: 100px 0; }
    se lee como una frase y no como dos datos sueltos en orden invertido. */
 .stat-label { font-size: 0.82rem; color: var(--gray); font-weight: 500; line-height: 1.4; }
 
+/* ===== FRANJA DE PRUEBA =====
+   Va pegada abajo del hero. Tres capturas reales y tres numeros que se
+   pueden chequear: es la unica prueba que hay antes de que la persona
+   decida si sigue leyendo o se va. */
+.prueba { padding: 44px 0; }
+.prueba-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 44px;
+    align-items: center;
+}
+.prueba-shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.prueba-shots img {
+    display: block;
+    width: 100%;
+    /* height:auto es obligatorio: sin eso, el atributo height="800" del HTML
+       le gana al aspect-ratio y las capturas salen de 800px de alto. */
+    height: auto;
+    /* 16/10 = la proporcion nativa de las capturas: asi no se recorta nada. */
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+.prueba-linea { font-size: 0.92rem; color: var(--gray); line-height: 1.65; }
+.prueba-linea strong { color: var(--white); font-weight: 700; }
+.prueba-datos .stats-grid { max-width: none; margin: 22px 0 18px; gap: 18px; text-align: left; }
+.prueba-datos .stat-item { align-items: flex-start; gap: 4px; }
+.prueba-datos .stat-number { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+.prueba-datos .stat-plus { font-size: 1.1rem; }
+.prueba-datos .stat-label { font-size: 0.74rem; }
+
+@media (max-width: 900px) {
+    .prueba-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width: 600px) {
+    /* En un telefono, tres capturas apaisadas de 109px de ancho no se leen.
+       Recorte vertical anclado arriba: se ve el hero de cada sitio. */
+    .prueba-shots img { aspect-ratio: 3 / 4; }
+    /* Tres columnas tambien en mobile: apiladas, los numeros ocupaban el
+       doble de alto sin decir nada mas. */
+    .prueba-datos .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .prueba-datos .stat-number { font-size: 1.45rem; }
+    .prueba-datos .stat-plus { font-size: 0.9rem; }
+}
+@media (max-width: 480px) {
+    .prueba { padding: 34px 0; }
+    .prueba-shots { gap: 7px; }
+    .prueba-datos .stats-grid { gap: 12px; }
+    .prueba-datos .stat-label { font-size: 0.7rem; }
+}
+
 /* ===== SERVICIOS ===== */
 /* ===== SERVICIOS: lista editorial, no grilla de tarjetas =====
    Se reemplazaron las cajas con borde redondeado por filas separadas por

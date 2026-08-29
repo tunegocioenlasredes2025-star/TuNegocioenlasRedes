@@ -101,7 +101,9 @@ function animateCounter(el) {
     requestAnimationFrame(update);
 }
 
-const statsEl = document.querySelector('.stats');
+// Se mira .stats-grid y no .stats: en el home los numeros se mudaron
+// adentro de la franja de prueba y la seccion .stats ya no existe.
+const statsEl = document.querySelector('.stats-grid');
 
 // COUNTER OBSERVER
 const counterObs = new IntersectionObserver((entries) => {
