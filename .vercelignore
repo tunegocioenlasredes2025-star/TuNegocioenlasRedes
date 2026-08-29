@@ -11,3 +11,6 @@ Mejooras pagina tnr.md.txt
 
 # Fuentes fuente (las .ttf de Poppins solo se usan para generar la og-image)
 fonts/*.ttf
+
+# Documento interno de trabajo
+PENDIENTE-DATOS.md
