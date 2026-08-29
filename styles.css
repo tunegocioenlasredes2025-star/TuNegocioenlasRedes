@@ -15,6 +15,8 @@
     --celeste: #97ecff;
     --white: #f8f8f8;
     --gray: #94a3b8;
+    /* Un escalon mas claro que --gray, para etiquetas de formulario. */
+    --gray-light: #cbd5e1;
     --border: rgba(53, 182, 245, 0.15);
     --glass: rgba(255, 255, 255, 0.04);
     --shadow-blue: 0 0 40px rgba(53, 182, 245, 0.15);
@@ -793,6 +795,28 @@ section { padding: 100px 0; }
 }
 .contacto-form h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 24px; }
 .form-group { margin-bottom: 14px; }
+.form-group label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--gray-light);
+    margin-bottom: 6px;
+}
+/* Estado visible despues de enviar: sin esto la persona no sabe si paso algo */
+.form-estado {
+    display: block;
+    margin-top: 14px;
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    background: rgba(53, 182, 245, 0.08);
+    border: 1px solid rgba(53, 182, 245, 0.28);
+    color: var(--white);
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+.form-estado[hidden] { display: none; }
+.form-estado a { color: var(--blue-light); text-decoration: underline; }
 .form-group input,
 .form-group select,
 .form-group textarea {

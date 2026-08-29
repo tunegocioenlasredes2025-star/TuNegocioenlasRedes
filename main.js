@@ -124,25 +124,75 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // CONTACT FORM → WhatsApp
+//
+// OJO: hoy el formulario NO guarda el lead en ningun lado. Arma el mensaje y
+// abre WhatsApp; si la persona cierra esa pestana antes de tocar "enviar", la
+// consulta se perdio y no queda rastro de que existio.
+//
+// LEAD_ENDPOINT queda vacio A PROPOSITO: no hay todavia un endpoint real
+// (Formspree, una funcion de Vercel, un Apps Script). Cuando exista, se pega
+// la URL aca y el guardado se enciende solo, sin tocar nada mas.
+const LEAD_ENDPOINT = '';
+
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
+    const estado = document.getElementById('formEstado');
+    const campo = (n) => contactForm.querySelector(`[name="${n}"]`);
+    const valor = (n) => { const c = campo(n); return c ? c.value.trim() : ''; };
+
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const inputs = contactForm.querySelectorAll('input, select, textarea');
-        const nombre = inputs[0].value || '';
-        const negocio = inputs[1].value || '';
-        const tel = inputs[2].value || '';
-        const servicio = inputs[3].value || '';
-        const msg = inputs[4].value || '';
+
+        const nombre = valor('nombre');
+        const negocio = valor('negocio');
+        const tel = valor('telefono');
+        const servicio = valor('servicio');
+        const msg = valor('mensaje');
 
         const text = [
             `Hola! Soy ${nombre}${negocio ? ' de ' + negocio : ''}.`,
             `Quiero información sobre: ${servicio}.`,
             tel ? `Mi WhatsApp: ${tel}.` : '',
-            msg ? msg : ''
+            msg
         ].filter(Boolean).join(' ');
 
-        window.open(`https://wa.me/5491150089069?text=${encodeURIComponent(text)}`, '_blank');
+        const url = `https://wa.me/5491150089069?text=${encodeURIComponent(text)}`;
+
+        // WhatsApp se abre PRIMERO y siempre. Si el guardado falla, tarda o
+        // esta apagado, la consulta llega igual: nunca se pierde un lead por
+        // esperar a un fetch.
+        // Sin 'noopener' en los features: pasarlo hace que window.open devuelva
+        // siempre null y entonces no hay forma de distinguir "abrio bien" de
+        // "el navegador lo bloqueo". Se corta el opener a mano justo despues.
+        const ventana = window.open(url, '_blank');
+        if (ventana) { try { ventana.opener = null; } catch (_) {} }
+
+        if (LEAD_ENDPOINT) {
+            try {
+                fetch(LEAD_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nombre, negocio, telefono: tel, servicio, mensaje: msg,
+                                           origen: location.pathname }),
+                    keepalive: true
+                }).catch(() => { /* el lead ya viaja por WhatsApp */ });
+            } catch (_) { /* idem */ }
+        }
+
+        if (estado) {
+            estado.hidden = false;
+            if (ventana) {
+                estado.innerHTML = 'Listo: te abrimos WhatsApp con el mensaje ya escrito. ' +
+                    '<strong>Tocá enviar ahí</strong> para que nos llegue.';
+            } else {
+                // El navegador bloqueo la ventana emergente: se le da el link a mano
+                // en vez de dejarlo creyendo que mando algo.
+                estado.innerHTML = 'Tu navegador bloqueó la ventana de WhatsApp. ' +
+                    `<a href="${url}" target="_blank" rel="noopener">Abrila desde acá</a> ` +
+                    'para mandarnos la consulta.';
+            }
+            estado.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
     });
 }
 
@@ -278,7 +328,11 @@ document.addEventListener('click', (e) => {
 document.addEventListener('submit', (e) => {
     const f = e.target;
     if (f && f.id === 'contactForm') {
-        tnrEvento('form_submit', { pagina: location.pathname });
+        const s = f.querySelector('[name="servicio"]');
+        tnrEvento('form_submit', {
+            pagina: location.pathname,
+            servicio: s ? s.value : ''   // dato no personal: sirve para saber que se pide mas
+        });
     }
 }, true);
 
