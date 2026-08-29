@@ -944,7 +944,12 @@ section { padding: 100px 0; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .footer-bottom { flex-direction: column; text-align: center; }
     .demo-card { padding: 40px 24px; }
-    .hero-ctas { flex-direction: column; }
+    /* El H1 pasó de 2 a 6 líneas en mobile: sin comprimir el hero, los dos
+       botones quedaban tapados por la barra fija de abajo. */
+    .hero { padding-top: 56px; }
+    .hero-title { font-size: 2.5rem; margin-bottom: 16px; }
+    .hero-subtitle { margin-bottom: 26px; }
+    .hero-ctas { flex-direction: column; margin-bottom: 22px; }
     .hero-ctas .btn { justify-content: center; }
     .hero-scroll-hint { display: none; }
     .contacto-form { padding: 24px; }
