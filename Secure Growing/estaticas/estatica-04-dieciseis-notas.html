@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>Dieciséis notas</title>
+<style>
+/* ============================================================
+   SECURE GROWING — tokens.css
+   Fuente de verdad del sistema visual para piezas de Instagram.
+   Todo lo que se diseña sale de acá. Nada hardcodeado en las piezas.
+   Origen: assets/styles.css de la landing (repo SecureGrowing, main)
+   + decisiones de branding del 30/08/2026.
+   ============================================================ */
+
+:root {
+  /* ---------- Color: base ---------- */
+  --sg-verde:        #053727;   /* verde botella, fondo principal */
+  --sg-verde-alto:   #0A4A34;   /* verde un tono arriba: bloques sobre verde */
+  --sg-verde-med:    #406459;   /* verde medio: eyebrow sobre hueso, separadores */
+  --sg-negro:        #0A0B0C;   /* casi negro: fondo alterno (método, footer) */
+  --sg-hueso:        #F4F3EF;   /* hueso: fondo claro y texto sobre oscuro */
+  --sg-hueso-2:      #E4E1D9;   /* hueso oscuro: líneas divisoras sobre hueso */
+  --sg-texto:        #11201B;   /* texto sobre hueso */
+  --sg-texto-sub:    #4E5E59;   /* texto secundario sobre hueso */
+
+  /* ---------- Color: acento ---------- */
+  --sg-cobre:        #C8863C;   /* cobre: botón, numeración, contorno */
+  --sg-cobre-cl:     #E7B173;   /* cobre claro: palabra acentuada y eyebrow sobre oscuro */
+  --sg-cobre-osc:    #7A5526;   /* cobre oscurecido: marca de agua del logo */
+  --sg-sobre-cobre:  #20140A;   /* texto sobre botón cobre */
+
+  /* ---------- Color: derivados (alpha sobre oscuro) ---------- */
+  --sg-hueso-78:     rgba(244,243,239,.78);   /* bajada sobre verde */
+  --sg-hueso-70:     rgba(244,243,239,.70);   /* cuerpo sobre verde/negro */
+  --sg-hueso-60:     rgba(244,243,239,.60);   /* texto terciario sobre oscuro */
+  --sg-hueso-40:     rgba(244,243,239,.40);   /* legal / firma discreta */
+  --sg-linea-osc:    rgba(244,243,239,.16);   /* divisoras sobre oscuro */
+  --sg-linea-clara:  var(--sg-hueso-2);       /* divisoras sobre hueso */
+
+  /* ---------- Tipografía ---------- */
+  --sg-font-display: 'Bricolage Grotesque', system-ui, sans-serif;   /* 700 / 800 */
+  --sg-font-text:    'Instrument Sans', system-ui, sans-serif;        /* 400 / 500 / 600 */
+
+  /* Escala para lienzo 1080 x 1350 (px) */
+  --sg-fs-eyebrow:   22px;     /* tag: uppercase, tracking .2em, 700 display */
+  --sg-fs-h1:        124px;    /* titular hero de carrusel / estática */
+  --sg-fs-h2:        88px;     /* titular de slide interior */
+  --sg-fs-h3:        52px;     /* subtítulo / nombre de fila */
+  --sg-fs-pill:      40px;     /* texto dentro de pastilla */
+  --sg-fs-body:      30px;     /* bajada */
+  --sg-fs-body-sm:   26px;     /* cuerpo secundario, notas de fuente */
+  --sg-fs-label:     22px;     /* etiquetas de dato, ejes, firma */
+  --sg-fs-num-xl:    420px;    /* número protagonista (una cifra) */
+  --sg-fs-num-lg:    320px;    /* número protagonista (dos o tres cifras) */
+  --sg-fs-num-row:   120px;    /* numeración 01 02 03 de filas */
+
+  --sg-lh-display:   1.0;      /* line-height titulares */
+  --sg-lh-num:       .85;      /* line-height números gigantes */
+  --sg-lh-body:      1.4;      /* line-height cuerpo */
+  --sg-ls-display:   -.035em;  /* tracking titulares */
+  --sg-ls-num:       -.05em;   /* tracking números gigantes */
+  --sg-ls-eyebrow:   .2em;     /* tracking eyebrow */
+
+  /* ---------- Lienzo y grilla ---------- */
+  --sg-w:            1080px;
+  --sg-h:            1350px;
+  --sg-margen:       80px;     /* margen exterior a los cuatro lados */
+  --sg-margen-top:   96px;     /* margen superior (eyebrow arranca acá) */
+  --sg-zona-segura:  64px;     /* nada esencial más cerca del borde que esto */
+  --sg-gap:          32px;     /* separación estándar entre bloques */
+  --sg-gap-lg:       56px;     /* separación entre grupos */
+  --sg-col:          920px;    /* ancho útil = 1080 − 2 × 80 */
+
+  /* ---------- Formas ---------- */
+  --sg-radio-pill:   999px;    /* pastilla: siempre redonda */
+  --sg-radio-bloque: 28px;     /* bloque de dato con esquinas suaves (nunca tarjeta rectangular) */
+  --sg-linea:        2px;      /* grosor de divisoras */
+  --sg-stroke-num:   4px;      /* grosor del contorno del número (solo PNG) */
+
+  /* ---------- Elementos de dato ---------- */
+  --sg-barra-h:      64px;     /* alto de barra comparativa */
+  --sg-punto:        28px;     /* diámetro de punto en grillas y timelines */
+  --sg-punto-gap:    18px;     /* separación entre puntos */
+  --sg-punto-on:     var(--sg-cobre);
+  --sg-punto-off:    var(--sg-linea-osc);
+
+  /* ---------- Firma ---------- */
+  --sg-firma-logo:   64px;     /* alto del isotipo en la firma */
+  --sg-firma-txt:    22px;     /* @securegrowing */
+}
+
+
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:700;src:url('../fonts/BricolageGrotesque-Bold.ttf') format('truetype')}
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:800;src:url('../fonts/BricolageGrotesque-ExtraBold.ttf') format('truetype')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400;src:url('../fonts/InstrumentSans-Regular.ttf') format('truetype')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:500;src:url('../fonts/InstrumentSans-Medium.ttf') format('truetype')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:600;src:url('../fonts/InstrumentSans-SemiBold.ttf') format('truetype')}
+
+/* ---- base de las piezas: todo sale de los tokens inyectados arriba ---- */
+*,*::before,*::after{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+@page{size:11.25in 14.0625in;margin:0}
+html,body{margin:0;padding:0;background:var(--sg-negro)}
+body{font-family:var(--sg-font-text);-webkit-font-smoothing:antialiased}
+.slide{position:relative;width:var(--sg-w);height:var(--sg-h);overflow:hidden;
+  padding:var(--sg-margen-top) var(--sg-margen) calc(var(--sg-margen) + var(--sg-firma-logo) + 28px);
+  background:var(--sg-verde);color:var(--sg-hueso);
+  page-break-after:always;break-after:page;display:flex;flex-direction:column;align-items:flex-start;text-align:left;isolation:isolate}
+.slide:last-child{page-break-after:auto;break-after:auto}
+.slide.hueso{background:var(--sg-hueso);color:var(--sg-texto)}
+.slide.negro{background:var(--sg-negro)}
+@media screen{.slide{margin:0 auto 24px}}
+
+/* jerarquía */
+.eyebrow{margin:0;font-family:var(--sg-font-display);font-weight:700;font-size:var(--sg-fs-eyebrow);
+  letter-spacing:var(--sg-ls-eyebrow);text-transform:uppercase;color:var(--sg-cobre-cl);line-height:1.2}
+.hueso .eyebrow{color:var(--sg-verde-med)}
+.titulo{margin:28px 0 0;font-family:var(--sg-font-display);font-weight:800;font-size:var(--sg-fs-h2);
+  line-height:var(--sg-lh-display);letter-spacing:var(--sg-ls-display);max-width:var(--sg-col);color:var(--sg-hueso)}
+.titulo.h1{font-size:var(--sg-fs-h1)}
+.titulo.h1 + .bajada{font-size:34px;max-width:860px}
+.hueso .titulo{color:var(--sg-verde)}
+.ac{color:var(--sg-cobre-cl)}
+.hueso .ac{color:var(--sg-verde);text-decoration:underline;text-decoration-color:var(--sg-cobre);
+  text-decoration-thickness:8px;text-underline-offset:14px}
+.bajada{margin:var(--sg-gap) 0 0;font-size:var(--sg-fs-body);line-height:var(--sg-lh-body);max-width:820px;color:var(--sg-hueso-78)}
+.hueso .bajada{color:var(--sg-texto-sub)}
+.nota{margin:24px 0 0;font-size:var(--sg-fs-label);line-height:1.35;color:var(--sg-hueso-60);max-width:820px}
+.hueso .nota{color:var(--sg-texto-sub)}
+.slide .dato{margin-top:auto;margin-bottom:auto;width:var(--sg-col)}
+.slide .dato:has(+ .fuente){margin-bottom:0}
+.slide .dato + .fuente{margin-bottom:auto}
+.titulo.cierre{font-size:100px}
+.slide .bajada.abajo{margin-top:auto}
+.slide .btn{margin-top:auto}
+
+/* números gigantes: contorno en pantalla/PNG, sólido en PDF */
+.num{margin:0;font-family:var(--sg-font-display);font-weight:800;font-size:var(--sg-fs-num-lg);
+  line-height:var(--sg-lh-num);letter-spacing:var(--sg-ls-num);color:transparent;-webkit-text-stroke:var(--sg-stroke-num) var(--sg-cobre)}
+.num.xl{font-size:var(--sg-fs-num-xl)}
+.num.solido{color:var(--sg-cobre);-webkit-text-stroke:0}
+@media print{.num{color:var(--sg-cobre);-webkit-text-stroke:0}}
+.num-lbl{margin:16px 0 0;font-family:var(--sg-font-display);font-weight:700;font-size:var(--sg-fs-h3);letter-spacing:-.02em;line-height:1.1}
+.hueso .num-lbl{color:var(--sg-verde)}
+
+/* firma y paginación */
+.firma{position:absolute;left:var(--sg-margen);bottom:var(--sg-margen);display:flex;align-items:center;gap:14px;margin:0}
+.firma svg{height:var(--sg-firma-logo);width:auto;display:block}
+.firma span{font-family:var(--sg-font-display);font-weight:700;font-size:var(--sg-firma-txt);letter-spacing:.02em;color:var(--sg-hueso)}
+.hueso .firma span{color:var(--sg-verde)}
+.pag{position:absolute;right:var(--sg-margen);bottom:var(--sg-margen);margin:0;font-family:var(--sg-font-display);font-weight:700;
+  font-size:var(--sg-fs-label);letter-spacing:.08em;color:var(--sg-hueso-40);line-height:var(--sg-firma-logo)}
+.hueso .pag{color:var(--sg-texto-sub)}
+
+/* pastilla y botón */
+.pill{display:inline-block;margin:0;background:var(--sg-hueso);color:var(--sg-verde);font-family:var(--sg-font-display);font-weight:800;
+  font-size:var(--sg-fs-pill);letter-spacing:-.02em;line-height:1.1;padding:22px 40px;border-radius:var(--sg-radio-pill);white-space:nowrap}
+.hueso .pill{background:var(--sg-verde);color:var(--sg-hueso)}
+.btn{display:inline-block;margin:var(--sg-gap-lg) 0 0;background:var(--sg-cobre);color:var(--sg-sobre-cobre);font-family:var(--sg-font-display);font-weight:700;
+  font-size:38px;letter-spacing:-.01em;line-height:1.1;padding:30px 56px;border-radius:var(--sg-radio-pill);white-space:nowrap}
+
+/* etiqueta de fuente del dato */
+.fuente{margin:20px 0 0;font-size:var(--sg-fs-label);line-height:1.35;color:var(--sg-hueso-40);max-width:820px}
+.hueso .fuente{color:var(--sg-texto-sub);opacity:.8}
+
+/* ---- elementos de dato ---- */
+/* cascada de barras */
+.barras{display:grid;gap:40px}
+.fila{display:grid;grid-template-columns:210px 1fr 150px;align-items:center;gap:24px}
+.fila .bl{margin:0;font-family:var(--sg-font-display);font-weight:700;font-size:30px;letter-spacing:-.01em;color:var(--sg-hueso-70)}
+.fila .b{height:100px;border-radius:var(--sg-radio-pill);background:var(--sg-cobre);min-width:16px}
+.fila .b.off{background:transparent;border:var(--sg-linea) solid var(--sg-linea-osc)}
+.fila .b.ghost{background:var(--sg-linea-osc)}
+.fila .bv{margin:0;font-family:var(--sg-font-display);font-weight:800;font-size:64px;letter-spacing:-.03em;color:var(--sg-hueso);text-align:right}
+.fila .bv.dim{color:var(--sg-hueso-40)}
+.hueso .fila .bl{color:var(--sg-texto-sub)}
+.hueso .fila .bv{color:var(--sg-verde)}
+.hueso .fila .b.off{border-color:var(--sg-hueso-2)}
+.hueso .fila .b.ghost{background:var(--sg-hueso-2)}
+.fila.doble{grid-template-rows:auto auto;row-gap:8px}
+.fila.doble .b.ghost{height:24px;grid-column:2}
+.fila.doble .b{height:78px}
+.barras:has(.doble){gap:26px}
+
+/* timeline horizontal */
+.tl{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+.tl::before{content:"";position:absolute;left:26px;right:26px;top:25px;height:var(--sg-linea);background:var(--sg-linea-osc)}
+.hueso .tl::before{background:var(--sg-hueso-2)}
+.paso{position:relative;display:flex;flex-direction:column;gap:28px;padding-right:18px}
+.paso i{display:block;width:52px;height:52px;border-radius:50%;background:var(--sg-linea-osc)}
+.hueso .paso i{background:var(--sg-hueso-2)}
+.paso.on i{background:var(--sg-cobre)}
+.paso.now i{background:var(--sg-cobre);box-shadow:0 0 0 12px var(--sg-verde),0 0 0 16px var(--sg-cobre)}
+.negro .paso.now i{box-shadow:0 0 0 12px var(--sg-negro),0 0 0 16px var(--sg-cobre)}
+.hueso .paso.now i{box-shadow:0 0 0 12px var(--sg-hueso),0 0 0 16px var(--sg-cobre)}
+.paso b{margin:0;font-family:var(--sg-font-display);font-weight:700;font-size:30px;letter-spacing:-.01em;line-height:1.15;color:var(--sg-hueso-60)}
+.paso.on b,.paso.now b{color:var(--sg-hueso)}
+.hueso .paso b{color:var(--sg-texto-sub)}
+.hueso .paso.on b,.hueso .paso.now b{color:var(--sg-verde)}
+.paso small{margin:-8px 0 0;font-size:26px;line-height:1.3;color:var(--sg-hueso-40)}
+.paso.now small{color:var(--sg-cobre-cl)}
+.hueso .paso small{color:var(--sg-texto-sub)}
+
+/* grilla de puntos */
+.grilla{display:flex;flex-wrap:wrap;gap:var(--sg-punto-gap);width:var(--sg-col)}
+.grilla i{display:block;width:58px;height:58px;border-radius:50%;background:var(--sg-punto-off)}
+.grilla i.on{background:var(--sg-punto-on)}
+.hueso .grilla i{background:var(--sg-hueso-2)}
+.hueso .grilla i.on{background:var(--sg-cobre)}
+.grilla.chica i{width:60px;height:60px}
+.num + .num-lbl + .grilla,.num-lbl + .grilla{margin-top:40px}
+
+/* tabla ranking */
+.tabla{display:grid;grid-template-columns:270px repeat(3,1fr);border-top:var(--sg-linea) solid var(--sg-linea-osc)}
+.hueso .tabla{border-color:var(--sg-hueso-2)}
+.tabla > *{margin:0;padding:40px 0;border-bottom:var(--sg-linea) solid var(--sg-linea-osc);display:flex;align-items:center}
+.hueso .tabla > *{border-color:var(--sg-hueso-2)}
+.tabla .th{font-family:var(--sg-font-display);font-weight:700;font-size:var(--sg-fs-eyebrow);letter-spacing:.12em;text-transform:uppercase;color:var(--sg-cobre-cl);justify-content:center}
+.hueso .tabla .th{color:var(--sg-verde-med)}
+.tabla .th:first-child{justify-content:flex-start}
+.tabla .rl{font-family:var(--sg-font-display);font-weight:700;font-size:40px;letter-spacing:-.01em;color:var(--sg-hueso)}
+.hueso .tabla .rl{color:var(--sg-verde)}
+.tabla .rl.dim{color:var(--sg-hueso-40)}
+.hueso .tabla .rl.dim{color:var(--sg-texto-sub);opacity:.6}
+.tabla .c{justify-content:center}
+.tabla .c i{display:block;width:52px;height:52px;border-radius:50%;background:var(--sg-cobre)}
+.tabla .c i.no{background:transparent;border:var(--sg-linea) solid var(--sg-linea-osc)}
+.hueso .tabla .c i.no{border-color:var(--sg-hueso-2)}
+.tabla .c i.q{background:transparent;border:var(--sg-linea) solid var(--sg-cobre)}
+.tabla .c.now{background:var(--sg-verde-alto)}
+.hueso .tabla .c.now{background:var(--sg-hueso-2)}
+
+/* dos columnas contrapuestas */
+.dos{display:grid;grid-template-columns:1fr var(--sg-linea) 1fr;gap:0 40px;align-items:start}
+.dos .sep{background:var(--sg-linea-osc);align-self:stretch;margin:0}
+.hueso .dos .sep{background:var(--sg-hueso-2)}
+.dos .k{margin:0;font-family:var(--sg-font-display);font-weight:700;font-size:var(--sg-fs-eyebrow);letter-spacing:.12em;text-transform:uppercase;color:var(--sg-hueso-60)}
+.dos .k.acc{color:var(--sg-cobre-cl)}
+.hueso .dos .k{color:var(--sg-texto-sub)}
+.hueso .dos .k.acc{color:var(--sg-verde-med)}
+.dos .v{margin:26px 0 0;font-family:var(--sg-font-display);font-weight:800;font-size:170px;line-height:.9;letter-spacing:-.04em;color:var(--sg-hueso-40)}
+.dos .v.acc{color:var(--sg-cobre)}
+.hueso .dos .v{color:var(--sg-texto-sub);opacity:.4}
+.hueso .dos .v.acc{color:var(--sg-verde)}
+.dos .d{margin:26px 0 0;font-size:30px;line-height:1.35;color:var(--sg-hueso-60)}
+.dos .d.acc{color:var(--sg-hueso)}
+.hueso .dos .d{color:var(--sg-texto-sub)}
+.hueso .dos .d.acc{color:var(--sg-texto)}
+.dos .v.chico{font-size:60px;line-height:1.05}
+.dos .v{white-space:nowrap}
+.dos .v.med{font-size:120px}
+.dos .v.chico{white-space:normal}
+/* marca de agua del isotipo en portadas (mismo recurso que .hero__marca de la landing) */
+.marca{position:absolute;right:-170px;bottom:300px;width:660px;height:auto;pointer-events:none;z-index:-1}
+.marca path{fill:var(--sg-verde-alto)}
+
+/* segmentos de tiempo */
+.segs{display:grid;grid-template-columns:repeat(14,1fr);gap:10px;width:var(--sg-col)}
+.segs i{display:block;height:200px;border-radius:14px;background:var(--sg-cobre)}
+.segs i.off{background:var(--sg-linea-osc)}
+.segs i.fin{background:var(--sg-hueso)}
+.segs-lbl{display:grid;grid-template-columns:repeat(14,1fr);gap:10px;margin:14px 0 0;width:var(--sg-col)}
+.segs-lbl b{margin:0;font-family:var(--sg-font-display);font-weight:700;font-size:20px;color:var(--sg-hueso-40);text-align:center}
+
+/* escalera */
+.escalera{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:end;width:var(--sg-col)}
+.esc{display:flex;flex-direction:column;justify-content:flex-end}
+.esc b{margin:0 0 14px;font-family:var(--sg-font-display);font-weight:800;font-size:96px;letter-spacing:-.04em;line-height:.9;color:var(--sg-hueso)}
+.esc i{display:block;border-radius:24px 24px 0 0;background:var(--sg-cobre)}
+.esc i.dim{background:var(--sg-linea-osc)}
+.esc small{margin:16px 0 0;font-family:var(--sg-font-display);font-weight:700;font-size:24px;letter-spacing:.06em;text-transform:uppercase;color:var(--sg-hueso-60)}
+
+/* barra comparativa */
+.comp{display:grid;gap:36px;width:var(--sg-col)}
+.comp .cb{display:grid;grid-template-columns:1fr;gap:16px}
+.comp .cl{margin:0;font-family:var(--sg-font-display);font-weight:700;font-size:26px;letter-spacing:-.01em;color:var(--sg-hueso-70)}
+.comp .bar{height:104px;border-radius:var(--sg-radio-pill);background:var(--sg-cobre);display:flex;align-items:center;padding:0 40px;
+  font-family:var(--sg-font-display);font-weight:800;font-size:64px;letter-spacing:-.03em;color:var(--sg-sobre-cobre)}
+.comp .bar.vacia{background:transparent;border:var(--sg-linea) dashed var(--sg-hueso-60);color:var(--sg-hueso-60);font-weight:700;font-size:30px;letter-spacing:0}
+
+/* pastillas apiladas */
+.pilas{display:grid;gap:22px}
+.pilas .it{display:grid;gap:14px;justify-items:start}
+.pilas p{margin:0;font-size:26px;line-height:1.35;color:var(--sg-hueso-78);max-width:760px}
+.pilas .pill{color:var(--sg-verde);font-size:40px;padding:20px 40px}
+
+/* red de nodos */
+.red{display:block;width:var(--sg-col);height:auto}
+.red line{stroke:var(--sg-verde-med);opacity:.45}
+
+/* filas numeradas */
+.filas{display:grid;border-top:var(--sg-linea) solid var(--sg-linea-osc)}
+.filas .f{display:grid;grid-template-columns:150px 1fr;column-gap:26px;padding:26px 0;border-bottom:var(--sg-linea) solid var(--sg-linea-osc);align-items:baseline}
+.filas .n{margin:0;grid-row:1/3;font-family:var(--sg-font-display);font-weight:800;font-size:var(--sg-fs-num-row);line-height:.85;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:3px var(--sg-cobre)}
+@media print{.filas .n{color:var(--sg-cobre);-webkit-text-stroke:0}}
+.filas .t{margin:0;grid-column:2;font-family:var(--sg-font-display);font-weight:700;font-size:38px;letter-spacing:-.02em;color:var(--sg-hueso)}
+.filas .s{margin:8px 0 0;grid-column:2;font-size:24px;line-height:1.35;color:var(--sg-hueso-70)}
+
+</style>
+</head>
+<body>
+<section class="slide">
+<p class="eyebrow">Contenido · Lo que publica la prensa del sector</p><h1 class="titulo h1">16 notas en 12 días. <span class="ac">¿Cuántas publicaste vos?</span></h1><p class="bajada">Eso publicó la revista del sector en dos semanas de agosto. En este rubro el contenido sobra: lanzamientos, normas, obras, expos. Lo que falta es un sistema para sacarlo.</p><div class="dato comp"><div class="cb"><p class="cl">Revista del sector, 3 al 15 de agosto</p><div class="bar" style="width:100%">16 notas</div></div><div class="cb"><p class="cl">Tu Instagram, mismo período</p><div class="bar vacia">completá vos</div></div></div><p class="fuente">InfoSeguridad, 3 al 15 de agosto de 2026. Conteo propio.</p>
+<p class="firma"><svg viewBox="320 368 384 288" aria-hidden="true"><path fill="var(--sg-hueso)" d="M424.873 378.207C452.029 374.09 476.399 384.137 499.43 396.781C483.943 410.475 469.623 426.409 459.306 444.38C446.752 439.986 433.973 436.867 420.877 440.779C409.99 444.03 403.266 454.774 407.026 465.797C408.359 469.626 410.947 472.892 414.371 475.063C423.306 480.804 447.562 484.091 458.636 487.325C467.866 490.066 476.665 494.093 484.772 499.288C495.591 506.194 507.83 517.828 514.948 528.307C528.398 548.11 538.269 567.64 561.52 578.397C586.306 589.863 608.778 586.967 633.549 578.139C633.809 572.486 634.187 564.232 633.499 558.754C654.216 543.446 675.586 529.403 696.479 514.13L696.575 558.125L696.585 603.303C667.496 628.755 647.822 640.498 607.433 645.557C560.52 651.433 512.694 628.116 484.185 591.308C472.529 576.26 469.377 562.354 451.695 551.187C442.805 545.198 432.86 542.971 422.606 540.204C384.561 529.937 348.058 510.598 343.473 467.038C337.976 414.818 375.324 382.66 424.873 378.207Z"/><path fill="var(--sg-hueso)" d="M587.349 378.215C622.365 374.213 663.731 391.933 688.248 416.619C672.371 429.276 658.531 441.983 643.284 455.195C613.323 431.509 567.002 433.863 538.944 459.649C524.946 473.814 519.586 484.041 515.812 503.435C499.521 488.177 486.573 477.861 464.8 470.348C481.273 422.335 529.226 383.588 579.734 378.791C582.256 378.551 584.821 378.377 587.349 378.215Z"/><path fill="var(--sg-hueso)" d="M379.748 563.953C381.394 564.427 386.995 570.823 389.085 572.281C408.652 585.93 436.016 592.88 458.389 582.723C468.407 600.222 480.784 614.143 496.252 626.888C482.832 636.104 463.679 643.101 447.62 645.358C403.268 651.786 354.661 632.533 326.997 597.146C344.656 586.202 362.24 575.137 379.748 563.953Z"/><path fill="var(--sg-cobre)" d="M634.62 484.986C654.327 487.337 667.755 492.004 682.724 504.872C671.297 512.104 660.043 519.194 648.882 526.859C641.519 531.915 630.86 537.811 624.402 543.546L621.294 541.865C610.158 535.545 594.249 528.16 580.967 530.603C578.758 531.009 575.449 532.851 573.371 533.934C575.771 530.511 579.126 526.074 582.316 523.385C598.109 510.071 617.057 495.786 634.62 484.986Z"/></svg><span>@securegrowing</span></p>
+
+</section>
+</body>
+</html>

@@ -37,7 +37,7 @@
 
   /* Escala para lienzo 1080 x 1350 (px) */
   --sg-fs-eyebrow:   22px;     /* tag: uppercase, tracking .2em, 700 display */
-  --sg-fs-h1:        112px;    /* titular hero de carrusel / estática */
+  --sg-fs-h1:        124px;    /* titular hero de carrusel / estática */
   --sg-fs-h2:        88px;     /* titular de slide interior */
   --sg-fs-h3:        52px;     /* subtítulo / nombre de fila */
   --sg-fs-pill:      40px;     /* texto dentro de pastilla */
@@ -45,7 +45,7 @@
   --sg-fs-body-sm:   26px;     /* cuerpo secundario, notas de fuente */
   --sg-fs-label:     22px;     /* etiquetas de dato, ejes, firma */
   --sg-fs-num-xl:    420px;    /* número protagonista (una cifra) */
-  --sg-fs-num-lg:    260px;    /* número protagonista (dos o tres cifras) */
+  --sg-fs-num-lg:    320px;    /* número protagonista (dos o tres cifras) */
   --sg-fs-num-row:   120px;    /* numeración 01 02 03 de filas */
 
   --sg-lh-display:   1.0;      /* line-height titulares */

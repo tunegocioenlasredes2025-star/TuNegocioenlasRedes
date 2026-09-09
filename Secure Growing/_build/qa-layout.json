@@ -1,0 +1,422 @@
+[
+ {
+  "pieza": "carruseles/carrusel-01-vendedor-sentado",
+  "slides": 8,
+  "qa": [
+   {
+    "slide": 1,
+    "scrollH": 1350,
+    "contBottom": 1178,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 2,
+    "scrollH": 1350,
+    "contBottom": 1070,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 3,
+    "scrollH": 1350,
+    "contBottom": 1072,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 4,
+    "scrollH": 1350,
+    "contBottom": 1070,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 5,
+    "scrollH": 1350,
+    "contBottom": 1026,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 6,
+    "scrollH": 1350,
+    "contBottom": 1026,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 7,
+    "scrollH": 1350,
+    "contBottom": 1134,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 8,
+    "scrollH": 1350,
+    "contBottom": 1178,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   }
+  ]
+ },
+ {
+  "pieza": "carruseles/carrusel-02-te-googlean-antes",
+  "slides": 8,
+  "qa": [
+   {
+    "slide": 1,
+    "scrollH": 1350,
+    "contBottom": 1178,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 2,
+    "scrollH": 1350,
+    "contBottom": 973,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 3,
+    "scrollH": 1350,
+    "contBottom": 885,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 4,
+    "scrollH": 1350,
+    "contBottom": 906,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 5,
+    "scrollH": 1350,
+    "contBottom": 929,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 6,
+    "scrollH": 1350,
+    "contBottom": 885,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 7,
+    "scrollH": 1350,
+    "contBottom": 929,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 8,
+    "scrollH": 1350,
+    "contBottom": 1178,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   }
+  ]
+ },
+ {
+  "pieza": "carruseles/carrusel-03-cuanto-vale-un-abonado",
+  "slides": 8,
+  "qa": [
+   {
+    "slide": 1,
+    "scrollH": 1350,
+    "contBottom": 1178,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 2,
+    "scrollH": 1350,
+    "contBottom": 1169,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 3,
+    "scrollH": 1350,
+    "contBottom": 1134,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 4,
+    "scrollH": 1350,
+    "contBottom": 981,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 5,
+    "scrollH": 1350,
+    "contBottom": 1073,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 6,
+    "scrollH": 1350,
+    "contBottom": 885,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 7,
+    "scrollH": 1350,
+    "contBottom": 1178,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 8,
+    "scrollH": 1350,
+    "contBottom": 1178,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   }
+  ]
+ },
+ {
+  "pieza": "carruseles/carrusel-04-tres-proveedores",
+  "slides": 8,
+  "qa": [
+   {
+    "slide": 1,
+    "scrollH": 1350,
+    "contBottom": 1178,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 2,
+    "scrollH": 1350,
+    "contBottom": 1133,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 3,
+    "scrollH": 1350,
+    "contBottom": 1089,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 4,
+    "scrollH": 1350,
+    "contBottom": 1089,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 5,
+    "scrollH": 1350,
+    "contBottom": 1089,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 6,
+    "scrollH": 1350,
+    "contBottom": 1089,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 7,
+    "scrollH": 1350,
+    "contBottom": 1156,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 8,
+    "scrollH": 1350,
+    "contBottom": 1178,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   }
+  ]
+ },
+ {
+  "pieza": "carruseles/carrusel-05-nadie-tiene-el-numero",
+  "slides": 8,
+  "qa": [
+   {
+    "slide": 1,
+    "scrollH": 1350,
+    "contBottom": 1178,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 2,
+    "scrollH": 1350,
+    "contBottom": 1004,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 3,
+    "scrollH": 1350,
+    "contBottom": 959,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 4,
+    "scrollH": 1350,
+    "contBottom": 959,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 5,
+    "scrollH": 1350,
+    "contBottom": 959,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 6,
+    "scrollH": 1350,
+    "contBottom": 913,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 7,
+    "scrollH": 1350,
+    "contBottom": 1060,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   },
+   {
+    "slide": 8,
+    "scrollH": 1350,
+    "contBottom": 1178,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   }
+  ]
+ },
+ {
+  "pieza": "estaticas/estatica-01-dos-semanas",
+  "slides": 1,
+  "qa": [
+   {
+    "slide": 1,
+    "scrollH": 1350,
+    "contBottom": 1178,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   }
+  ]
+ },
+ {
+  "pieza": "estaticas/estatica-02-cinco-por-dia",
+  "slides": 1,
+  "qa": [
+   {
+    "slide": 1,
+    "scrollH": 1350,
+    "contBottom": 1073,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   }
+  ]
+ },
+ {
+  "pieza": "estaticas/estatica-03-se-conocen-todos",
+  "slides": 1,
+  "qa": [
+   {
+    "slide": 1,
+    "scrollH": 1350,
+    "contBottom": 1178,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   }
+  ]
+ },
+ {
+  "pieza": "estaticas/estatica-04-dieciseis-notas",
+  "slides": 1,
+  "qa": [
+   {
+    "slide": 1,
+    "scrollH": 1350,
+    "contBottom": 1155,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   }
+  ]
+ },
+ {
+  "pieza": "estaticas/estatica-05-tres-cosas",
+  "slides": 1,
+  "qa": [
+   {
+    "slide": 1,
+    "scrollH": 1350,
+    "contBottom": 1178,
+    "firmaTop": 1206,
+    "maxRight": 1000,
+    "overflow": false
+   }
+  ]
+ }
+]
