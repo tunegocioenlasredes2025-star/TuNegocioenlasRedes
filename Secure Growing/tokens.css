@@ -1,0 +1,84 @@
+/* ============================================================
+   SECURE GROWING — tokens.css
+   Fuente de verdad del sistema visual para piezas de Instagram.
+   Todo lo que se diseña sale de acá. Nada hardcodeado en las piezas.
+   Origen: assets/styles.css de la landing (repo SecureGrowing, main)
+   + decisiones de branding del 30/08/2026.
+   ============================================================ */
+
+:root {
+  /* ---------- Color: base ---------- */
+  --sg-verde:        #053727;   /* verde botella, fondo principal */
+  --sg-verde-alto:   #0A4A34;   /* verde un tono arriba: bloques sobre verde */
+  --sg-verde-med:    #406459;   /* verde medio: eyebrow sobre hueso, separadores */
+  --sg-negro:        #0A0B0C;   /* casi negro: fondo alterno (método, footer) */
+  --sg-hueso:        #F4F3EF;   /* hueso: fondo claro y texto sobre oscuro */
+  --sg-hueso-2:      #E4E1D9;   /* hueso oscuro: líneas divisoras sobre hueso */
+  --sg-texto:        #11201B;   /* texto sobre hueso */
+  --sg-texto-sub:    #4E5E59;   /* texto secundario sobre hueso */
+
+  /* ---------- Color: acento ---------- */
+  --sg-cobre:        #C8863C;   /* cobre: botón, numeración, contorno */
+  --sg-cobre-cl:     #E7B173;   /* cobre claro: palabra acentuada y eyebrow sobre oscuro */
+  --sg-cobre-osc:    #7A5526;   /* cobre oscurecido: marca de agua del logo */
+  --sg-sobre-cobre:  #20140A;   /* texto sobre botón cobre */
+
+  /* ---------- Color: derivados (alpha sobre oscuro) ---------- */
+  --sg-hueso-78:     rgba(244,243,239,.78);   /* bajada sobre verde */
+  --sg-hueso-70:     rgba(244,243,239,.70);   /* cuerpo sobre verde/negro */
+  --sg-hueso-60:     rgba(244,243,239,.60);   /* texto terciario sobre oscuro */
+  --sg-hueso-40:     rgba(244,243,239,.40);   /* legal / firma discreta */
+  --sg-linea-osc:    rgba(244,243,239,.16);   /* divisoras sobre oscuro */
+  --sg-linea-clara:  var(--sg-hueso-2);       /* divisoras sobre hueso */
+
+  /* ---------- Tipografía ---------- */
+  --sg-font-display: 'Bricolage Grotesque', system-ui, sans-serif;   /* 700 / 800 */
+  --sg-font-text:    'Instrument Sans', system-ui, sans-serif;        /* 400 / 500 / 600 */
+
+  /* Escala para lienzo 1080 x 1350 (px) */
+  --sg-fs-eyebrow:   22px;     /* tag: uppercase, tracking .2em, 700 display */
+  --sg-fs-h1:        112px;    /* titular hero de carrusel / estática */
+  --sg-fs-h2:        88px;     /* titular de slide interior */
+  --sg-fs-h3:        52px;     /* subtítulo / nombre de fila */
+  --sg-fs-pill:      40px;     /* texto dentro de pastilla */
+  --sg-fs-body:      30px;     /* bajada */
+  --sg-fs-body-sm:   26px;     /* cuerpo secundario, notas de fuente */
+  --sg-fs-label:     22px;     /* etiquetas de dato, ejes, firma */
+  --sg-fs-num-xl:    420px;    /* número protagonista (una cifra) */
+  --sg-fs-num-lg:    260px;    /* número protagonista (dos o tres cifras) */
+  --sg-fs-num-row:   120px;    /* numeración 01 02 03 de filas */
+
+  --sg-lh-display:   1.0;      /* line-height titulares */
+  --sg-lh-num:       .85;      /* line-height números gigantes */
+  --sg-lh-body:      1.4;      /* line-height cuerpo */
+  --sg-ls-display:   -.035em;  /* tracking titulares */
+  --sg-ls-num:       -.05em;   /* tracking números gigantes */
+  --sg-ls-eyebrow:   .2em;     /* tracking eyebrow */
+
+  /* ---------- Lienzo y grilla ---------- */
+  --sg-w:            1080px;
+  --sg-h:            1350px;
+  --sg-margen:       80px;     /* margen exterior a los cuatro lados */
+  --sg-margen-top:   96px;     /* margen superior (eyebrow arranca acá) */
+  --sg-zona-segura:  64px;     /* nada esencial más cerca del borde que esto */
+  --sg-gap:          32px;     /* separación estándar entre bloques */
+  --sg-gap-lg:       56px;     /* separación entre grupos */
+  --sg-col:          920px;    /* ancho útil = 1080 − 2 × 80 */
+
+  /* ---------- Formas ---------- */
+  --sg-radio-pill:   999px;    /* pastilla: siempre redonda */
+  --sg-radio-bloque: 28px;     /* bloque de dato con esquinas suaves (nunca tarjeta rectangular) */
+  --sg-linea:        2px;      /* grosor de divisoras */
+  --sg-stroke-num:   4px;      /* grosor del contorno del número (solo PNG) */
+
+  /* ---------- Elementos de dato ---------- */
+  --sg-barra-h:      64px;     /* alto de barra comparativa */
+  --sg-punto:        28px;     /* diámetro de punto en grillas y timelines */
+  --sg-punto-gap:    18px;     /* separación entre puntos */
+  --sg-punto-on:     var(--sg-cobre);
+  --sg-punto-off:    var(--sg-linea-osc);
+
+  /* ---------- Firma ---------- */
+  --sg-firma-logo:   64px;     /* alto del isotipo en la firma */
+  --sg-firma-txt:    22px;     /* @securegrowing */
+}
