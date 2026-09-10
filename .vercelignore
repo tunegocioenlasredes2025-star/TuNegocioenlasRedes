@@ -1,5 +1,6 @@
 # Herramientas de build: no se publican
 _build/
+liga-arcade/
 carrusel-studio/
 carrusel-studio.skill.zip
 carousel_generator.py

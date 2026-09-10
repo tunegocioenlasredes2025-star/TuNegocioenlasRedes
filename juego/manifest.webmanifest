@@ -1,0 +1,17 @@
+{
+  "name": "Liga Arcade",
+  "short_name": "Liga Arcade",
+  "description": "Fútbol arcade argentino para el celular. Sin conexión.",
+  "lang": "es-AR",
+  "start_url": "/juego/",
+  "scope": "/juego/",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#0b1d0f",
+  "theme_color": "#0b1d0f",
+  "icons": [
+    { "src": "/juego/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/juego/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/juego/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
