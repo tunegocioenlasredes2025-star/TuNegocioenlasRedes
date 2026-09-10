@@ -1,8 +1,23 @@
 # Liga Arcade — PLAN de arquitectura
 
-> Estado: **BORRADOR, pendiente de aprobación.** Escrito antes de la primera línea de
-> código. Cada punto marcado con `[SUPUESTO n]` depende de una de las preguntas
-> abiertas listadas al final; si cambiás la respuesta, cambio el plan.
+> Estado: **APROBADO con ajustes (10/09/2026).** Decisiones cerradas en §0. Los
+> `[SUPUESTO n]` del borrador quedaron resueltos por defecto salvo donde §0 dice otra cosa.
+
+---
+
+## 0. Decisiones cerradas
+
+| Tema | Decisión |
+|---|---|
+| Referencia de diseño | **Dream League Soccer**: cámara, controles y, sobre todo, el **Modo Carrera** (ver §16b) |
+| Dispositivo del cliente | **iPhone** → se publica como **PWA** en `https://tunegocioenlasredes.com/juego` (Safari → Compartir → Agregar a inicio; pantalla completa y offline). Sin Mac no hay app nativa iOS; queda documentado. |
+| Android | Se mantiene el APK por GitHub Actions (artifact `liga-arcade-debug-apk`) para probar en cualquier Android. |
+| Ubicación | `liga-arcade/` en este repo (excluido de Vercel); la build va a `juego/` en la raíz, que Vercel sirve con el sitio. |
+| Competencias | Estructura real 2026: **Primera** (30 equipos, 2 zonas de 15) y **Primera Nacional** (36 equipos, 2 zonas de 18). Nombres y escudos ficticios pero reconocibles. Ver `data/divisiones-2026.md`. |
+| Idioma | Español rioplatense únicamente. |
+| Cámara | Elevada lateral con perspectiva (DLS): cancha horizontal, el lado lejano se comprime. Ver `src/game/render/Projection.ts`. |
+| Gráficos | Sprites vectoriales generados por código (sin PNG externos). |
+| Resto | Según el borrador: pelota ágil arcade, 1v1 en mitades de pantalla, offside según dificultad, 4 min por defecto, App ID `ar.tunegocioenlasredes.ligaarcade`. |
 
 ---
 
@@ -358,6 +373,16 @@ Sonido (sintetizado por WebAudio + CC0 si hace falta), animaciones de celebraci�
 repetición de gol (rebobinado de snapshots del core), transiciones, haptics, splash,
 icono, APK release firmado, sesión de 30 min sin crashes medida.
 
+### FASE 3b — Modo Carrera (igual a DLS)
+Elegís un club, arrancás en **Primera Nacional** con un plantel flojo y un presupuesto de
+monedas. Ganás monedas por partido (resultado, goles, objetivos de temporada). Con las monedas
+comprás jugadores en el **mercado de pases** (lista generada de todas las divisiones, con
+precio según media y edad) y mejorás el **estadio** (capacidad → más ingresos). Fin de
+temporada: **ascenso/descenso** entre Primera Nacional y Primera según la estructura real
+(zonas, final por el ascenso, reducido). Paralelamente se juega la **Copa** (eliminación
+directa con todos los clubes). Guardado automático de la carrera. Dificultad de la IA sube
+con la división.
+
 ### FASE 5 — Online (solo si 1–4 impecables)
 Lockstep determinista por WebSocket usando el core ya determinista.
 
@@ -366,7 +391,7 @@ líneas de cómo probarlo en tu celu. No paso de fase sin tu OK.
 
 ---
 
-## 17. Preguntas abiertas (con mi propuesta por defecto)
+## 17. Preguntas del borrador (resueltas en §0)
 
 Marcá cuáles cambiás; lo que no menciones, lo tomo como aprobado.
 

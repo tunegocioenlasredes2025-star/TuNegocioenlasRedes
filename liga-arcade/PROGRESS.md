@@ -1,31 +1,32 @@
 # Liga Arcade — PROGRESS
 
 ## Estado general
-- [x] Relevamiento del repo y del entorno (sin Android SDK acá → APK por CI)
-- [x] PLAN.md borrador escrito
-- [ ] Respuestas a las 12 preguntas abiertas de PLAN.md §17
-- [ ] PLAN.md aprobado
+- [x] Relevamiento del repo y del entorno
+- [x] PLAN.md aprobado con ajustes (iPhone → PWA, modo carrera DLS, Primera + Primera Nacional)
 
-## FASE 1 — Vertical slice
-- [ ] Scaffold: Vite + TS estricto + Phaser 3.90 + Vitest + Capacitor 8
-- [ ] CI que genera el APK debug como artifact
-- [ ] Core: Ball.ts con eje Z, rebote, fricción, spin + tests
-- [ ] Core: PlayerBody.ts (aceleración, inercia, sprint)
-- [ ] Render: proyección 2.5D, cancha en RenderTexture, sprite de jugador generado, pelota con sombra
-- [ ] Input: joystick flotante + botón de tiro con barra de potencia
-- [ ] Cámara que sigue la pelota con anticipación
-- [ ] Overlay de stats (fps, ms, draw calls, latencia input)
-- [ ] Landscape bloqueado + safe areas
-- [ ] APK instalado y probado en tu celu → iterar hasta que se sienta bien
+## FASE 1 — Vertical slice · **lista para que la pruebes**
+- [x] Scaffold: Vite 7 + TS 5 estricto + Phaser 3.90 + Vitest 3 + Capacitor 8
+- [x] Core sin Phaser: pelota con eje Z (gravedad, drag, pique, fricción, efecto), postes y travesaño con colisión continua, red, gol, jugador con inercia, conducción y toque largo al sprintar, tiro/pase/centro por potencia
+- [x] 22 tests en verde (física, reglas de gol, posesión, determinismo)
+- [x] Render 2.5D con perspectiva estilo DLS: cancha en textura única, arcos con red, sprite de jugador generado por código (8 direcciones × correr/patear/barrer), pelota con sombra y altura
+- [x] Joystick flotante + botones TIRO / PASE / CENTRO / SPRINT con anillo de potencia, multi-touch real
+- [x] Cámara que sigue la pelota con anticipación y zoom
+- [x] Overlay de stats (FPS, 1% low, ms de simulación, latencia de input, boot, heap) → botón "FPS" o `?stats`
+- [x] PWA: manifest, service worker con precache, íconos, overlay "girá el teléfono", safe areas
+- [x] Proyecto Android (Capacitor) + workflow de GitHub Actions que deja el APK como artifact
+- [x] Test de humo en Chromium headless con viewport de iPhone (arranque < 1 s, 0 errores, gol de punta a punta)
+- [ ] **Probado en tu iPhone** → ajustar sensación (velocidad, potencia, cámara, tamaño de botones) hasta que se sienta bien
+- [ ] OK explícito para pasar a Fase 2
 
 ## FASE 2 — Partido completo
-- [ ] Pendiente (no arranca sin OK de Fase 1)
+- [ ] 11v11, cambio de jugador automático/manual, arquero, IA por rol, 4 dificultades, reglas completas, HUD de partido
 
 ## FASE 3 — Modos y contenido
-- [ ] Pendiente
+- [ ] Menús, 30 + 36 equipos con escudos y kits, amistoso 1v1 local, liga, copa, penales, settings, guardado
+- [ ] Modo Carrera estilo DLS (monedas, mercado de pases, estadio, ascensos)
 
 ## FASE 4 — Pulido
-- [ ] Pendiente
+- [ ] Sonido, celebraciones, repetición de gol, transiciones, APK release firmado, sesión de 30 min sin crashes
 
 ## FASE 5 — Online
 - [ ] Pendiente
