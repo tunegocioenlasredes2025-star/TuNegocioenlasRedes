@@ -25,7 +25,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#0e2139">
+    <meta name="theme-color" content="#ffffff">
     <meta name="google-site-verification" content="4Of5Hx8LEJC8QyjvEbFUF_-j8gUQ2gm2ILo7uYJ9NiU">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRDYX4PKY6"></script>
@@ -36,9 +36,9 @@
       gtag('config', 'G-SRDYX4PKY6');
     </script>
     <script>document.documentElement.classList.add('js')</script>
-    <link rel="preload" href="/fonts/jakarta/PlusJakartaSans-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="/fonts.css?v=4f57da79">
-    <link rel="stylesheet" href="/styles.css?v=7a5cb3c0">
+    <link rel="preload" href="/fonts/bricolage/Bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/fonts.css?v=6f184336">
+    <link rel="stylesheet" href="/styles.css?v=af54c7a7">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -151,7 +151,7 @@
     </script>
 </head>
 <body>
-
+    <div class="scroll-progress" aria-hidden="true"></div>
     <!-- WHATSAPP FLOTANTE -->
     <a href="https://wa.me/5491150089069?text=Hola!%20Quiero%20saber%20m%C3%A1s%20sobre%20sus%20servicios" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -165,18 +165,15 @@
     </div>
 
     <!-- NAVBAR -->
-    <nav class="navbar" id="navbar">
+    
+    <nav class="navbar scrolled" id="navbar">
         <div class="nav-container">
-            <a href="/" class="nav-logo">
-                <img src="/logo-160.webp" alt="Tu Negocio En Las Redes - agencia de marketing digital en Zona Oeste" class="nav-logo-img" width="159" height="160" fetchpriority="high">
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
+            <a href="/" class="nav-logo"><img src="/logo-claro-96.webp" alt="Tu Negocio En Las Redes - agencia de marketing digital en Zona Oeste" class="nav-logo-img" width="96" height="96" fetchpriority="high"><span class="nav-logo-text">Tu Negocio<br>En Las Redes</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="/" class="nav-link active">Inicio</a></li>
                 <li><a href="/servicios" class="nav-link">Servicios</a></li>
-                <li><a href="/ia" class="nav-link">IA & Automatización</a></li>
+                <li><a href="/ia" class="nav-link">IA &amp; Automatización</a></li>
                 <li><a href="/trabajos" class="nav-link">Trabajos</a></li>
                 <li><a href="/nosotros" class="nav-link">Nosotros</a></li>
                 <li><a href="/contacto" class="nav-link">Contacto</a></li>
@@ -184,307 +181,318 @@
             </ul>
         </div>
     </nav>
-
-    <!-- HERO -->
-    <section class="hero" id="home">
-        <div class="hero-bg">
-            <div class="hero-orb hero-orb-1"></div>
-            <div class="hero-orb hero-orb-2"></div>
-            <div class="hero-grid"></div>
-        </div>
+<main>
+    <!-- ===== HERO ===== -->
+    <header class="h-hero" id="home" data-ga-ubicacion="hero">
+        <div class="blob blob-sky" aria-hidden="true"></div>
+        <div class="blob blob-sun" aria-hidden="true"></div>
+        <svg class="h-plane" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <path id="rutaAvion" class="trail" d="M-60 700 C 220 620, 260 380, 520 420 S 900 560, 1010 300 S 1180 60, 1300 40"/>
+            <g>
+                <polygon class="avion" points="0,-11 34,0 0,11 7,0"/>
+                <polygon class="avion-2" points="0,0 34,0 7,11"/>
+                <animateMotion dur="11s" repeatCount="indefinite" rotate="auto"><mpath href="#rutaAvion"/></animateMotion>
+            </g>
+        </svg>
         <div class="container">
-            <div class="hero-content">
-                <span class="hero-tag animate-fade-up">
-                    <svg viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
-                    La agencia que moderniza negocios
-                </span>
-                <h1 class="hero-title animate-fade-up delay-1">
-                    Tu negocio no necesita trabajar más.<br>
-                    <span class="gradient-text">Necesita mejores sistemas.</span>
+            <div class="h-copy">
+                <p class="h-kicker animate-fade-up"><span class="live" aria-hidden="true"></span>Agencia digital · Zona Oeste</p>
+                <h1 class="h-title">
+                    <span class="h-line"><span>Tu negocio no necesita</span></span>
+                    <span class="h-line"><span>trabajar más.</span></span>
+                    <span class="h-line"><span>Necesita <span class="mark">mejores sistemas.</span></span></span>
                 </h1>
-                <p class="hero-subtitle animate-fade-up delay-2">
-                    Webs que traen consultas, WhatsApp que responde solo y sistemas de gestión a medida.
-                    Para negocios de Zona Oeste que todavía hacen a mano lo que podría hacerse solo.
-                </p>
-                <div class="hero-ctas animate-fade-up delay-3">
-                    <a href="https://wa.me/5491150089069?text=Quiero%20una%20demo%20gratis%20de%20p%C3%A1gina%20web" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                <p class="h-sub animate-fade-up delay-3">Webs que traen consultas, <strong>WhatsApp que responde solo</strong> y sistemas de gestión a medida, para negocios de Zona Oeste y de todo el país.</p>
+                <div class="h-ctas animate-fade-up delay-4">
+                    <a href="https://wa.me/5491150089069?text=Quiero%20una%20demo%20gratis%20de%20p%C3%A1gina%20web" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
                         Quiero mi demo gratis
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        <svg fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
                     </a>
-                    <a href="#casos" class="btn btn-ghost">Ver resultados</a>
+                    <a href="#trabajos" class="btn btn-ghost btn-large">Ver trabajos</a>
                 </div>
-                <div class="hero-social-proof animate-fade-up delay-4">
-                    <span>15 proyectos online · Ituzaingó, Morón, Castelar y Río Gallegos · demo lista en 72 hs</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- FRANJA DE PRUEBA -->
-    <!-- Tres capturas reales y tres numeros verificables, arriba de todo:
-         es lo primero que ve alguien que no nos conoce. Absorbe el bloque de
-         stats que antes estaba suelto mas abajo. -->
-    <section class="prueba section-accent">
-        <div class="container">
-            <div class="prueba-grid">
-                <div class="prueba-shots reveal">
-                    <img src="/trabajos/estudio-contable-gici-sitio-web-480.webp" alt="Sitio web del Estudio Contable GICI, en Ituzaingó" width="480" height="232" loading="lazy" decoding="async">
-                    <img src="/trabajos/pasion-matera-tienda-online-mates-480.webp" alt="Tienda online de Pasión Matera" width="480" height="233" loading="lazy" decoding="async">
-                    <img src="/trabajos/medisur-rio-gallegos-salud-web-480.webp" alt="Sitio web de Medisur, centro médico en Río Gallegos" width="480" height="300" loading="lazy" decoding="async">
-                </div>
-                <div class="prueba-datos reveal delay-1">
-                    <p class="prueba-linea">Hoy hay <strong>15 sitios nuestros online</strong>, de Ituzaingó a Río Gallegos: estudios contables, tiendas, gastronomía, automotores, salud y plataformas de gestión.</p>
-                    <div class="stats-grid stats-grid--3">
-                <div class="stat-item reveal">
-                    <span class="stat-label">Proyectos online hoy</span>
-                    <div class="stat-row"><span class="stat-number" data-target="15">0</span><span class="stat-plus"></span></div>
-                </div>
-                <div class="stat-item reveal delay-1">
-                    <span class="stat-label">Demo lista en menos de</span>
-                    <div class="stat-row"><span class="stat-number" data-target="72">0</span><span class="stat-plus">hs</span></div>
-                </div>
-                <div class="stat-item reveal delay-2">
-                    <span class="stat-label">Hasta el cliente más lejano</span>
-                    <div class="stat-row"><span class="stat-number" data-target="2600">0</span><span class="stat-plus">km</span></div>
-                </div>
-                    </div>
-                    <a href="/trabajos" class="link-arrow">Ver los 15 trabajos
-                        <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                    </a>
+                <div class="h-proof animate-fade-up delay-4">
+                    <div><strong class="count" data-target="15">15</strong><span>sitios nuestros online hoy</span></div>
+                    <div><strong><span class="count" data-target="72">72</span> hs</strong><span>para ver tu demo andando</span></div>
+                    <div><strong><span class="count" data-target="2600">2.600</span> km</strong><span>hasta el cliente más lejano</span></div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- PROBLEMA -->
-    <section class="problema section-dark">
-        <div class="container">
-            <div class="problema-grid">
-                <div class="problema-left reveal">
-                    <span class="section-tag">La realidad</span>
-                    <h2>La mayoría de negocios<br>todavía trabaja<br><span class="gradient-text">como en 2015.</span></h2>
-                </div>
-                <div class="problema-right reveal delay-1">
-                    <div class="problema-items">
-                        <div class="problema-item">
-                            <span class="problema-icon"><svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>
-                            <p>Responden mensajes manualmente a toda hora</p>
-                        </div>
-                        <div class="problema-item">
-                            <span class="problema-icon"><svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>
-                            <p>No tienen presencia digital real, o la tienen mal</p>
-                        </div>
-                        <div class="problema-item">
-                            <span class="problema-icon"><svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>
-                            <p>Dependen del boca a boca para conseguir clientes</p>
-                        </div>
-                        <div class="problema-item">
-                            <span class="problema-icon"><svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>
-                            <p>Tienen una página web que no genera nada</p>
-                        </div>
+            <div class="h-stage">
+                <div class="phone" aria-label="Sitios que hicimos, vistos en un celular">
+                    <div class="phone-screen" id="phoneScreen">
+                        <img src="/trabajos/toncars-automotores-web-celular.webp" data-name="TonCars Automotores" alt="Sitio web de TonCars Automotores visto en un celular" width="480" height="1039" fetchpriority="high">
+                        <img data-src="/trabajos/mundo-cortinas-web-celular.webp" data-name="Mundo Cortinas" alt="Sitio web de Mundo Cortinas visto en un celular" width="480" height="1039">
+                        <img data-src="/trabajos/medisur-rio-gallegos-web-celular.webp" data-name="Medisur · Río Gallegos" alt="Sitio web de Medisur visto en un celular" width="480" height="1039">
                     </div>
-                    <a href="/contacto" class="btn btn-primary">Quiero cambiar eso →</a>
+                    <span class="phone-label"><b id="phoneName">TonCars Automotores</b> <i>· hecho por TNR</i></span>
+                </div>
+                <div class="ping ping-wa" aria-hidden="true">
+                    <span class="ping-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></span>
+                    <span><b>Nueva consulta</b><small>entró desde la web</small></span>
+                </div>
+                <div class="ping ping-maps" aria-hidden="true">
+                    <span class="ping-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+                    <span><b>Te encontraron</b><small>en Google Maps</small></span>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- TRABAJOS (teaser) -->
-    <section class="trabajos section-mid" id="casos">
+    <!-- ===== TRABAJOS ===== -->
+    <section class="h-work" id="trabajos" data-ga-ubicacion="casos">
         <div class="container">
-            <div class="teaser-head reveal">
-                <div class="section-header">
-                    <span class="section-tag">Casos reales</span>
-                    <h2>Nos adaptamos a<br><span class="gradient-text">cada negocio.</span></h2>
-                    <p class="section-subtitle">Estos tres sitios los hicimos nosotros y no se parecen en nada entre sí. Es a propósito: el diseño sale del negocio, no de una plantilla que reciclamos. Y no trabajamos solo en Zona Oeste.</p>
+            <div class="h-head reveal">
+                <div>
+                    <span class="eyebrow">Casos reales</span>
+                    <h2>Webs reales, de <span class="mark">negocios reales.</span></h2>
+                    <p>Todas están online. Abrilas desde tu celular: así las va a ver tu cliente.</p>
                 </div>
-                <a href="/trabajos" class="link-arrow">Ver todos los trabajos
-                    <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
+                <div class="rail-nav">
+                    <button type="button" class="rail-btn" data-rail="-1" aria-label="Trabajo anterior"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 5l-7 7 7 7"/></svg></button>
+                    <button type="button" class="rail-btn" data-rail="1" aria-label="Trabajo siguiente"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+                </div>
+                <span class="rail-hint">Deslizá <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
             </div>
-            <div class="trabajos-grid trabajos-grid--3">
-                <article class="trabajo-card reveal">
-                    <div class="trabajo-media">
-                        <div class="trabajo-bar">
-                            <span class="trabajo-dot r"></span><span class="trabajo-dot y"></span><span class="trabajo-dot g"></span>
-                            <span class="trabajo-url">mundo-cortinas.vercel.app</span>
-                        </div>
-                        <img src="/trabajos/mundo-cortinas-tienda-web-720.webp" alt="Sitio web de Mundo Cortinas, cortinas a medida en Castelar" loading="lazy" decoding="async" width="720" height="450">
-                    </div>
-                    <div class="trabajo-body">
-                        <span class="trabajo-tag">Cortinas a medida · Castelar</span>
-                        <h3>Mundo Cortinas</h3>
-                        <dl class="caso-lineas">
-                            <div>
-                                <dt>El problema</dt>
-                                <dd>Una cortina a medida no se compra por catálogo: se compra después de que alguien te explique la diferencia entre una black out y una sunscreen. Si eso no está escrito en ningún lado, la explicación arranca de cero en cada consulta.</dd>
-                            </div>
-                            <div>
-                                <dt>Qué construimos</dt>
-                                <dd>Ficha propia para cada tipo de cortina —black out, sunscreen, zebra, bandas verticales, cortinado clásico, toldos y cerramientos de cristal—, la paleta de telas para mirar antes de decidir, y el proceso escrito en cuatro pasos: asesoramiento, medición, fabricación y colocación.</dd>
-                            </div>
-                            <div>
-                                <dt>Qué tiene hoy</dt>
-                                <dd>Seis accesos a WhatsApp repartidos por la página y el teléfono a la vista en el encabezado. La persona llega sabiendo qué producto quiere y la charla arranca ahí.</dd>
-                            </div>
-                        </dl>
-                        <div class="trabajo-stack"><span>Diseño a medida</span><span>Catálogo por producto</span><span>Presupuestos</span><span>WhatsApp</span></div>
-                        <div class="trabajo-acciones">
-                            <a href="https://wa.me/5491150089069?text=Vi%20Mundo%20Cortinas%20en%20su%20web%20y%20quiero%20algo%20as%C3%AD%20para%20mi%20negocio" class="trabajo-cta" target="_blank" rel="noopener noreferrer">Quiero algo así</a>
-                            <a href="https://mundo-cortinas.vercel.app/" class="trabajo-link" target="_blank" rel="noopener noreferrer">
-                                Ver sitio
-                                <svg viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-                <article class="trabajo-card reveal delay-1">
-                    <div class="trabajo-media">
-                        <div class="trabajo-bar">
-                            <span class="trabajo-dot r"></span><span class="trabajo-dot y"></span><span class="trabajo-dot g"></span>
-                            <span class="trabajo-url">toncars.com.ar</span>
-                        </div>
-                        <img src="/trabajos/toncars-automotores-catalogo-web-720.webp" alt="Sitio web de TonCars Automotores" loading="lazy" decoding="async" width="720" height="450">
-                    </div>
-                    <div class="trabajo-body">
-                        <span class="trabajo-tag">Agencia multimarca · Ing. Maschwitz</span>
+
+            <div class="rail" id="rail">
+                <article class="w-card trabajo-card">
+                    <div class="w-media" style="--c:#FCE4E1"><img src="/trabajos/toncars-automotores-web-celular.webp" alt="TonCars Automotores en el celular" width="480" height="1039" loading="lazy" decoding="async"></div>
+                    <div class="w-body">
+                        <span class="w-tag">Agencia de autos · Ing. Maschwitz</span>
                         <h3>TonCars Automotores</h3>
-                        <dl class="caso-lineas">
-                            <div>
-                                <dt>El problema</dt>
-                                <dd>Un usado se vende con la foto y el precio a la vista. Si cada unidad vive en una publicación suelta, la persona compara en otra pestaña y no vuelve.</dd>
-                            </div>
-                            <div>
-                                <dt>Qué construimos</dt>
-                                <dd>Catálogo con ficha por unidad y botón de consulta en cada auto, más las secciones que hacen falta para cerrar la operación: financiación, permuta, consignación y el paso a paso de la compra.</dd>
-                            </div>
-                            <div>
-                                <dt>Qué tiene hoy</dt>
-                                <dd>Diez accesos a WhatsApp en la misma página, y cada consulta entra con el vehículo ya elegido en vez de un “hola, qué precio tiene”.</dd>
-                            </div>
-                        </dl>
-                        <div class="trabajo-stack"><span>Catálogo</span><span>Ficha por unidad</span><span>Financiación</span><span>Consultas</span></div>
-                        <div class="trabajo-acciones">
-                            <a href="https://wa.me/5491150089069?text=Vi%20TonCars%20Automotores%20en%20su%20web%20y%20quiero%20algo%20as%C3%AD%20para%20mi%20negocio" class="trabajo-cta" target="_blank" rel="noopener noreferrer">Quiero algo así</a>
-                            <a href="https://toncars.com.ar/" class="trabajo-link" target="_blank" rel="noopener noreferrer">
-                                Ver sitio
-                                <svg viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                            </a>
+                        <p>Catálogo con ficha por unidad: cada consulta llega con el auto ya elegido.</p>
+                        <details class="w-caso">
+                            <summary>Cómo lo resolvimos</summary>
+                            <dl>
+                                <div><dt>El problema</dt><dd>Un usado se vende con la foto y el precio a la vista. Si cada unidad vive en una publicación suelta, la persona compara en otra pestaña y no vuelve.</dd></div>
+                                <div><dt>Qué construimos</dt><dd>Catálogo con ficha por unidad y botón de consulta en cada auto, más financiación, permuta, consignación y el paso a paso de la compra.</dd></div>
+                                <div><dt>Qué tiene hoy</dt><dd>Diez accesos a WhatsApp en la misma página, y cada consulta entra con el vehículo ya elegido en vez de un “hola, qué precio tiene”.</dd></div>
+                            </dl>
+                        </details>
+                        <div class="w-actions">
+                            <a href="https://wa.me/5491150089069?text=Vi%20TonCars%20Automotores%20en%20su%20web%20y%20quiero%20algo%20as%C3%AD%20para%20mi%20negocio" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Quiero algo así</a>
+                            <a href="https://toncars.com.ar/" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Ver sitio</a>
                         </div>
                     </div>
                 </article>
-                <article class="trabajo-card reveal delay-2">
-                    <div class="trabajo-media">
-                        <div class="trabajo-bar">
-                            <span class="trabajo-dot r"></span><span class="trabajo-dot y"></span><span class="trabajo-dot g"></span>
-                            <span class="trabajo-url">medisur-rg.com.ar</span>
+
+                <article class="w-card trabajo-card">
+                    <div class="w-media" style="--c:#FDEAD9"><img src="/trabajos/mundo-cortinas-web-celular.webp" alt="Mundo Cortinas en el celular" width="480" height="1039" loading="lazy" decoding="async"></div>
+                    <div class="w-body">
+                        <span class="w-tag">Cortinas a medida · Castelar</span>
+                        <h3>Mundo Cortinas</h3>
+                        <p>Una ficha por tipo de cortina, para que la charla arranque con el producto ya elegido.</p>
+                        <details class="w-caso">
+                            <summary>Cómo lo resolvimos</summary>
+                            <dl>
+                                <div><dt>El problema</dt><dd>Una cortina a medida se compra después de que alguien te explique la diferencia entre una black out y una sunscreen. Si eso no está escrito, la explicación arranca de cero en cada consulta.</dd></div>
+                                <div><dt>Qué construimos</dt><dd>Ficha propia para cada tipo de cortina, la paleta de telas para mirar antes de decidir y el proceso en cuatro pasos: asesoramiento, medición, fabricación y colocación.</dd></div>
+                                <div><dt>Qué tiene hoy</dt><dd>Seis accesos a WhatsApp y el teléfono a la vista en el encabezado. La persona llega sabiendo qué producto quiere.</dd></div>
+                            </dl>
+                        </details>
+                        <div class="w-actions">
+                            <a href="https://wa.me/5491150089069?text=Vi%20Mundo%20Cortinas%20en%20su%20web%20y%20quiero%20algo%20as%C3%AD%20para%20mi%20negocio" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Quiero algo así</a>
+                            <a href="https://mundo-cortinas.vercel.app/" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Ver sitio</a>
                         </div>
-                        <img src="/trabajos/medisur-rio-gallegos-salud-web-720.webp" alt="Sitio web de Medisur, centro médico en Río Gallegos" loading="lazy" decoding="async" width="720" height="450">
                     </div>
-                    <div class="trabajo-body">
-                        <span class="trabajo-tag">Salud · Río Gallegos</span>
+                </article>
+
+                <article class="w-card trabajo-card">
+                    <div class="w-media" style="--c:#DDF3FD"><img src="/trabajos/medisur-rio-gallegos-web-celular.webp" alt="Medisur en el celular" width="480" height="1039" loading="lazy" decoding="async"></div>
+                    <div class="w-body">
+                        <span class="w-tag">Salud · Río Gallegos, a 2.600 km</span>
                         <h3>Medisur</h3>
-                        <dl class="caso-lineas">
-                            <div>
-                                <dt>El problema</dt>
-                                <dd>En salud nadie busca “un centro médico”: busca el estudio que le pidieron. Si la web no lo nombra, no aparece — y si no aparece, no existe.</dd>
-                            </div>
-                            <div>
-                                <dt>Qué construimos</dt>
-                                <dd>Un menú por estudio, cada uno con su propia página: densitometría, mamografía, ecografía, tomografía computada, cardiología y gastroenterología, más guardia clínica 24 hs y radiografías sin turno.</dd>
-                            </div>
-                            <div>
-                                <dt>Qué tiene hoy</dt>
-                                <dd>“Solicitar turno” en el encabezado y seis accesos a WhatsApp. Está en <strong>Río Gallegos, Santa Cruz</strong>: a 2.600 km de Ituzaingó.</dd>
-                            </div>
-                        </dl>
-                        <div class="trabajo-stack"><span>Institucional</span><span>Página por estudio</span><span>Turnos</span><span>SEO</span></div>
-                        <div class="trabajo-acciones">
-                            <a href="https://wa.me/5491150089069?text=Vi%20Medisur%20en%20su%20web%20y%20quiero%20algo%20as%C3%AD%20para%20mi%20negocio" class="trabajo-cta" target="_blank" rel="noopener noreferrer">Quiero algo así</a>
-                            <a href="https://medisur-rg.com.ar/" class="trabajo-link" target="_blank" rel="noopener noreferrer">
-                                Ver sitio
-                                <svg viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                            </a>
+                        <p>Una página por estudio médico, para aparecer cuando buscan el estudio que les pidieron.</p>
+                        <details class="w-caso">
+                            <summary>Cómo lo resolvimos</summary>
+                            <dl>
+                                <div><dt>El problema</dt><dd>En salud nadie busca “un centro médico”: busca el estudio que le pidieron. Si la web no lo nombra, no aparece.</dd></div>
+                                <div><dt>Qué construimos</dt><dd>Un menú por estudio, cada uno con su página: densitometría, mamografía, ecografía, tomografía, cardiología y gastroenterología, más guardia 24 hs.</dd></div>
+                                <div><dt>Qué tiene hoy</dt><dd>“Solicitar turno” en el encabezado y seis accesos a WhatsApp. Está en Río Gallegos, Santa Cruz: a 2.600 km de Ituzaingó.</dd></div>
+                            </dl>
+                        </details>
+                        <div class="w-actions">
+                            <a href="https://wa.me/5491150089069?text=Vi%20Medisur%20en%20su%20web%20y%20quiero%20algo%20as%C3%AD%20para%20mi%20negocio" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Quiero algo así</a>
+                            <a href="https://medisur-rg.com.ar/" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Ver sitio</a>
                         </div>
                     </div>
                 </article>
-            </div>
-        </div>
-    </section>
 
-    <!-- HUECO PARA TESTIMONIOS
-         Aca va la franja de 3 testimonios: nombre, negocio y foto o logo.
-         No se construye vacia a proposito: un bloque de testimonios con
-         texto de relleno hace mas dano que no tenerlo. Ver PENDIENTE-DATOS.md
-         -->
+                <article class="w-card trabajo-card">
+                    <div class="w-media" style="--c:#E3F4E8"><img src="/trabajos/pasion-matera-tienda-celular.webp" alt="Pasión Matera en el celular" width="480" height="1039" loading="lazy" decoding="async"></div>
+                    <div class="w-body">
+                        <span class="w-tag">Tienda online · mates</span>
+                        <h3>Pasión Matera</h3>
+                        <p>Tienda de mates artesanales con catálogo, carrito y pedidos directos por WhatsApp.</p>
+                        <div class="w-actions">
+                            <a href="https://wa.me/5491150089069?text=Vi%20Pasi%C3%B3n%20Matera%20en%20su%20web%20y%20quiero%20algo%20as%C3%AD%20para%20mi%20negocio" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Quiero algo así</a>
+                            <a href="https://pasionmatera7.com" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Ver sitio</a>
+                        </div>
+                    </div>
+                </article>
 
-    <!-- SERVICIOS (teaser) -->
-    <section class="servicios section-dark">
-        <div class="container">
-            <div class="teaser-head reveal">
-                <div class="section-header">
-                    <span class="section-tag">Nuestros servicios</span>
-                    <h2>Marketing digital y páginas web,<br><span class="gradient-text">para que te entren consultas.</span></h2>
-                    <p class="section-subtitle">No tercerizamos ni trabajamos con plantillas. Cada solución es pensada para tu negocio.</p>
-                </div>
-                <a href="/servicios" class="link-arrow">Ver todos los servicios
-                    <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <article class="w-card trabajo-card">
+                    <div class="w-media" style="--c:#ECEAFB"><img src="/trabajos/estudio-contable-gici-web-celular.webp" alt="Estudio Contable GICI en el celular" width="480" height="1039" loading="lazy" decoding="async"></div>
+                    <div class="w-body">
+                        <span class="w-tag">Estudio contable · Ituzaingó</span>
+                        <h3>Estudio Contable GICI</h3>
+                        <p>Servicios explicados en claro y consultas directas para un estudio contable e impositivo.</p>
+                        <div class="w-actions">
+                            <a href="https://wa.me/5491150089069?text=Vi%20Estudio%20Contable%20GICI%20en%20su%20web%20y%20quiero%20algo%20as%C3%AD%20para%20mi%20negocio" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Quiero algo así</a>
+                            <a href="https://estudiocontablegici.com" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Ver sitio</a>
+                        </div>
+                    </div>
+                </article>
+
+                <a href="/trabajos" class="w-more">
+                    <strong>15</strong>
+                    <span>proyectos online, con CRM y apps de gestión incluidos</span>
+                    <span class="link-arrow">Ver todos <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
                 </a>
             </div>
-            <div class="servicios-grid">
-                <div class="servicio-card reveal">
-                    <h3>Que te encuentren y te consulten</h3>
-                    <p>El objetivo no es tener presencia digital. Es que suene el teléfono.</p>
-                    <div class="servicio-links">
-                        <a href="/paginas-web">Páginas web</a>
-                        <a href="/tiendas-online">Tiendas online</a>
-                        <a href="/publicidad-digital">Publicidad digital</a>
-                        <a href="/marketing-digital-zona-oeste">SEO local</a>
+        </div>
+    </section>
+
+    <!-- ===== ANTES / DESPUES ===== -->
+    <section class="h-fix" data-ga-ubicacion="antes_despues">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="eyebrow">¿Te suena?</span>
+                <h2>Lo que hoy te hace perder clientes, <span class="mark">resuelto.</span></h2>
+            </div>
+            <div class="fix-list">
+                <div class="fix-row reveal">
+                    <span class="fix-antes"><s>Contestás mensajes a mano, a toda hora.</s></span>
+                    <span class="fix-despues"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Un bot responde lo repetido al instante y te pasa las consultas que valen.</span>
+                </div>
+                <div class="fix-row reveal">
+                    <span class="fix-antes"><s>No tenés web, o tenés una que no genera nada.</s></span>
+                    <span class="fix-despues"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Una web rápida que explica qué vendés y termina en un botón de WhatsApp.</span>
+                </div>
+                <div class="fix-row reveal">
+                    <span class="fix-antes"><s>Dependés del boca a boca para conseguir clientes.</s></span>
+                    <span class="fix-despues"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Aparecés cuando te buscan en Google y en Maps.</span>
+                </div>
+                <div class="fix-row reveal">
+                    <span class="fix-antes"><s>Llevás clientes, turnos y ventas en un cuaderno o un Excel.</s></span>
+                    <span class="fix-despues"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Un sistema a medida que te ordena todo en una sola pantalla.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICIOS ===== -->
+    <section class="h-services" id="servicios" data-ga-ubicacion="servicios">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="eyebrow">Qué hacemos</span>
+                <h2>Marketing digital y páginas web, para que te entren consultas.</h2>
+            </div>
+            <div class="tabs reveal" role="tablist" aria-label="Servicios">
+                <button type="button" class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">Que te encuentren</button>
+                <button type="button" class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false">Que no se te escape nadie</button>
+                <button type="button" class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false">Que te elijan</button>
+            </div>
+            <div class="tab-panels reveal delay-1">
+                <div class="tab-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+                    <div>
+                        <h3>Que te encuentren y te consulten</h3>
+                        <p>El objetivo no es tener presencia digital. Es que suene el teléfono.</p>
+                        <nav class="srv-links" aria-label="Servicios para que te encuentren">
+                            <a href="/paginas-web">Páginas web</a>
+                            <a href="/tiendas-online">Tiendas online</a>
+                            <a href="/publicidad-digital">Publicidad digital</a>
+                            <a href="/marketing-digital-zona-oeste">SEO local</a>
+                        </nav>
+                    </div>
+                    <div class="srv-visual" aria-hidden="true">
+                        <div class="serp">
+                            <div class="serp-bar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>cortinas a medida castelar<span class="cursor"></span></div>
+                            <div class="serp-res yo"><b>Tu negocio · tunegocio.com.ar</b>Primer resultado · abierto ahora · WhatsApp</div>
+                            <div class="serp-res otro"><b>Otro resultado</b>Sin web, solo un teléfono</div>
+                            <div class="serp-res otro"><b>Otro resultado</b>Última publicación hace 2 años</div>
+                        </div>
                     </div>
                 </div>
-                <div class="servicio-card reveal delay-1">
-                    <h3>Que no se te caiga ninguna consulta</h3>
-                    <p>Cada mensaje que contestás tres horas tarde es un cliente que ya le escribió a otro.</p>
-                    <div class="servicio-links">
-                        <a href="/automatizacion-whatsapp">Chatbot de WhatsApp</a>
-                        <a href="/crm-para-pymes">CRM para PyMEs</a>
-                        <a href="/ia">Automatización con IA</a>
+                <div class="tab-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
+                    <div>
+                        <h3>Que no se te caiga ninguna consulta</h3>
+                        <p>Cada mensaje que contestás tres horas tarde es un cliente que ya le escribió a otro.</p>
+                        <nav class="srv-links" aria-label="Servicios de automatización">
+                            <a href="/automatizacion-whatsapp">Chatbot de WhatsApp</a>
+                            <a href="/crm-para-pymes">CRM para PyMEs</a>
+                            <a href="/ia">Automatización con IA</a>
+                        </nav>
+                    </div>
+                    <div class="srv-visual" aria-hidden="true">
+                        <div class="chat">
+                            <div class="chat-top"><i><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></i><span>Tu negocio<small>responde al instante</small></span></div>
+                            <span class="bubble in">Hola! ¿Tienen turno para mañana?</span>
+                            <span class="bubble typing"><i></i><i></i><i></i></span>
+                            <span class="bubble out">¡Hola! Mañana hay 10:30 y 16:00. ¿Cuál te guardo?</span>
+                            <span class="bubble in">La de las 16</span>
+                            <span class="bubble out">Listo, agendado a las 16:00. Te aviso 2 hs antes.</span>
+                            <p class="chat-nota">Ejemplo de un bot de turnos</p>
+                        </div>
                     </div>
                 </div>
-                <div class="servicio-card reveal delay-2">
-                    <h3>Que te elijan a vos y no al de al lado</h3>
-                    <p>Nadie compra lo que no conoce, y nadie recuerda lo que no entiende.</p>
-                    <div class="servicio-links">
-                        <a href="/gestion-de-redes">Gestión de redes</a>
-                        <a href="/servicios">Branding y contenido</a>
+                <div class="tab-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3">
+                    <div>
+                        <h3>Que te elijan a vos y no al de al lado</h3>
+                        <p>Nadie compra lo que no conoce, y nadie recuerda lo que no entiende.</p>
+                        <nav class="srv-links" aria-label="Servicios de marca y contenido">
+                            <a href="/gestion-de-redes">Gestión de redes</a>
+                            <a href="/servicios">Branding y contenido</a>
+                        </nav>
+                    </div>
+                    <div class="srv-visual" aria-hidden="true">
+                        <div class="post">
+                            <div class="post-img"><img src="/logo-claro-192.webp" alt="" width="192" height="192" loading="lazy"></div>
+                            <div class="post-bar"><svg class="heart" viewBox="0 0 24 24"><path d="M12 21s-8-5.3-8-11a4.7 4.7 0 0 1 8-3.3A4.7 4.7 0 0 1 20 10c0 5.7-8 11-8 11z"/></svg>A tu cliente le gustó esto</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- VIDEO -->
-    <section class="video-reel section-mid">
+    <!-- ===== COMO ARRANCAMOS ===== -->
+    <section class="h-steps" id="demo" data-ga-ubicacion="demo">
         <div class="container">
-            <div class="video-reel-grid">
-                <div class="reel-frame reveal">
-                    <video id="reelBriones" playsinline preload="none"
-                           poster="/videos/metodo-briones-poster-720.webp"
-                           src="/videos/metodo-briones.mp4">
-                        <track kind="captions" src="/videos/metodo-briones.vtt"
-                               srclang="es" label="Español" default>
+            <div class="section-header reveal">
+                <span class="eyebrow">Demo gratis</span>
+                <h2>Tu web andando en tu celular, <span class="mark">antes de pagar.</span></h2>
+            </div>
+            <ol class="steps">
+                <li class="step reveal"><div><h3>Nos contás a qué te dedicás</h3><p>Por WhatsApp, en cinco minutos. Con tu Instagram o tu logo alcanza para arrancar.</p></div></li>
+                <li class="step step-demo reveal delay-1"><div><h3>En 72 hs te mandamos tu demo</h3><p>Un link propio que abrís en el celular, con tu logo, tus colores y tu contenido. No un PDF ni un dibujo.</p></div></li>
+                <li class="step reveal delay-2"><div><h3>Si te gusta, la terminamos</h3><p>Te pasamos un precio cerrado. Si no te convence, no pagás nada y te quedás con la idea.</p></div></li>
+            </ol>
+            <p class="steps-nota">Nos lleva medio día de trabajo, así que la hacemos para negocios que están decidiendo en serio.</p>
+            <div class="steps-cta">
+                <a href="https://wa.me/5491150089069?text=Quiero%20mi%20demo%20gratis%20de%20p%C3%A1gina%20web" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">Quiero ver mi demo <svg fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VIDEO DEL METODO ===== -->
+    <section class="h-video video-reel" data-ga-ubicacion="video">
+        <div class="container">
+            <div class="h-video-grid">
+                <div class="reel-frame reveal reveal-zoom">
+                    <video id="reelBriones" playsinline preload="none" data-poster="/videos/metodo-briones-poster-720.webp" src="/videos/metodo-briones.mp4">
+                        <track kind="captions" src="/videos/metodo-briones.vtt" srclang="es" label="Español" default>
                     </video>
-                    <button type="button" class="reel-play" id="reelPlay" aria-label="Reproducir el video">
+                    <span class="reel-dur">1:22</span>
+                    <button type="button" class="reel-play" id="reelPlay" aria-label="Reproducir el video del método">
                         <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
                     </button>
                 </div>
-                <div class="video-reel-texto reveal delay-1">
-                    <span class="section-tag">Cómo pensamos</span>
-                    <h2>El método detrás<br><span class="gradient-text">de lo que hacemos.</span></h2>
-                    <p>No arrancamos por el diseño. Arrancamos por entender cómo vende tu negocio hoy, dónde se te caen los clientes y qué es lo que realmente hay que arreglar primero.</p>
-                    <p>En este video te contamos de dónde sale esa forma de trabajar, y por qué en muchos casos la respuesta no es una web nueva sino ordenar lo que ya tenés.</p>
-                    <a href="https://wa.me/5491150089069?text=Vi%20el%20video%20y%20quiero%20charlar" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Charlemos de tu negocio →</a>
-
+                <div class="h-video-texto reveal delay-1">
+                    <span class="eyebrow">Cómo pensamos</span>
+                    <h2>El método detrás de lo que hacemos.</h2>
+                    <p>No arrancamos por el diseño: arrancamos por entender cómo vende tu negocio hoy y dónde se te caen los clientes. A veces la respuesta no es una web nueva, sino ordenar lo que ya tenés.</p>
+                    <a href="https://wa.me/5491150089069?text=Vi%20el%20video%20y%20quiero%20charlar" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Charlemos de tu negocio →</a>
                     <details class="transcripcion">
                         <summary>Leer la transcripción del video</summary>
                         <div class="transcripcion-cuerpo">
@@ -503,36 +511,12 @@
         </div>
     </section>
 
-    <!-- DEMO GRATIS -->
-    <section class="demo-section reveal">
-        <div class="container">
-            <div class="demo-card">
-                <div class="demo-badge">GRATIS</div>
-                <h2>No te contamos cómo quedaría.<br><span class="gradient-text">Te la mostramos funcionando.</span></h2>
-                <p>Armamos una demo real de tu página y te pasamos el link para que la abras vos mismo.</p>
-                <div class="demo-recibis">
-                    <h3>Qué recibís exactamente</h3>
-                    <ul class="demo-features">
-                        <li class="demo-feature"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Un <strong>link propio</strong> que abrís en el celular. No un PDF, ni un dibujo de cómo quedaría.</span></li>
-                        <li class="demo-feature"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Con <strong>tu logo, tus colores y tu contenido</strong> — no un ejemplo genérico de tu rubro.</span></li>
-                        <li class="demo-feature"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Diseñada para lo que vendés vos, sin plantilla reciclada de otro cliente.</span></li>
-                        <li class="demo-feature"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Andando <strong>en el celular</strong>, que es desde donde te va a mirar tu cliente.</span></li>
-                        <li class="demo-feature"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>En <strong>menos de 72 horas</strong> desde que nos contás a qué te dedicás.</span></li>
-                    </ul>
-                </div>
-                <p class="demo-condicion">Nos lleva medio día de trabajo, así que la hacemos para negocios que están decidiendo en serio. Si no te gusta, te quedás con la idea igual: no hay costo ni compromiso.</p>
-                <a href="https://wa.me/5491150089069?text=Quiero%20mi%20demo%20gratis%20de%20p%C3%A1gina%20web" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">Quiero ver mi demo →</a>
-                <span class="demo-note">Contanos a qué te dedicás y arrancamos.</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq section-dark">
+    <!-- ===== PREGUNTAS ===== -->
+    <section class="faq h-faq" id="preguntas" data-ga-ubicacion="faq">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">Preguntas frecuentes</span>
-                <h2>Lo que todos preguntan<br><span class="gradient-text">antes de empezar.</span></h2>
+                <span class="eyebrow">Preguntas frecuentes</span>
+                <h2>Lo que todos preguntan antes de empezar.</h2>
             </div>
             <div class="faq-list reveal delay-1">
                 <details class="faq-item">
@@ -562,6 +546,25 @@
             </div>
         </div>
     </section>
+
+    <!-- ===== CIERRE ===== -->
+    <section class="h-final" data-ga-ubicacion="cierre">
+        <div class="container reveal">
+            <svg class="avion-final" viewBox="0 0 40 24" aria-hidden="true"><polygon points="0,1 40,12 0,23 8,12" fill="#0A1B33"/><polygon points="0,12 40,12 8,23" fill="#003878"/></svg>
+            <h2>¿Vemos cómo quedaría la tuya?</h2>
+            <p>Contanos a qué te dedicás y en 72 hs la abrís desde tu celular. Sin costo y sin compromiso.</p>
+            <a href="https://wa.me/5491150089069?text=Quiero%20mi%20demo%20gratis%20de%20p%C3%A1gina%20web" class="btn btn-sun btn-large" target="_blank" rel="noopener noreferrer">Quiero mi demo gratis <svg fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <nav class="zonas" aria-label="Zonas donde trabajamos">
+                <span>Trabajamos en</span>
+                <a href="/marketing-digital-ituzaingo">Ituzaingó</a>
+                <a href="/marketing-digital-moron">Morón</a>
+                <a href="/marketing-digital-castelar">Castelar</a>
+                <a href="/marketing-digital-zona-oeste">toda la Zona Oeste</a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- FAQPage: tiene que coincidir con las preguntas visibles de la seccion #preguntas -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -576,42 +579,12 @@
       ]
     }
     </script>
-
-    <!-- ZONAS -->
-    <section class="section-accent">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">Dónde trabajamos</span>
-                <h2>Somos de <span class="gradient-text">Zona Oeste.</span></h2>
-                <p class="section-subtitle">Conocemos el mercado de la zona porque es el nuestro. Si preferís, nos juntamos a charlarlo en persona.</p>
-            </div>
-            <div class="related reveal delay-1">
-                <a href="/marketing-digital-ituzaingo">
-                    <strong>Marketing digital en Ituzaingó</strong>
-                    <span>Comercios y profesionales del centro, Villa Udaondo y Parque Leloir.</span>
-                </a>
-                <a href="/marketing-digital-moron">
-                    <strong>Marketing digital en Morón</strong>
-                    <span>El mercado más competitivo del oeste: cómo destacar ahí.</span>
-                </a>
-                <a href="/marketing-digital-castelar">
-                    <strong>Marketing digital en Castelar</strong>
-                    <span>Comercio de cercanía y emprendedores que venden por Instagram.</span>
-                </a>
-                <a href="/marketing-digital-zona-oeste">
-                    <strong>Toda la Zona Oeste</strong>
-                    <span>Haedo, Ramos Mejía, El Palomar, Hurlingham, Merlo y Moreno.</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
+</main>
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="/logo-160.webp" alt="Tu Negocio En Las Redes" class="footer-logo-img" width="159" height="160" loading="lazy" decoding="async">
+                    <img src="/logo-claro-96.webp" alt="Tu Negocio En Las Redes" class="footer-logo-img" width="96" height="96" loading="lazy" decoding="async">
                     <p>Modernizamos negocios con marketing, automatización e inteligencia artificial.</p>
                     <a href="https://instagram.com/tunegocioenlasredes_" class="footer-ig" target="_blank" rel="noopener noreferrer">@tunegocioenlasredes_</a>
                 </div>
@@ -659,6 +632,6 @@
         </div>
     </footer>
 
-    <script src="/main.js?v=85bc8282"></script>
+    <script src="/main.js?v=e526f9db"></script>
 </body>
 </html>

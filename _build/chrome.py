@@ -55,7 +55,7 @@ def head(*, title, description, path, schema, og_title=None, og_desc=None, page_
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#0e2139">
+    <meta name="theme-color" content="#ffffff">
     <meta name="google-site-verification" content="4Of5Hx8LEJC8QyjvEbFUF_-j8gUQ2gm2ILo7uYJ9NiU">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRDYX4PKY6"></script>
@@ -66,7 +66,7 @@ def head(*, title, description, path, schema, og_title=None, og_desc=None, page_
       gtag('config', 'G-SRDYX4PKY6');
     </script>
     <script>document.documentElement.classList.add('js')</script>
-    <link rel="preload" href="/fonts/jakarta/PlusJakartaSans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/bricolage/Bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts.css">
     <link rel="stylesheet" href="/styles.css">
     <script type="application/ld+json">
@@ -74,6 +74,7 @@ def head(*, title, description, path, schema, og_title=None, og_desc=None, page_
     </script>
 </head>
 <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
 
     <a href="https://wa.me/{WA_MATEO}?text=Hola!%20Quiero%20saber%20m%C3%A1s%20sobre%20sus%20servicios" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
         {WA_SVG}
@@ -96,7 +97,7 @@ def nav(active=""):
     return f'''
     <nav class="navbar scrolled" id="navbar">
         <div class="nav-container">
-            <a href="/" class="nav-logo"><img src="/logo-160.webp" alt="Tu Negocio En Las Redes - agencia de marketing digital en Zona Oeste" class="nav-logo-img" width="159" height="160" fetchpriority="high"></a>
+            <a href="/" class="nav-logo"><img src="/logo-claro-96.webp" alt="Tu Negocio En Las Redes - agencia de marketing digital en Zona Oeste" class="nav-logo-img" width="96" height="96" fetchpriority="high"><span class="nav-logo-text">Tu Negocio<br>En Las Redes</span></a>
             <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
             <ul class="nav-menu" id="navMenu">
 {lis}
@@ -220,7 +221,7 @@ FOOTER = f'''
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="/logo-160.webp" alt="Tu Negocio En Las Redes" class="footer-logo-img" width="159" height="160" loading="lazy" decoding="async">
+                    <img src="/logo-claro-96.webp" alt="Tu Negocio En Las Redes" class="footer-logo-img" width="96" height="96" loading="lazy" decoding="async">
                     <p>Modernizamos negocios con marketing, automatización e inteligencia artificial.</p>
                     <a href="https://instagram.com/tunegocioenlasredes_" class="footer-ig" target="_blank" rel="noopener noreferrer">@tunegocioenlasredes_</a>
                 </div>

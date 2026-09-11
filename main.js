@@ -371,3 +371,168 @@ document.addEventListener('submit', (e) => {
     }
     window.addEventListener('scroll', revisar, { passive: true });
 })();
+
+// ─────────────────────────────────────────────────────────────────────
+// ANIMACIONES v3 (septiembre 2026)
+// Todo con CSS + un poco de JS, sin librerias: el sitio sigue pesando
+// lo mismo. Si el visitante pidio "reducir movimiento" en su sistema, lo
+// que se mueve solo queda quieto.
+// ─────────────────────────────────────────────────────────────────────
+const tnrCalma = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const tnrPunteroFino = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+// Barra de progreso de lectura + navbar que se esconde al bajar + barra de
+// CTA mobile que aparece cuando el boton del hero sale de pantalla.
+(() => {
+    const barra = document.querySelector('.scroll-progress');
+    const nav = document.getElementById('navbar');
+    const ctaMobile = document.querySelector('.mobile-cta');
+    const ctaHero = document.querySelector('.h-ctas, .page-hero-ctas');
+    let ultimoY = window.scrollY;
+    let pedido = false;
+
+    function actualizar() {
+        pedido = false;
+        const y = window.scrollY;
+        const alto = document.documentElement.scrollHeight - window.innerHeight;
+        if (barra && alto > 0) barra.style.transform = `scaleX(${Math.min(y / alto, 1)})`;
+
+        if (nav && !document.body.classList.contains('menu-open')) {
+            const bajando = y > ultimoY + 4;
+            const subiendo = y < ultimoY - 4;
+            if (bajando && y > 320) nav.classList.add('nav-oculta');
+            else if (subiendo || y < 80) nav.classList.remove('nav-oculta');
+        }
+        ultimoY = y;
+
+        if (ctaMobile) {
+            const mostrar = ctaHero ? ctaHero.getBoundingClientRect().bottom < 0 : y > 240;
+            ctaMobile.classList.toggle('visible', mostrar);
+        }
+    }
+    window.addEventListener('scroll', () => {
+        if (!pedido) { pedido = true; requestAnimationFrame(actualizar); }
+    }, { passive: true });
+    actualizar();
+})();
+
+// Contadores del hero: arrancan solos al cargar (estan a la vista).
+(() => {
+    const nums = document.querySelectorAll('.h-proof .count');
+    if (!nums.length || tnrCalma) return;
+    nums.forEach(el => { el.dataset.final = el.textContent; el.textContent = '0'; });
+    setTimeout(() => nums.forEach(animateCounter), 700);
+})();
+
+// Celular del hero: va pasando por sitios reales que hicimos. Las capturas
+// 2 y 3 se piden recien despues del load, para no competir con lo que
+// importa en la primera carga.
+(() => {
+    const pantalla = document.getElementById('phoneScreen');
+    if (!pantalla) return;
+    const imgs = [...pantalla.querySelectorAll('img')];
+    const nombre = document.getElementById('phoneName');
+    let i = 0;
+    imgs[0].classList.add('on');
+
+    window.addEventListener('load', () => {
+        imgs.forEach(img => { if (img.dataset.src) img.src = img.dataset.src; });
+        if (tnrCalma || imgs.length < 2) return;
+        setInterval(() => {
+            if (document.hidden) return;
+            const actual = imgs[i];
+            i = (i + 1) % imgs.length;
+            const sig = imgs[i];
+            if (!sig.complete) { i = (i - 1 + imgs.length) % imgs.length; return; }
+            actual.classList.remove('on'); actual.classList.add('off');
+            sig.classList.remove('off'); sig.classList.add('on');
+            setTimeout(() => actual.classList.remove('off'), 900);
+            if (nombre) nombre.textContent = sig.dataset.name || '';
+        }, 3200);
+    });
+})();
+
+// Poster del video: se carga despues del load (antes pesaba 44 KB en la
+// primera carga para un video que casi nadie reproduce enseguida).
+window.addEventListener('load', () => {
+    document.querySelectorAll('video[data-poster]').forEach(v => { v.poster = v.dataset.poster; });
+});
+
+// Pestañas de servicios. Sin JS se ven los tres paneles, uno abajo del otro.
+(() => {
+    const tabs = [...document.querySelectorAll('.tabs [role="tab"]')];
+    if (!tabs.length) return;
+    function elegir(tab, foco) {
+        tabs.forEach(t => {
+            const activo = t === tab;
+            t.setAttribute('aria-selected', activo ? 'true' : 'false');
+            t.tabIndex = activo ? 0 : -1;
+            const panel = document.getElementById(t.getAttribute('aria-controls'));
+            if (!panel) return;
+            panel.hidden = !activo;
+            if (activo) { panel.classList.remove('entra'); void panel.offsetWidth; panel.classList.add('entra'); }
+        });
+        if (foco) tab.focus();
+    }
+    tabs.forEach((t, n) => {
+        t.addEventListener('click', () => elegir(t));
+        t.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') elegir(tabs[(n + 1) % tabs.length], true);
+            if (e.key === 'ArrowLeft') elegir(tabs[(n - 1 + tabs.length) % tabs.length], true);
+        });
+    });
+    elegir(tabs.find(t => t.getAttribute('aria-selected') === 'true') || tabs[0]);
+})();
+
+// Carril de trabajos: flechas en escritorio y arrastrar con el mouse.
+(() => {
+    const rail = document.getElementById('rail');
+    if (!rail) return;
+    document.querySelectorAll('[data-rail]').forEach(b => b.addEventListener('click', () => {
+        const card = rail.querySelector('.w-card');
+        const paso = card ? card.getBoundingClientRect().width + 14 : 320;
+        rail.scrollBy({ left: paso * Number(b.dataset.rail), behavior: 'smooth' });
+    }));
+    if (!tnrPunteroFino) return;
+    let x0 = 0, s0 = 0, arrastrando = false, movio = false;
+    rail.addEventListener('pointerdown', (e) => {
+        if (e.pointerType !== 'mouse' || e.target.closest('a, button, summary')) return;
+        arrastrando = true; movio = false; x0 = e.clientX; s0 = rail.scrollLeft;
+        rail.classList.add('dragging');
+    });
+    window.addEventListener('pointermove', (e) => {
+        if (!arrastrando) return;
+        const dx = e.clientX - x0;
+        if (Math.abs(dx) > 4) movio = true;
+        rail.scrollLeft = s0 - dx;
+    });
+    window.addEventListener('pointerup', () => {
+        if (!arrastrando) return;
+        arrastrando = false; rail.classList.remove('dragging');
+    });
+    rail.addEventListener('click', (e) => { if (movio) { e.preventDefault(); movio = false; } }, true);
+})();
+
+// Botones "magneticos" y tarjetas que se inclinan hacia el mouse.
+// Solo con mouse: en el celular no hay hover y seria ruido.
+(() => {
+    if (!tnrPunteroFino || tnrCalma) return;
+    document.querySelectorAll('.btn-primary, .btn-sun, .nav-cta, .rail-btn').forEach(b => {
+        b.addEventListener('mousemove', (e) => {
+            const r = b.getBoundingClientRect();
+            const dx = (e.clientX - r.left - r.width / 2) * 0.18;
+            const dy = (e.clientY - r.top - r.height / 2) * 0.28;
+            b.style.transform = `translate(${dx}px, ${dy}px)`;
+        });
+        b.addEventListener('mouseleave', () => { b.style.transform = ''; });
+    });
+    document.querySelectorAll('.w-card, .trabajo-card, .app-card, .team-card').forEach(c => {
+        c.addEventListener('mousemove', (e) => {
+            const r = c.getBoundingClientRect();
+            const px = (e.clientX - r.left) / r.width - 0.5;
+            const py = (e.clientY - r.top) / r.height - 0.5;
+            c.style.transform = `perspective(900px) rotateY(${px * 6}deg) rotateX(${-py * 6}deg) translateY(-6px)`;
+        });
+        c.addEventListener('mouseleave', () => { c.style.transform = ''; });
+    });
+})();
