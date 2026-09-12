@@ -1,0 +1,32 @@
+{
+  "_lectura": "Una entrada por estática. Envolvé una palabra entre *asteriscos* para pintarla de verde. 'foto' es el nombre del archivo dentro de /fotos (si falta, se usa la portada tipográfica de respaldo).",
+  "notas": [
+    {
+      "categoria": "Tecnología",
+      "etiqueta": "Nota nueva",
+      "titular": "Ahora hay que probar que el video es *real*.",
+      "bajada": "ONVIF presentó Media Signing: firma digital para verificar que una grabación no fue alterada.",
+      "marca_agua": "Deepfakes",
+      "foto": "01-deepfakes.jpg",
+      "url": "https://infoseguridadit.com/deepfakes-y-videovigilancia/"
+    },
+    {
+      "categoria": "Instaladores",
+      "etiqueta": "Nota nueva",
+      "titular": "Certificarse ya no es un *extra*.",
+      "bajada": "Aliara lanza capacitación y certificación oficial en Power Shock Lite, exclusiva para instaladores.",
+      "marca_agua": "Capacitación",
+      "foto": "02-aliara.jpg",
+      "url": "https://infoseguridadit.com/electronica/2026/08/04/capacitacion-aliara/"
+    },
+    {
+      "categoria": "Empresas",
+      "etiqueta": "Nota nueva",
+      "titular": "El guardia solo ya no *alcanza*.",
+      "bajada": "Walter R. Smith, CEO de EZER Seguridad, explica el paso de la vigilancia física al modelo híbrido.",
+      "marca_agua": "Modelo híbrido",
+      "foto": "03-ezer.jpg",
+      "url": "https://infoseguridadit.com/electronica/2026/03/09/ezer-seguridad/"
+    }
+  ]
+}
