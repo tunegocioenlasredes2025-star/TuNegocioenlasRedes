@@ -63,7 +63,10 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
-img, video { max-width: 100%; display: block; }
+/* height:auto es obligatorio: sin esto el height="" del HTML le gana al ancho
+   del CSS y la imagen se estira (los celulares de los casos salian de
+   172x1039 en vez de 172x372). */
+img, video { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 button { font: inherit; color: inherit; }
@@ -723,19 +726,34 @@ body.menu-open .mobile-cta { transform: translateY(160%); }
     transition: transform .5s var(--spring), box-shadow .4s;
 }
 .w-card:hover { transform: translateY(-6px) rotate(-.4deg); box-shadow: var(--shadow); }
-.w-media { position: relative; height: 220px; overflow: hidden; background: var(--c, var(--mist-2)); }
-.w-media img {
+/* Celular asomando desde abajo de la tarjeta: marco oscuro con notch y la
+   captura real adentro, en su proporcion (390x844). */
+.w-media { position: relative; height: 236px; overflow: hidden; background: var(--c, var(--mist-2)); }
+.w-phone {
     position: absolute;
     left: 50%;
-    top: 26px;
-    width: 172px;
+    top: 24px;
+    width: 164px;
+    aspect-ratio: 390 / 844;
+    padding: 6px;
+    border-radius: 28px;
+    background: var(--ink);
+    box-shadow: 0 26px 40px -18px rgba(10, 27, 51, .6), inset 0 0 0 1.5px #2a3a55;
     transform: translateX(-50%);
-    border-radius: 22px;
-    border: 6px solid var(--ink);
-    box-shadow: 0 24px 40px -18px rgba(10, 27, 51, .6);
     transition: transform .7s var(--ease);
 }
-.w-card:hover .w-media img { transform: translateX(-50%) translateY(-18px); }
+.w-phone::before {
+    content: "";
+    position: absolute;
+    top: 12px; left: 50%;
+    width: 46px; height: 12px;
+    transform: translateX(-50%);
+    border-radius: 12px;
+    background: var(--ink);
+    z-index: 2;
+}
+.w-phone img { width: 100%; height: 100%; object-fit: cover; object-position: top center; border-radius: 22px; }
+.w-card:hover .w-phone { transform: translateX(-50%) translateY(-22px) rotate(-2deg); }
 .w-body { display: flex; flex-direction: column; gap: 8px; padding: 18px 18px 20px; flex: 1; }
 .w-tag { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); }
 .w-body h3 { font-size: 1.35rem; }
@@ -912,8 +930,9 @@ body.menu-open .mobile-cta { transform: translateY(160%); }
 /* Maqueta "que te elijan": publicacion que junta corazones */
 .post { width: 100%; max-width: 250px; border-radius: 18px; background: var(--paper); box-shadow: var(--shadow); overflow: hidden; }
 .post-img { aspect-ratio: 1; display: grid; place-items: center; background: linear-gradient(135deg, var(--sky-soft), var(--blue-soft)); }
-.post-img img { width: 46%; animation: logoSpin 12s linear infinite; }
-@keyframes logoSpin { to { transform: rotate(360deg); } }
+/* El logo flota y late suave: girandolo entero se veia roto */
+.post-img img { width: 44%; height: auto; aspect-ratio: 1; animation: logoFloat 4s ease-in-out infinite; }
+@keyframes logoFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-8px) scale(1.05); } }
 .post-bar { display: flex; align-items: center; gap: 10px; padding: 10px 14px; font-size: .8rem; font-weight: 700; }
 .post-bar .heart { width: 22px; height: 22px; fill: var(--danger); animation: heartBeat 2.4s var(--spring) infinite; }
 @keyframes heartBeat { 0%, 60%, 100% { transform: scale(1); } 10% { transform: scale(1.35); } 20% { transform: scale(.95); } }
