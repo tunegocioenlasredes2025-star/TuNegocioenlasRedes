@@ -27,6 +27,60 @@
       "marca_agua": "Modelo híbrido",
       "foto": "03-ezer.jpg",
       "url": "https://infoseguridadit.com/electronica/2026/03/09/ezer-seguridad/"
+    },
+    {
+      "categoria": "Distribuidores",
+      "etiqueta": "Nota nueva",
+      "titular": "Ahora la pelea es por el *canal*.",
+      "bajada": "Hikvision, Dahua e Intelbras compiten en Latinoamérica con tres modelos de negocio distintos y un mismo objetivo.",
+      "marca_agua": "El canal",
+      "foto": "04-hikvision-dahua-intelbras.jpg",
+      "url": "https://infoseguridadit.com/electronica/2025/11/11/hikvision-dahua-intelbras/"
+    },
+    {
+      "categoria": "Tecnología",
+      "etiqueta": "Nota nueva",
+      "titular": "Una cámara insegura es una *puerta abierta*.",
+      "bajada": "La ciberseguridad dejó de ser un plus: ISO/IEC 27701 y el AI Act ya marcan la cancha del sector.",
+      "marca_agua": "Ciberseguridad",
+      "foto": "05-ciberseguridad.jpg",
+      "url": "https://infoseguridadit.com/electronica/2025/12/04/ciberseguridad-en-seguridad-electronica/"
+    },
+    {
+      "categoria": "Negocios",
+      "etiqueta": "Nota nueva",
+      "titular": "Las ventas no crecen por volumen. Crecen por *método*.",
+      "bajada": "El sector sigue operando con intuición y urgencia: pocos miden, pocos ajustan, casi nadie ejecuta con constancia.",
+      "marca_agua": "Ventas",
+      "foto": "06-ventas.jpg",
+      "url": "https://infoseguridadit.com/electronica/2025/12/09/ventas-en-seguridad-electronica-2/"
+    },
+    {
+      "categoria": "Instaladores",
+      "etiqueta": "Nota nueva",
+      "titular": "Nadie nace sabiendo *instalar*.",
+      "bajada": "Gustavo Cillis y la academia Nexcam forman técnicos desde cero en cámaras, alarmas, accesos y perimetrales.",
+      "marca_agua": "Formación",
+      "foto": "07-nexcam.jpg",
+      "url": "https://infoseguridadit.com/electronica/2025/10/21/nexcam/"
+    },
+    {
+      "categoria": "Empresas",
+      "etiqueta": "Nota nueva",
+      "titular": "El modelo comercial más *agresivo* del sector.",
+      "bajada": "Cómo funciona el esquema de ventas de Verisure, uno de los más discutidos de la seguridad electrónica.",
+      "marca_agua": "Verisure",
+      "foto": "08-verisure.jpg",
+      "url": "https://infoseguridadit.com/electronica/2026/06/05/verisure/"
+    },
+    {
+      "categoria": "Hotelería",
+      "etiqueta": "Nota nueva",
+      "titular": "Un hotel ya no se protege solo con *cámaras*.",
+      "bajada": "Automatización, IA, gestión de energía y nuevos accesos: de la cámara de seguridad a la habitación inteligente.",
+      "marca_agua": "Hoteles",
+      "foto": "09-hoteles.jpg",
+      "url": "https://infoseguridadit.com/electronica/"
     }
   ]
 }

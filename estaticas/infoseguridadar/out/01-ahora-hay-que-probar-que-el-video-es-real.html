@@ -35,18 +35,19 @@ body{display:flex;align-items:flex-start;justify-content:center}
 .media img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* portada tipografica cuando no hay foto */
-.media.sinfoto{background:
-  radial-gradient(120% 100% at 18% 0%, rgba(43,224,107,.30) 0%, rgba(43,224,107,0) 58%),
+.media.sinfoto{--gx:18%;--gy:0%;--ang:160deg;background:
+  radial-gradient(120% 100% at var(--gx) var(--gy), rgba(43,224,107,.30) 0%, rgba(43,224,107,0) 58%),
   radial-gradient(90% 80% at 100% 100%, rgba(43,224,107,.12) 0%, rgba(0,0,0,0) 60%),
-  linear-gradient(160deg,#0D1512 0%,#050706 55%,#0A0F0D 100%);
+  linear-gradient(var(--ang),#0D1512 0%,#050706 55%,#0A0F0D 100%);
   display:flex;align-items:flex-end;padding:40px 44px}
 .media.sinfoto::before{content:'';position:absolute;inset:0;opacity:.16;
   background-image:linear-gradient(rgba(43,224,107,.55) 1px,transparent 1px),
                    linear-gradient(90deg,rgba(43,224,107,.55) 1px,transparent 1px);
   background-size:64px 64px;
-  -webkit-mask-image:radial-gradient(120% 90% at 20% 10%,#000 0%,transparent 70%)}
+  -webkit-mask-image:radial-gradient(120% 90% at var(--gx) 10%,#000 0%,transparent 70%)}
 .media.sinfoto .marca-agua{font-family:'Archivo Black',sans-serif;font-size:104px;line-height:.88;
-  letter-spacing:-.035em;color:rgba(255,255,255,.09);text-transform:uppercase;position:relative}
+  letter-spacing:-.035em;color:rgba(255,255,255,.09);text-transform:uppercase;position:relative;
+  white-space:nowrap;max-width:100%}
 
 /* ---- texto ---- */
 .titular{margin-top:34px;flex:0 0 auto;text-align:left;font-weight:900;font-stretch:92%;
@@ -84,7 +85,7 @@ body{display:flex;align-items:flex-start;justify-content:center}
     <span class="kicker">NOTA NUEVA</span>
   </div>
 
-  <div class="media sinfoto"><span class="marca-agua">Deepfakes</span></div>
+  <div class="media sinfoto" style="--gx:18%;--gy:0%;--ang:160deg"><span class="marca-agua">Deepfakes</span></div>
 
   <h1 class="titular" id="titular">Ahora hay que probar que el video es <em>real</em>.</h1>
   <p class="bajada" id="bajada">ONVIF presentó Media Signing: firma digital para verificar que una grabación no fue alterada.</p>
@@ -124,6 +125,12 @@ body{display:flex;align-items:flex-start;justify-content:center}
     // si sobro aire, la foto crece para cerrar la composicion
     while(!desborda()&&m<780){m+=6;media.style.height=m+'px';}
     if(desborda()){m-=6;media.style.height=m+'px';}
+  }
+  var agua=document.querySelector('.marca-agua');
+  if(agua){
+    var caja=agua.parentElement, a=parseFloat(getComputedStyle(agua).fontSize);
+    var util=caja.clientWidth-88;
+    while(agua.scrollWidth>util&&a>34){a-=2;agua.style.fontSize=a+'px';}
   }
   document.documentElement.dataset.listo='1';
 })();
