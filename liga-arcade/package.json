@@ -1,0 +1,33 @@
+{
+  "name": "liga-arcade",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Liga Arcade: juego de fútbol arcade 2.5D para celular",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm run test && npm run build",
+    "smoke": "node scripts/smoke.mjs",
+    "icons": "node scripts/make-icons.mjs",
+    "cap:sync": "cap sync android"
+  },
+  "dependencies": {
+    "@capacitor/core": "8.5.1",
+    "@capacitor/preferences": "8.0.0",
+    "phaser": "3.90.0"
+  },
+  "devDependencies": {
+    "@capacitor/android": "8.5.1",
+    "@capacitor/cli": "8.5.1",
+    "@types/node": "22.20.2",
+    "playwright": "1.56.1",
+    "typescript": "5.9.3",
+    "vite": "7.3.6",
+    "vitest": "3.2.7"
+  }
+}

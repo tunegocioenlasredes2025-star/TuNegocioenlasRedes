@@ -15,3 +15,8 @@ carousel_generator.py
 Mejooras pagina tnr.md.txt
 __pycache__/
 *.pyc
+
+# Juego Liga Arcade: dependencias y builds intermedias (la build final vive en juego/)
+liga-arcade/node_modules/
+liga-arcade/www/
+liga-arcade/smoke-out/

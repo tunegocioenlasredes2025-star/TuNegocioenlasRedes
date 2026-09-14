@@ -1,0 +1,51 @@
+name: Liga Arcade · APK Android
+
+on:
+  push:
+    branches: ['**']
+    paths: ['liga-arcade/**', '.github/workflows/liga-arcade-android.yml']
+  workflow_dispatch:
+
+jobs:
+  check-and-build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: liga-arcade
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: liga-arcade/package-lock.json
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Tipos + tests + build web
+        run: npm run check
+
+      - name: Build para Capacitor (rutas relativas a la raíz)
+        run: BASE_PATH=/ OUT_DIR=www npm run build
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Sincronizar Capacitor
+        run: npx cap sync android
+
+      - name: Compilar APK debug
+        run: cd android && chmod +x gradlew && ./gradlew assembleDebug --no-daemon
+
+      - name: Publicar APK como artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: liga-arcade-debug-apk
+          path: liga-arcade/android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 30

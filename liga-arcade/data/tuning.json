@@ -1,0 +1,46 @@
+{
+  "ball": {
+    "gravity": 11.5,
+    "airDrag": 0.006,
+    "rollingDecel": 2.6,
+    "stopSpeed": 0.12,
+    "bounceRestitution": 0.55,
+    "bounceHorizontalKeep": 0.82,
+    "minBounceVz": 1.2,
+    "spinMagnus": 0.03,
+    "spinDecay": 0.55,
+    "postRestitution": 0.7,
+    "netDamping": 14,
+    "radius": 0.11
+  },
+  "kick": {
+    "shot": { "minSpeed": 14, "maxSpeed": 31, "minElevationDeg": 3, "maxElevationDeg": 22, "spinFromStick": 9 },
+    "pass": { "minSpeed": 9, "maxSpeed": 21, "elevationDeg": 0, "spinFromStick": 0 },
+    "lob": { "minSpeed": 12, "maxSpeed": 24, "elevationDeg": 38, "spinFromStick": 3 },
+    "maxHoldSeconds": 0.85
+  },
+  "player": {
+    "radius": 0.38,
+    "runSpeed": 7.0,
+    "sprintSpeed": 8.7,
+    "accel": 26,
+    "decel": 34,
+    "turnRateRad": 14,
+    "withBallSpeedFactor": 0.92,
+    "controlRadius": 0.9,
+    "controlMaxBallZ": 0.55,
+    "controlMaxRelSpeed": 7.5,
+    "dribbleOffset": 0.5,
+    "knockAheadDistance": 1.6,
+    "knockAheadSpeedFactor": 1.28,
+    "ownershipRadius": 1.9,
+    "kickImmunitySeconds": 0.22,
+    "dribbleSpringLambda": 14
+  },
+  "camera": {
+    "lookAhead": 6,
+    "followLambda": 5.5,
+    "zoomMin": 1.35,
+    "zoomMax": 1.7
+  }
+}

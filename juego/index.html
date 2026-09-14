@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <title>Liga Arcade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="description" content="Liga Arcade: fútbol arcade argentino para el celular. Gratis, sin conexión." />
+  <meta name="theme-color" content="#0b1d0f" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Liga Arcade" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="manifest" href="/juego/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="/juego/icons/apple-touch-icon.png" />
+  <link rel="icon" href="/juego/icons/icon-192.png" />
+  <style>
+    :root {
+      --sat: env(safe-area-inset-top, 0px);
+      --sar: env(safe-area-inset-right, 0px);
+      --sab: env(safe-area-inset-bottom, 0px);
+      --sal: env(safe-area-inset-left, 0px);
+      color-scheme: dark;
+    }
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; background: #0b1d0f; overflow: hidden; }
+    body {
+      position: fixed; inset: 0;
+      touch-action: none; overscroll-behavior: none;
+      -webkit-user-select: none; user-select: none;
+      -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    #game { position: fixed; inset: 0; }
+    #game canvas { display: block; touch-action: none; }
+    #rotate {
+      position: fixed; inset: 0; display: none; align-items: center; justify-content: center;
+      flex-direction: column; gap: 16px; background: #0b1d0f; color: #e9f5ec; z-index: 10; text-align: center; padding: 24px;
+    }
+    #rotate .phone { width: 42px; height: 72px; border: 3px solid #e9f5ec; border-radius: 8px; animation: spin 1.6s ease-in-out infinite; }
+    @keyframes spin { 0%, 20% { transform: rotate(0deg); } 60%, 100% { transform: rotate(90deg); } }
+    @media (orientation: portrait) { #rotate { display: flex; } }
+    #boot { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; color: #9fd3ac; font-size: 14px; letter-spacing: 2px; z-index: 5; pointer-events: none; }
+  </style>
+  <script type="module" crossorigin src="/juego/assets/index-YerymNB1.js"></script>
+  <link rel="modulepreload" crossorigin href="/juego/assets/phaser-DXXWZowi.js">
+</head>
+<body>
+  <div id="game"></div>
+  <div id="boot">CARGANDO</div>
+  <div id="rotate"><div class="phone"></div><div>Girá el teléfono</div></div>
+  <script>
+    if ('serviceWorker' in navigator && location.protocol === 'https:') {
+      // Scope sin barra final: Vercel sirve el juego en /juego (redirige /juego/ → /juego) y el SW tiene que cubrir esa URL.
+      const base = '/juego/';
+      const scope = base.length > 1 ? base.replace(/\/$/, '') : base;
+      window.addEventListener('load', () => { navigator.serviceWorker.register(base + 'sw.js', { scope }).catch(() => {}); });
+    }
+  </script>
+</body>
+</html>
