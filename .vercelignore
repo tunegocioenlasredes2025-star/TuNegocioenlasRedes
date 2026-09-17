@@ -15,3 +15,6 @@ fonts/*.ttf
 
 # Documento interno de trabajo
 PENDIENTE-DATOS.md
+
+# Carpeta de trabajo de contenido para redes: no se publica
+contenido/

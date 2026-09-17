@@ -1,5 +1,7 @@
 Publicaciones, logo, etc/
 *.pdf
+# ...salvo los PDF editables de los carruseles, que son entregable
+!contenido/**/*.pdf
 *.zip
 *.mp4
 # ...salvo los del sitio
