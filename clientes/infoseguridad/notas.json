@@ -1,0 +1,81 @@
+{
+  "_comentario": [
+    "Cola de notas de infoseguridadit.com pendientes de subir a Instagram.",
+    "Campos: id (nombre del PNG) · rubro (píldora verde) · sello (texto de la derecha)",
+    "titular (termina en punto o signo) · destacar (la parte del titular que va en verde)",
+    "bajada (1-2 renglones) · foto (archivo dentro de fotos/) · encuadre (background-position)",
+    "Sin 'foto' la pieza sale en modo tipográfico, que también es parte del sistema."
+  ],
+  "notas": [
+    {
+      "id": "aliara-capacitacion",
+      "rubro": "INSTALADORES",
+      "sello": "NOTA NUEVA",
+      "titular": "Capacitarse ya no es opcional para el instalador.",
+      "destacar": "opcional",
+      "bajada": "Aliara lanza la capacitación oficial y la certificación de Power Shock Lite, exclusiva para instaladores.",
+      "foto": null,
+      "encuadre": "center"
+    },
+    {
+      "id": "deepfakes-videovigilancia",
+      "rubro": "TECNOLOGÍA",
+      "sello": "NOTA NUEVA",
+      "titular": "¿Cómo se prueba que una grabación es real?",
+      "destacar": "real",
+      "bajada": "Los deepfakes obligan a la videovigilancia a demostrar el origen y la integridad de cada video.",
+      "foto": null,
+      "encuadre": "center"
+    },
+    {
+      "id": "onvif-media-signing",
+      "rubro": "INDUSTRIA",
+      "sello": "NOTA NUEVA",
+      "titular": "ONVIF quiere firmar cada video de seguridad.",
+      "destacar": "firmar",
+      "bajada": "El nuevo Media Signing Add-on permite verificar el origen y la integridad de la grabación. Ya está la versión candidata.",
+      "foto": null,
+      "encuadre": "center"
+    },
+    {
+      "id": "seguridad-sin-internet",
+      "rubro": "INSTALADORES",
+      "sello": "NOTA NUEVA",
+      "titular": "Se cae internet: qué sigue funcionando y qué no.",
+      "destacar": "internet",
+      "bajada": "Cámaras, alarmas y control de accesos conservan funciones críticas aun sin conexión. Qué se pierde y qué se mantiene.",
+      "foto": null,
+      "encuadre": "center"
+    },
+    {
+      "id": "tecnologia-hoteles",
+      "rubro": "INTEGRADORES",
+      "sello": "NOTA NUEVA",
+      "titular": "El hotel dejó de ser cámaras y alarmas.",
+      "destacar": "hotel",
+      "bajada": "Automatización, IA, gestión de energía, conectividad y nuevas plataformas: la tecnología hotelera cambió de escala.",
+      "foto": null,
+      "encuadre": "center"
+    },
+    {
+      "id": "monitoreo-ampliado",
+      "rubro": "MONITOREO",
+      "sello": "NOTA NUEVA",
+      "titular": "Monitorear ya no es solo escuchar una alarma.",
+      "destacar": "escuchar",
+      "bajada": "Video verificación, apps, seguimiento vehicular, guardias virtuales e IA: el monitoreo se volvió un servicio mucho más amplio.",
+      "foto": null,
+      "encuadre": "center"
+    },
+    {
+      "id": "seguridad-premium",
+      "rubro": "DISTRIBUIDORES",
+      "sello": "NOTA NUEVA",
+      "titular": "Qué significa premium en seguridad electrónica.",
+      "destacar": "premium",
+      "bajada": "Confiabilidad, integración y soporte técnico: los factores que hoy definen el mercado profesional.",
+      "foto": null,
+      "encuadre": "center"
+    }
+  ]
+}

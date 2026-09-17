@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>InfoSeguridadAR — estática de nota</title>
+<style id="fuentes">/*__FUENTES__*/</style>
+<style>
+  /* ═══════════════════════════════════════════════════════════
+     SISTEMA VISUAL — infoseguridadAR
+     Lienzo 1080×1350 (4:5). Ver SISTEMA-VISUAL.md
+     ═══════════════════════════════════════════════════════════ */
+  :root{
+    --bg:        #101214;   /* casi negro, nunca #000 */
+    --verde:     #7ED957;   /* verde de marca */
+    --blanco:    #FFFFFF;
+    --bajada:    #B9C0C6;
+    --dominio:   #6E767C;
+    --tinta:     #0B0D0E;   /* texto sobre verde */
+
+    --margen:    44px;      /* margen lateral (medido del feed real) */
+    --foto-top:  106px;     /* la foto arranca debajo de la barra de rubro */
+    --foto-alto: 615px;     /* franja de foto, bordes duros */
+
+    --sans: 'Inter', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#1a1c1f}
+  body{display:flex;flex-direction:column;align-items:center;gap:40px;padding:40px}
+
+  .pieza{
+    position:relative;
+    width:1080px;height:1350px;
+    background:var(--bg);
+    overflow:hidden;
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    text-align:left;                 /* forzado, nunca heredar centrado */
+  }
+
+  /* ── FOTO ────────────────────────────────────────────────── */
+  /* La foto es una franja de bordes duros: arranca DEBAJO de la barra de
+     rubro y termina limpia contra el fondo. Sin degradados: así es la marca. */
+  .foto{
+    position:absolute;left:0;right:0;
+    top:var(--foto-top);height:var(--foto-alto);
+    background:#15181a center/cover no-repeat;
+  }
+
+  /* Variante tipográfica (nota sin foto): el fondo ocupa el lienzo entero */
+  .pieza.sin-foto .foto{
+    top:0;height:100%;
+    background:
+      radial-gradient(72% 42% at 80% 2%,   rgba(126,217,87,.17) 0%, rgba(126,217,87,0) 66%),
+      radial-gradient(60% 40% at 4% 26%,   rgba(126,217,87,.06) 0%, rgba(126,217,87,0) 68%),
+      linear-gradient(166deg, #171c19 0%, #131617 44%, #101214 78%);
+  }
+  .pieza.sin-foto .foto::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(to bottom,
+      rgba(16,18,20,.22) 0%,
+      rgba(16,18,20,0)   26%,
+      rgba(16,18,20,.62) 58%,
+      var(--bg)          84%);
+  }
+  .pieza.sin-foto .foto::before{      /* trama técnica sutil */
+    content:'';position:absolute;inset:0;opacity:1;
+    background-image:
+      linear-gradient(rgba(126,217,87,.13) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(126,217,87,.13) 1px, transparent 1px);
+    background-size:108px 108px;
+    mask-image:linear-gradient(to bottom, #000 0%, rgba(0,0,0,.55) 42%, transparent 66%);
+  }
+
+  /* ── BARRA SUPERIOR: rubro + NOTA NUEVA ──────────────────── */
+  .barra{
+    position:absolute;top:32px;left:var(--margen);
+    display:flex;align-items:center;gap:20px;
+  }
+  .rubro{
+    background:var(--verde);color:var(--tinta);
+    font-family:var(--mono);font-weight:800;font-size:21px;
+    letter-spacing:.10em;text-transform:uppercase;
+    padding:12px 22px 11px;border-radius:2px;white-space:nowrap;
+  }
+  .sep{width:3px;height:27px;background:var(--verde);border-radius:2px}
+  .sello{
+    font-family:var(--mono);font-weight:800;font-size:21px;
+    letter-spacing:.15em;text-transform:uppercase;color:var(--blanco);
+    white-space:nowrap;
+  }
+
+  /* ── BLOQUE INFERIOR ─────────────────────────────────────── */
+  .contenido{
+    position:absolute;left:var(--margen);right:var(--margen);bottom:0;
+    padding-bottom:76px;
+    display:flex;flex-direction:column;
+    text-align:left;
+  }
+
+  .titular{
+    font-weight:900;
+    font-size:var(--titular-size, 92px);
+    line-height:.91;                 /* medido del feed: interlineado muy ceñido */
+    letter-spacing:-.028em;
+    color:var(--blanco);
+    text-wrap:balance;
+  }
+  .titular em{font-style:normal;color:var(--verde)}   /* palabra destacada */
+
+  .bajada{
+    margin-top:22px;
+    font-weight:400;font-size:31px;line-height:1.40;
+    letter-spacing:-.004em;color:var(--bajada);
+    max-width:94%;
+  }
+
+  /* ── PIE: CTA + logo ─────────────────────────────────────── */
+  .pie{
+    margin-top:26px;
+    display:flex;align-items:flex-end;justify-content:space-between;gap:28px;
+  }
+  .cta{
+    display:flex;align-items:center;gap:14px;
+    font-weight:600;font-size:29px;letter-spacing:-.005em;color:var(--verde);
+  }
+  .cta svg{flex:none;width:38px;height:20px}
+
+  .marca{display:flex;flex-direction:column;align-items:flex-end;gap:9px;flex:none}
+  .marca img{height:67px;width:auto;display:block}
+  .dominio{
+    font-family:var(--sans);font-weight:500;font-size:21px;
+    letter-spacing:.01em;color:var(--dominio);
+  }
+</style>
+</head>
+<body>
+
+<!-- ▼▼ El generador (generar.py) reemplaza este bloque por una pieza por nota ▼▼ -->
+<div class="pieza" id="pieza">
+  <div class="foto" style="background-image:url('')"></div>
+
+  <div class="barra">
+    <span class="rubro">INSTALADORES</span>
+    <span class="sep"></span>
+    <span class="sello">NOTA NUEVA</span>
+  </div>
+
+  <div class="contenido">
+    <h1 class="titular">Titular de la <em>nota</em> acá.</h1>
+    <p class="bajada">Bajada corta que explica de qué se trata la nota.</p>
+    <div class="pie">
+      <span class="cta">
+        <svg viewBox="0 0 34 18" fill="none" aria-hidden="true">
+          <path d="M0 9h30M23 2l8 7-8 7" stroke="currentColor" stroke-width="2.6"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Nota completa en el link de la bio
+      </span>
+      <span class="marca">
+        <img src="logo-infoseguridad.svg" alt="infoseguridadAR">
+        <span class="dominio">infoseguridadit.com</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
