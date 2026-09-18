@@ -83,14 +83,14 @@ lo decidimos nosotros.
 Todas salen de trabajo real que ya existe. Ninguna necesita inventar nada.
 
 ### Caso real
-1. **TonCars** — "El problema no era la web. Era el primer mensaje." Cómo una ficha por unidad cambia la consulta que entra. *(hecho: `carruseles/00-muestra-estilo/`)*
-2. **Mundo Cortinas** — "Una black out y una sunscreen no son lo mismo. Si eso no está escrito, lo explicás cincuenta veces por semana."
+1. **TonCars** — "El problema no era la web. Era el primer mensaje." Cómo una ficha por unidad cambia la consulta que entra. ✅ *(muestra de estilo, 4 slides: `carruseles/00-muestra-estilo/`)*
+2. **Mundo Cortinas** — "Contestás lo mismo todos los días." ✅ *(8 slides: `carruseles/01-mundo-cortinas/`)*
 3. **Medisur** — "Nadie busca 'un centro médico'. Busca el estudio que le pidieron." Por qué una página por estudio, a 2.600 km de acá.
 4. **GICI** — "Un contador no compite con otro contador. Compite con el que aparece primero cuando buscás 'contador para monotributo'."
 5. **Pasión Matera** — Qué cambia cuando un producto artesanal tiene carrito y no solo un DM.
 
 ### El detalle
-6. "Por qué en la web de TonCars hay **diez** botones de WhatsApp y no uno."
+6. "Por qué en la web de TonCars hay **diez** botones de WhatsApp y no uno." ✅ *(8 slides: `carruseles/02-diez-botones-whatsapp/`)*
 7. "Por qué escribimos el precio de la cortina antes de que pregunten."
 8. "El campo del formulario que sacamos y subió las consultas." *(solo si hay dato real)*
 9. "Lo que hace tu web en los 3 segundos que la persona tarda en decidir si se queda." — con captura real, no con una foto de reloj.

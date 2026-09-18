@@ -68,8 +68,37 @@ Escalas de titular sobre 1080×1350: `112px` (hero) · `92px` · `74px` ·
 | 06 | QUÉ TIENE HOY | El resultado verificable |
 | 07 | — | CTA: demo gratis en 72 hs |
 
+## Chequeo automático de titulares
+
+Un titular con saltos de línea puestos a mano se puede partir igual si la línea
+no entra a lo ancho, y eso arruina el ritmo del slide sin que salte a la vista.
+`build.py` compara los renglones que se dibujaron contra los que pide el copy y
+avisa en la consola:
+
+```
+! slide 2: el titular se corta en 5 lineas y el copy pide 3 -> Nadie compra una cortina...
+```
+
+Cuando aparece, se baja un escalón de tamaño (`xl` → `lg` → `md` → `sm`) o se
+reescribe la línea más larga. Como referencia: en `lg` entran unos 19 caracteres
+por línea, en `md` unos 24.
+
 ## Archivos
 
-- `build.py` — render a PNG 2x + PDF vectorial
-- `carruseles/<nombre>/make.py` — copy y estructura de cada carrusel
-- `carruseles/<nombre>/index.html` — standalone, se puede abrir en el navegador
+- `sistema.py` — la paleta, las tipografías, el molde de slide y los bloques
+  (`h`, `sub`, `split`, `pasos`, `vs`, `cta`). **Un solo lugar:** si hay que
+  cambiar un color o un tamaño, se cambia acá y cambian todos los carruseles
+- `build.py` — render a PNG 2x + PDF vectorial + hoja de contacto
+- `fuentes-para-canva/` — las tres caras estáticas: `.woff2` para el HTML,
+  `.ttf` para subir a Canva
+- `carruseles/<nombre>/make.py` — solo el copy y el orden de los slides
+- `carruseles/<nombre>/caption.txt` — el texto del posteo
+- `carruseles/<nombre>/index.html` — standalone, se abre en cualquier navegador
+
+## Cómo se arma uno nuevo
+
+Copiar un `make.py` existente, cambiar la lista `SLIDES` y correr:
+
+```
+python3 contenido/build.py contenido/carruseles/<carpeta>
+```

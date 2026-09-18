@@ -43,6 +43,28 @@ def img(rel, mime):
     return "data:%s;base64,%s" % (mime, b64(rel))
 
 
+# Un titular con <br> a mano se puede partir igual si la linea no entra a lo
+# ancho, y eso arruina el ritmo del slide sin que salte a la vista. Esto compara
+# los renglones que se dibujaron contra los que pide el copy.
+CHEQUEO_DE_LINEAS = """
+() => {
+  const avisos = [];
+  document.querySelectorAll('.slide').forEach((sl, i) => {
+    sl.querySelectorAll('h1').forEach(h => {
+      const pedidas = h.innerHTML.split(/<br\\s*\\/?>/i).length;
+      // por altura y no con getClientRects(): un <span class="mark"> adentro del
+      // titular parte el rango en varios rects dentro del mismo renglon
+      const lh = parseFloat(getComputedStyle(h).lineHeight);
+      const reales = Math.round(h.getBoundingClientRect().height / lh);
+      if (reales > pedidas) avisos.push({slide: i + 1, pedidas, reales,
+        texto: h.textContent.trim().slice(0, 52)});
+    });
+  });
+  return avisos;
+}
+"""
+
+
 def render(folder):
     from playwright.sync_api import sync_playwright
     from pypdf import PdfReader, PdfWriter
@@ -59,6 +81,11 @@ def render(folder):
         pg = b.new_page(viewport={'width': 1080, 'height': 1350}, device_scale_factor=2)
         pg.goto((d / 'index.html').as_uri())
         pg.wait_for_timeout(1200)
+
+        avisos = pg.evaluate(CHEQUEO_DE_LINEAS)
+        for a in avisos:
+            print('  ! slide %(slide)s: el titular se corta en %(reales)s lineas y el copy '
+                  'pide %(pedidas)s -> %(texto)s' % a)
 
         slides = pg.query_selector_all('.slide')
         for i, s in enumerate(slides, 1):
