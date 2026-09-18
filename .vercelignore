@@ -1,6 +1,7 @@
 # Herramientas de build: no se publican
 _build/
 clientes/
+herramientas/
 liga-arcade/
 carrusel-studio/
 carrusel-studio.skill.zip
