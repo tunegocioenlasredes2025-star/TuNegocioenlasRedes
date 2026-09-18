@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render de los carruseles de TNR: PNG 2x para publicar + PDF editable para Canva.
+"""Render de los carruseles de TNR: PNG para publicar, PPTX para editar en Canva.
 
 Dos decisiones que costaron encontrar y conviene no tocar:
 
@@ -11,6 +11,9 @@ Dos decisiones que costaron encontrar y conviene no tocar:
 2. El PDF se imprime slide por slide y despues se unen las paginas. Imprimiendo
    todo de una, Chromium agrega una pagina en blanco antes de la primera y otra
    despues de la ultima.
+
+El PPTX lo arma pptx_export.py y es la via recomendada para Canva; el PDF queda
+como respaldo (ver contenido/editar-en-canva.md).
 
 Uso:  python3 contenido/build.py contenido/carruseles/<carpeta>
 """
@@ -113,6 +116,10 @@ def render(folder):
     assert n == len(slides), 'el PDF quedo con %d paginas para %d slides' % (n, len(slides))
 
     hoja_de_contacto(out)
+
+    from pptx_export import exportar
+    exportar(d)
+
     print('%d slides -> %s' % (len(slides), out))
 
 

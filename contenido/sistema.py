@@ -32,7 +32,7 @@ body{background:#DDE5F0;display:flex;flex-direction:column;align-items:center;ga
 /* etiqueta superior: el eyebrow de la web, con el guion celeste */
 .eyebrow{display:flex;align-items:center;gap:16px;font-size:22px;font-weight:700;
   letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
-.eyebrow::before{content:"";width:40px;height:5px;border-radius:5px;background:var(--sky);flex:none}
+.dash{width:40px;height:5px;border-radius:5px;background:var(--sky);flex:none}
 .navy .eyebrow{color:#8FD8F5}
 
 .body-zone{flex:1;display:flex;flex-direction:column;justify-content:center;
@@ -44,9 +44,9 @@ p.sub{font-size:36px;line-height:1.42;color:var(--ink-2);margin-top:36px;max-wid
 .navy p.sub{color:#B9CFE8}
 
 /* marcador celeste detras de la palabra clave: la firma de la marca */
-.mark{background:linear-gradient(transparent 56%,var(--hl) 56%,var(--hl) 94%,transparent 94%);
-  padding:0 .06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.navy .mark{background:linear-gradient(transparent 56%,rgba(0,168,232,.42) 56%,rgba(0,168,232,.42) 94%,transparent 94%)}
+.mark{box-shadow:inset 0 -.36em 0 var(--hl);padding:0 .06em;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
+.navy .mark{box-shadow:inset 0 -.36em 0 rgba(0,168,232,.45)}
 .blue{color:var(--blue)} .navy .blue{color:#63C8F2}
 
 /* dos columnas: texto + captura real del cliente */
@@ -62,14 +62,16 @@ p.sub{font-size:36px;line-height:1.42;color:var(--ink-2);margin-top:36px;max-wid
 
 /* lista numerada: los pasos de un proceso */
 ol.pasos{margin-top:52px;display:flex;flex-direction:column;gap:30px}
+ol.pasos .pcol{display:block}
 ol.pasos li{display:flex;align-items:baseline;gap:26px;font-size:38px;line-height:1.24;
   font-weight:700;color:var(--ink)}
 .navy ol.pasos li{color:#fff}
 ol.pasos b{font-family:var(--display);font-size:46px;font-weight:800;color:var(--blue);
   flex:none;width:72px;letter-spacing:-.02em}
 .navy ol.pasos b{color:#63C8F2}
-ol.pasos span{font-weight:400;color:var(--ink-2);display:block;font-size:30px;margin-top:6px}
-.navy ol.pasos span{color:#B9CFE8}
+ol.pasos .pt{font-style:normal}
+ol.pasos .pa{font-weight:400;color:var(--ink-2);display:block;font-size:30px;margin-top:6px}
+.navy ol.pasos .pa{color:#B9CFE8}
 
 /* comparacion antes / despues */
 .vs{margin-top:54px;display:flex;flex-direction:column;gap:22px}
@@ -124,17 +126,22 @@ def split(texto_html, imagen, alt=''):
 
 def pasos(items):
     """items: [(numero, titulo, aclaracion)]"""
-    lis = ''.join('<li><b>%s</b><div>%s<span>%s</span></div></li>' % i for i in items)
+    lis = ''.join('<li><b>%s</b><div class="pcol"><i class="pt">%s</i>'
+                  '<span class="pa">%s</span></div></li>' % i for i in items)
     return '<ol class="pasos">%s</ol>' % lis
 
 
 def vs(antes, ahora):
-    return ('<div class="vs"><div class="antes"><em>Antes</em>%s</div>'
-            '<div class="ahora"><em>Ahora</em>%s</div></div>' % (antes, ahora))
+    return ('<div class="vs"><div class="antes"><em>Antes</em><span>%s</span></div>'
+            '<div class="ahora"><em>Ahora</em><span>%s</span></div></div>' % (antes, ahora))
 
 
 def cta(texto):
-    return '<div class="cta">%s %s</div>' % (texto, ARROW)
+    return '<div class="cta"><span>%s</span>%s</div>' % (texto, ARROW)
+
+
+def eyebrow(texto):
+    return '<div class="eyebrow"><i class="dash"></i><span>%s</span></div>' % texto
 
 
 def page(titulo, slides):
@@ -142,17 +149,17 @@ def page(titulo, slides):
     logo = img('logo-256.png', 'image/png')
     total = len(slides)
     out = []
-    for i, (bg, eyebrow, body) in enumerate(slides, 1):
+    for i, (bg, eye, body) in enumerate(slides, 1):
         swipe = '<div class="swipe">Deslizá %s</div>' % ARROW if i < total else ''
         out.append(
             '<section class="slide %s">\n'
-            '  <div class="eyebrow">%s</div>\n'
+            '  %s\n'
             '  <div class="body-zone">%s</div>\n'
             '  <div class="foot">\n'
             '    <div class="brand"><img src="%s" alt=""><span>tunegocioenlasredes.com.ar</span></div>\n'
             '    %s<div class="num">%02d / %02d</div>\n'
             '  </div>\n'
-            '</section>' % (bg, eyebrow, body, logo, swipe, i, total))
+            '</section>' % (bg, eyebrow(eye), body, logo, swipe, i, total))
     return ('<!doctype html><html lang="es-AR"><meta charset="utf-8">'
             '<title>%s</title><style>%s%s</style>%s</html>'
             % (titulo, fonts_css(), CSS, "\n".join(out)))
