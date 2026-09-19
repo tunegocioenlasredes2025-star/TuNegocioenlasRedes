@@ -79,7 +79,22 @@ a la web o a las redes.
 | Servicio | Precio por mes | Qué incluye | De dónde sale |
 |---|---|---|---|
 | Mantenimiento web | **$100.000** | Hosting y dominio al día, cambios de contenido, que todo ande | Claudio pagó 100.000 |
-| Gestión de Google o Meta Ads | **$100.000 + la inversión** | Armado, seguimiento e informe mensual. La inversión en anuncios la paga el cliente directo a la plataforma | Claudio 100.000 · Setup 120.000 |
+| Gestión de Google o Meta Ads | **Desde $150.000, o el 15% de la inversión, lo que sea mayor** | Armado, seguimiento e informe mensual. La inversión en anuncios la paga el cliente directo a la plataforma | Mercado: $120.000 a $400.000 (ver abajo) |
+
+**Por qué Ads arranca en $150.000 y no más.** Estaba en $100.000, lo que nos
+pagaron Claudio y Setup, y eso queda por debajo del piso del mercado. No lo
+ponemos más alto porque todavía no tenemos resultados de Meta Ads para
+mostrar: las campañas de Meta que hicimos fueron gratis. Además, un negocio de
+barrio invierte entre $50.000 y $100.000 por mes, y el fee no puede comerse la
+mayor parte del presupuesto. **Cuando tengamos 2 o 3 casos con números**
+(consultas o ventas por mes con tanta inversión), sube a $250.000–$350.000. El
+primer caso es la campaña de F5: hay que medirla completa.
+
+| El cliente invierte | Cobramos |
+|---|---|
+| $100.000 | $150.000 |
+| $1.000.000 | $150.000 |
+| $2.000.000 | $300.000 |
 
 ### Redes
 
@@ -130,6 +145,7 @@ plan sin grabación no tiene tope, porque Claude lo produce y lo programa.
 | Cliente | Hoy | Con la lista | Qué hacer |
 |---|---|---|---|
 | Setup | Mantenimiento $32.000 | $100.000 | Mantenerlo hasta el ajuste de enero. Es el que más pagó y está muy conforme |
+| Setup y Claudio | Ads a $120.000 y $100.000 | Desde $150.000 | Mantenerlos hasta el ajuste de enero |
 | F5 | $90.000 por 4 piezas + 2 reels | Unos $120.000 con esta lógica | Cumplir la campaña prometida, mostrar resultados y ajustar en la renovación |
 | Satelital | $120.000 por 16 piezas | $180.000 (sin grabación) | Primero el informe con números. Sin eso, el aumento acelera la baja |
 | Motos Roll | Mes gratis | Plan sin grabación ($180.000) o con grabación ($350.000) | Al terminar el mes gratis, ofrecer con los números del mes en la mano |
@@ -149,6 +165,12 @@ para ubicarse, no como verdad.
 - **Tiendas online:** un estudio ofrece la tienda a medida a $250.000; con
   WooCommerce, el primer año cuesta de $300.000 a $800.000.
   [DP Estudio, enero 2026](https://dptiendaonline.com/blog/articulos/precio-tienda-online-argentina-2026).
+- **Ads:** para PyMEs, la gestión de Meta sale $120.000 a $400.000 por mes, con
+  la inversión aparte; las agencias especializadas cobran el 10% a 20% de lo
+  invertido, y la proporción habitual es 60-75% a anuncios y el resto a la
+  agencia. [SODI](https://www.sodi.com.ar/blog/cuanto-cuesta-publicidad-facebook-instagram-argentina)
+  · [Osyris](https://osyrismarketingdigital.com/blog/agencia-meta-ads-que-hace-como-elegir-precios)
+  · [Finmi, agosto 2026](https://finmi.com.ar/blog/cuanto-cuesta-agencia-marketing-digital-argentina).
 - **Identidad:** diseño de marca para una PyME $480.626; logo para
   profesionales $240.313; diseño de marca básico $153.800.
   [Tarifario.org, diciembre 2025](https://tarifario.org/identidad-c7).
