@@ -141,6 +141,27 @@ MEDIR = """
 """
 
 
+# Esconde todo lo que va arriba de la foto, para capturarla limpia. visibility
+# en vez de display: display cambiaria la maqueta y con ella las medidas.
+TAPAR = """
+([n, ocultar]) => {
+  const s = document.querySelectorAll('.slide')[n];
+  const v = ocultar ? 'hidden' : '';
+  s.querySelectorAll('.eyebrow, .foot').forEach(e => e.style.visibility = v);
+  s.querySelectorAll('.body-zone > *:not(.bgimg)').forEach(e => e.style.visibility = v);
+}
+"""
+
+
+def _jpeg(png, calidad=86):
+    """La foto a sangre en PNG pesa varios MB y Canva la sube igual de bien en JPEG."""
+    from PIL import Image
+    im = Image.open(io.BytesIO(png)).convert('RGB')
+    buf = io.BytesIO()
+    im.save(buf, 'JPEG', quality=calidad, optimize=True)
+    return buf.getvalue()
+
+
 def _rgb(c):
     return RGBColor(*c)
 
@@ -217,6 +238,22 @@ def exportar(folder):
                     _rect(slide, pieza)
                 elif pieza['tipo'] == 'text':
                     _texto(slide, pieza)
+                elif pieza['sel'] == '.bgimg':
+                    # La foto a sangre se sale del slide (inset negativo) y el
+                    # slide la recorta con overflow:hidden. Si se captura el
+                    # elemento, lo de afuera trae pedazos del slide de al lado:
+                    # se captura la ventana del slide, con el texto escondido.
+                    seccion = pg.query_selector_all('.slide')[n]
+                    caja = seccion.bounding_box()
+                    pg.evaluate(TAPAR, [n, True])
+                    # full_page: sin eso el recorte se corta en el alto de la
+                    # ventana y la foto sale unos pixeles mas baja
+                    foto = pg.screenshot(full_page=True,
+                                         clip={'x': caja['x'], 'y': caja['y'],
+                                               'width': W, 'height': H})
+                    pg.evaluate(TAPAR, [n, False])
+                    slide.shapes.add_picture(io.BytesIO(_jpeg(foto)), 0, 0,
+                                             Emu(W * PX), Emu(H * PX))
                 else:
                     el = pg.query_selector_all('.slide')[n].query_selector_all(pieza['sel'])[pieza['idx']]
                     slide.shapes.add_picture(
