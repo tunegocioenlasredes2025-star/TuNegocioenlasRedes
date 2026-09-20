@@ -92,6 +92,24 @@ ol.pasos .pa{font-weight:400;color:var(--ink-2);display:block;font-size:30px;mar
 .dato-pie{font-size:32px;line-height:1.4;color:var(--ink-2);margin-top:26px;max-width:820px}
 .navy .dato-pie{color:#B9CFE8}
 
+/* foto del cliente a sangre, con velo para que el titular se lea */
+.slide.foto{color:#fff}
+/* inset negativo: lo absoluto se posiciona contra la caja de padding del
+   slide, y sin esto la foto queda con el margen de seguridad alrededor */
+.bgimg{position:absolute;inset:calc(var(--safe) * -1);z-index:0}
+.bgimg img{width:100%;height:100%;object-fit:cover;display:block}
+.bgimg::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,20,45,.42) 0%,rgba(0,20,45,.80) 58%,rgba(0,20,45,.92) 100%)}
+.slide.foto .eyebrow,.slide.foto .foot{position:relative;z-index:1}
+/* el :not(.bgimg) es clave: sin el, la foto deja de ser absoluta y empuja al titular */
+.slide.foto .body-zone > :not(.bgimg){position:relative;z-index:1}
+.slide.foto .eyebrow{color:#8FD8F5}
+.slide.foto p.sub{color:#D6E4F5}
+.slide.foto .mark{box-shadow:inset 0 -.36em 0 rgba(0,168,232,.55)}
+.slide.foto .brand span{color:#C7D8EC}
+.slide.foto .num{color:#C7D8EC}
+.slide.foto .swipe{color:#8FD8F5}
+
 /* el dato gigante tambien entra al lado de una captura, mas chico */
 .split .dato{font-size:210px}
 .split .dato-txt{font-size:44px;margin-top:26px}
@@ -117,6 +135,8 @@ ol.pasos .pa{font-weight:400;color:var(--ink-2);display:block;font-size:30px;mar
 .foot{display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:14px}
 .brand img{width:46px;height:46px;display:block}
+/* sobre navy o sobre una foto, el isotipo azul no se lee: va en blanco */
+.navy .brand img,.slide.foto .brand img{filter:brightness(0) invert(1);opacity:.92}
 .brand span,.num{font-size:21px;font-weight:700;color:var(--muted)}
 .num{letter-spacing:.18em}
 .navy .brand span,.navy .num{color:#8FA9C8}
@@ -185,6 +205,11 @@ def anotada(imagen, notas, alt=''):
                   % (t, '<em>%s</em>' % a if a else '') for t, a in notas)
     return ('<div class="annot"><div class="shot-lg"><img src="%s" alt="%s"></div>'
             '<div class="notas">%s</div></div>' % (imagen, alt, lis))
+
+
+def fondo(imagen, alt=''):
+    """Foto del cliente a sangre detras del titular. El slide va con clase 'foto'."""
+    return '<div class="bgimg"><img src="%s" alt="%s"></div>' % (imagen, alt)
 
 
 def eyebrow(texto):
