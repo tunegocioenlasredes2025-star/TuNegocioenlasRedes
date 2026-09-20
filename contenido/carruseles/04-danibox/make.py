@@ -8,7 +8,8 @@ etiqueta, y el pie queda minimo: asi los edito Mateo a mano en Canva.
 Verificado en dani-box.vercel.app el 20/09/2026: 16 turnos por semana
 (4 los lunes, miercoles y viernes; 2 los martes y jueves; sabado y domingo sin
 clases), cada turno de una hora y media, y 5 accesos a WhatsApp, cada uno con
-su mensaje ya escrito.
+su mensaje ya escrito. Los 26 anos los confirmo Mateo: la web todavia
+dice 25.
 """
 import pathlib, sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))
@@ -20,7 +21,7 @@ CELU = img('trabajos/danibox-castelar-horarios-celular.webp', 'image/webp')
 
 SLIDES = [
     ('', '',
-     h('Dani se sabe<br>el nombre de<br><span class="mark">cada alumno</span>.', 'lg')),
+     h('Hace 26 años<br>que Dani enseña<br>en el <span class="mark">mismo lugar</span>.', 'lg')),
 
     ('navy', 'Caso real · Dani BOX · Club Castelar',
      dato('16', 'turnos por semana.<br>Eso sí se escribe<br>una sola vez.',
