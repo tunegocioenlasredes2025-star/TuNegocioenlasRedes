@@ -83,6 +83,31 @@ ol.pasos .pa{font-weight:400;color:var(--ink-2);display:block;font-size:30px;mar
 .vs em{display:block;font-style:normal;font-size:21px;font-weight:700;letter-spacing:.16em;
   text-transform:uppercase;opacity:.75;margin-bottom:10px}
 
+/* dato gigante: el numero ocupa media pantalla y el resto es aire */
+.dato{font-family:var(--display);font-weight:800;font-size:320px;line-height:.86;
+  letter-spacing:-.05em;color:var(--blue)}
+.navy .dato{color:#63C8F2}
+.dato-txt{font-family:var(--display);font-weight:800;font-size:64px;line-height:1.08;
+  letter-spacing:-.02em;margin-top:40px;max-width:860px}
+.dato-pie{font-size:32px;line-height:1.4;color:var(--ink-2);margin-top:26px;max-width:820px}
+.navy .dato-pie{color:#B9CFE8}
+
+/* captura anotada: la pantalla del cliente con notas que senalan partes */
+.annot{display:flex;gap:52px;align-items:center}
+.annot .shot-lg{flex:none;width:452px;height:904px;border-radius:30px;overflow:hidden;
+  transform:rotate(-2.2deg);box-shadow:0 34px 80px -30px rgba(10,27,51,.5);
+  border:1px solid rgba(10,27,51,.14)}
+.annot .shot-lg img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.navy .annot .shot-lg{border-color:rgba(255,255,255,.16);box-shadow:0 34px 80px -30px rgba(0,0,0,.6)}
+.annot .notas{flex:1;min-width:0;display:flex;flex-direction:column;gap:56px}
+.annot .nota{display:flex;align-items:flex-start;gap:20px;font-size:31px;line-height:1.26;
+  font-weight:700;color:var(--ink)}
+.annot .nota i{width:52px;height:4px;border-radius:4px;background:var(--sky);flex:none;margin-top:18px}
+.annot .nota span{display:block}
+.annot .nota em{display:block;font-style:normal;font-weight:400;font-size:27px;
+  color:var(--ink-2);margin-top:8px}
+.navy .annot .nota{color:#fff} .navy .annot .nota em{color:#B9CFE8}
+
 /* pie fijo: isotipo, desliza, numero */
 .foot{display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:14px}
@@ -140,26 +165,51 @@ def cta(texto):
     return '<div class="cta"><span>%s</span>%s</div>' % (texto, ARROW)
 
 
+def dato(numero, texto, pie=''):
+    """El numero gigante y una linea que lo explica. Sin bajada larga."""
+    return ('<div class="dato">%s</div><div class="dato-txt">%s</div>%s'
+            % (numero, texto, '<p class="dato-pie">%s</p>' % pie if pie else ''))
+
+
+def anotada(imagen, notas, alt=''):
+    """La captura del cliente, grande y apenas rotada, con notas que senalan partes.
+
+    notas: [(titulo, aclaracion)] — dos o tres. Mas de tres no entran.
+    """
+    lis = ''.join('<div class="nota"><i></i><span>%s%s</span></div>'
+                  % (t, '<em>%s</em>' % a if a else '') for t, a in notas)
+    return ('<div class="annot"><div class="shot-lg"><img src="%s" alt="%s"></div>'
+            '<div class="notas">%s</div></div>' % (imagen, alt, lis))
+
+
 def eyebrow(texto):
-    return '<div class="eyebrow"><i class="dash"></i><span>%s</span></div>' % texto
+    """Sin texto queda solo el guion celeste, que es como se ve mejor en el feed."""
+    span = '<span>%s</span>' % texto if texto else ''
+    return '<div class="eyebrow"><i class="dash"></i>%s</div>' % span
 
 
-def page(titulo, slides):
-    """slides: [(clase_de_fondo, eyebrow, cuerpo_html)]"""
+def page(titulo, slides, pie='min'):
+    """slides: [(clase_de_fondo, eyebrow, cuerpo_html)]
+
+    pie='min' deja el isotipo y el DESLIZA; 'completo' suma el dominio y la
+    numeracion, que es como estaban los tres primeros carruseles.
+    """
     logo = img('logo-256.png', 'image/png')
     total = len(slides)
     out = []
     for i, (bg, eye, body) in enumerate(slides, 1):
         swipe = '<div class="swipe">Deslizá %s</div>' % ARROW if i < total else ''
+        dominio = '<span>tunegocioenlasredes.com.ar</span>' if pie == 'completo' else ''
+        num = '<div class="num">%02d / %02d</div>' % (i, total) if pie == 'completo' else ''
         out.append(
             '<section class="slide %s">\n'
             '  %s\n'
             '  <div class="body-zone">%s</div>\n'
             '  <div class="foot">\n'
-            '    <div class="brand"><img src="%s" alt=""><span>tunegocioenlasredes.com.ar</span></div>\n'
-            '    %s<div class="num">%02d / %02d</div>\n'
+            '    <div class="brand"><img src="%s" alt="">%s</div>\n'
+            '    %s%s\n'
             '  </div>\n'
-            '</section>' % (bg, eyebrow(eye), body, logo, swipe, i, total))
+            '</section>' % (bg, eyebrow(eye), body, logo, dominio, swipe, num))
     return ('<!doctype html><html lang="es-AR"><meta charset="utf-8">'
             '<title>%s</title><style>%s%s</style>%s</html>'
             % (titulo, fonts_css(), CSS, "\n".join(out)))
