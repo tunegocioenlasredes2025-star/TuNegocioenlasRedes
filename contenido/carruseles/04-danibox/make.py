@@ -8,8 +8,8 @@ etiqueta, y el pie queda minimo: asi los edito Mateo a mano en Canva.
 Verificado en dani-box.vercel.app el 20/09/2026: 16 turnos por semana
 (4 los lunes, miercoles y viernes; 2 los martes y jueves; sabado y domingo sin
 clases), cada turno de una hora y media, y 5 accesos a WhatsApp, cada uno con
-su mensaje ya escrito. Los 26 anos los confirmo Mateo: la web todavia
-dice 25.
+su mensaje ya escrito. El hook es el titular del hero de la web. Los anos quedan en 25,
+como dice el sitio, hasta que Dani confirme si son 26.
 """
 import pathlib, sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))
@@ -22,7 +22,7 @@ OPIN = img('trabajos/danibox-castelar-opiniones-celular.webp', 'image/webp')
 
 SLIDES = [
     ('', '',
-     h('Hace 26 años<br>que Dani enseña<br>en el <span class="mark">mismo lugar</span>.', 'lg')),
+     h('Acá se aprende<br>a boxear y a<br><span class="mark">bancar al de<br>al lado</span>.', 'lg')),
 
     ('navy', 'Caso real · Dani BOX · Club Castelar',
      split(dato('4,4', 'de puntaje<br>en Google.',
