@@ -33,6 +33,8 @@ CHROME = '/opt/pw-browsers/chromium-1194/chrome-linux/chrome'
 # Que se exporta y en que orden. El orden importa: lo que va antes queda abajo,
 # asi que los rectangulos tienen que ir antes que el texto que llevan encima.
 SPEC = [
+    # la foto a sangre va primero de todo: lo que se escribe antes queda abajo
+    ('.bgimg',           'image', False),
     ('.dash',            'rect',  False),
     ('.eyebrow > span',  'text',  False),
     ('h1',               'text',  False),
@@ -43,9 +45,16 @@ SPEC = [
     ('.vs > div',        'rect',  False),
     ('.vs em',           'text',  False),
     ('.vs > div > span', 'text',  True),
+    ('.dato',            'text',  False),
+    ('.dato-txt',        'text',  False),
+    ('.dato-pie',        'text',  True),
+    ('.annot .nota i',   'rect',  False),
+    ('.annot .nota .nt', 'text',  True),
+    ('.annot .nota em',  'text',  True),
     ('.cta',             'rect',  False),
     ('.cta > span',      'text',  False),
     ('.shot',            'image', False),
+    ('.shot-lg',         'image', False),
     ('.brand img',       'image', False),
     ('.brand span',      'text',  False),
     ('.swipe',           'text',  False),

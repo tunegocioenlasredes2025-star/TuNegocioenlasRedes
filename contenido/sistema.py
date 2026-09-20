@@ -126,7 +126,8 @@ ol.pasos .pa{font-weight:400;color:var(--ink-2);display:block;font-size:30px;mar
 .annot .nota{display:flex;align-items:flex-start;gap:20px;font-size:31px;line-height:1.26;
   font-weight:700;color:var(--ink)}
 .annot .nota i{width:52px;height:4px;border-radius:4px;background:var(--sky);flex:none;margin-top:18px}
-.annot .nota span{display:block}
+.annot .nota .ncol{display:block}
+.annot .nota .nt{display:block}
 .annot .nota em{display:block;font-style:normal;font-weight:400;font-size:27px;
   color:var(--ink-2);margin-top:8px}
 .navy .annot .nota{color:#fff} .navy .annot .nota em{color:#B9CFE8}
@@ -201,7 +202,10 @@ def anotada(imagen, notas, alt=''):
 
     notas: [(titulo, aclaracion)] — dos o tres. Mas de tres no entran.
     """
-    lis = ''.join('<div class="nota"><i></i><span>%s%s</span></div>'
+    # el titulo va en su propio span: el exportador a PPTX necesita medirlos
+    # por separado, si no el titulo y la aclaracion caen en el mismo renglon
+    lis = ''.join('<div class="nota"><i></i><span class="ncol">'
+                  '<span class="nt">%s</span>%s</span></div>'
                   % (t, '<em>%s</em>' % a if a else '') for t, a in notas)
     return ('<div class="annot"><div class="shot-lg"><img src="%s" alt="%s"></div>'
             '<div class="notas">%s</div></div>' % (imagen, alt, lis))
