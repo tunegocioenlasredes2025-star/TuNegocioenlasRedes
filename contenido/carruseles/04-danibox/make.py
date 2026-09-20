@@ -20,10 +20,10 @@ CELU = img('trabajos/danibox-castelar-horarios-celular.webp', 'image/webp')
 
 SLIDES = [
     ('', '',
-     h('En un gimnasio<br>siempre preguntan<br>lo mismo:<br><span class="mark">¿a qué hora?</span>', 'lg')),
+     h('Dani se sabe<br>el nombre de<br><span class="mark">cada alumno</span>.', 'lg')),
 
     ('navy', 'Caso real · Dani BOX · Club Castelar',
-     dato('16', 'turnos por semana,<br>escritos uno por uno.',
+     dato('16', 'turnos por semana.<br>Eso sí se escribe<br>una sola vez.',
           'Cuatro los lunes, miércoles y viernes. Dos los martes y jueves. Sábado y domingo, sin clases.')),
 
     ('mist', 'Qué construimos',
