@@ -92,6 +92,11 @@ ol.pasos .pa{font-weight:400;color:var(--ink-2);display:block;font-size:30px;mar
 .dato-pie{font-size:32px;line-height:1.4;color:var(--ink-2);margin-top:26px;max-width:820px}
 .navy .dato-pie{color:#B9CFE8}
 
+/* el dato gigante tambien entra al lado de una captura, mas chico */
+.split .dato{font-size:210px}
+.split .dato-txt{font-size:44px;margin-top:26px}
+.split .dato-pie{font-size:27px;margin-top:20px}
+
 /* captura anotada: la pantalla del cliente con notas que senalan partes */
 .annot{display:flex;gap:52px;align-items:center}
 .annot .shot-lg{flex:none;width:452px;height:904px;border-radius:30px;overflow:hidden;

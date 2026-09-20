@@ -14,18 +14,20 @@ dice 25.
 import pathlib, sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))
 from build import img, render
-from sistema import page, h, dato, anotada, cta
+from sistema import page, h, dato, split, anotada, cta
 
 D = pathlib.Path(__file__).resolve().parent
 CELU = img('trabajos/danibox-castelar-horarios-celular.webp', 'image/webp')
+OPIN = img('trabajos/danibox-castelar-opiniones-celular.webp', 'image/webp')
 
 SLIDES = [
     ('', '',
      h('Hace 26 años<br>que Dani enseña<br>en el <span class="mark">mismo lugar</span>.', 'lg')),
 
     ('navy', 'Caso real · Dani BOX · Club Castelar',
-     dato('16', 'turnos por semana.<br>Eso sí se escribe<br>una sola vez.',
-          'Cuatro los lunes, miércoles y viernes. Dos los martes y jueves. Sábado y domingo, sin clases.')),
+     split(dato('4,4', 'de puntaje<br>en Google.',
+                'Las opiniones de los alumnos van en la web copiadas tal cual, con nombre y con el lugar donde las escribieron.'),
+           OPIN, 'Opiniones de alumnos en la web de Dani BOX')),
 
     ('mist', 'Qué construimos',
      anotada(CELU, [
