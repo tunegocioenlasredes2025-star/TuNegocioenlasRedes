@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Caso Motos Roll — 4 slides.
 
-Estilo nuevo: el slide 2 es un bloque de color a sangre, celeste pleno con una
-sola frase. El 1 va con una foto real del taller (de la galeria del sitio) y el
-3 reusa la captura anotada.
+Tres slides: foto real del taller (de la galeria del sitio), la captura anotada
+de la seccion de seguros y el cierre. Se probo un cuarto slide de color pleno y
+se saco: estiraba una idea que entra en tres.
 
 Verificado en motosroll.com.ar el 20/09/2026: la seccion "Servicio para
 aseguradoras" con presupuesto detallado, informe con fotos, respuesta rapida y
@@ -22,23 +22,20 @@ TALLER = img('trabajos/motos-roll-ituzaingo-taller-foto.webp', 'image/webp')
 SLIDES = [
     ('foto', '',
      fondo(TALLER, 'Una moto sobre el elevador en el taller de Motos Roll')
-     + h('El taller ya hacía<br>un trabajo que<br><span class="mark">nadie sabía</span>.', 'lg')),
+     + h('El trabajo que<br>mejor paga no<br><span class="mark">estaba escrito</span>.', 'lg')),
 
-    ('cielo', 'Caso real · Motos Roll · Ituzaingó',
-     h('Si no está<br>escrito,<br>no existe.', 'xl')),
-
-    ('', 'Qué construimos',
+    ('mist', 'Caso real · Motos Roll · Ituzaingó',
      anotada(CELU, [
-         ('La sección de seguros, con su propio botón',
-          'Presupuesto con la mano de obra y los repuestos discriminados, en el formato que pide la compañía.'),
+         ('Presupuestos para las aseguradoras',
+          'Mano de obra y repuestos discriminados, en el formato que pide la compañía. Con su propio botón.'),
          ('Informe con fotos de cada daño',
           'Para que la aseguradora autorice la reparación sin idas y vueltas.'),
          ('“Atendemos siniestros de toda la zona oeste”',
-          'Escrito en la página, no en la cabeza del mecánico.'),
+          'Ahora está escrito en la página, y no sólo en la cabeza del mecánico.'),
      ], 'Sección de seguros de Motos Roll en el celular')),
 
     ('', '',
-     h('Ahora el que tuvo<br>un siniestro<br><span class="mark">lo encuentra</span>.', 'lg')
+     h('Ahora cualquiera<br>que chocó la moto<br><span class="mark">lo encuentra</span>.', 'md')
      + cta('Te hacemos la demo gratis en 72 hs')),
 ]
 

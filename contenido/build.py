@@ -75,6 +75,10 @@ def render(folder):
     d = pathlib.Path(folder).resolve()
     out = d / 'png'
     out.mkdir(exist_ok=True)
+    # Si el carrusel se achica, los PNG de los slides que ya no estan quedarian
+    # en la carpeta y se colarian en la hoja de contacto.
+    for viejo in out.glob('slide-*.png'):
+        viejo.unlink()
     pdf_pages = []
 
     with sync_playwright() as p:
