@@ -136,6 +136,12 @@ ol.pasos .pa{font-weight:400;color:var(--ink-2);display:block;font-size:30px;mar
   border-radius:9px;padding:7px 18px}
 .ventana img{display:block;width:100%}
 
+/* barra de busqueda: el gancho de los casos de Google */
+.buscador{margin-top:56px;display:flex;align-items:center;gap:24px;background:#fff;
+  border:2px solid var(--line);border-radius:999px;padding:30px 40px;
+  box-shadow:0 24px 60px -30px rgba(10,27,51,.35);font-size:40px;color:var(--ink);max-width:900px}
+.buscador svg{width:40px;height:40px;flex:none;color:var(--muted)}
+
 /* captura anotada: la pantalla del cliente con notas que senalan partes */
 .annot{display:flex;gap:52px;align-items:center}
 .annot .shot-lg{flex:none;width:452px;height:904px;border-radius:30px;overflow:hidden;
@@ -241,6 +247,15 @@ def ventana(imagen, url, alt=''):
     """Captura de escritorio en una ventana de navegador, pegada al borde derecho."""
     return ('<div class="ventana"><div class="barra"><i></i><i></i><i></i><span>%s</span></div>'
             '<img src="%s" alt="%s"></div>' % (url, imagen, alt))
+
+
+LUPA = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" '
+        'stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>')
+
+
+def buscador(texto):
+    """Una barra de busqueda con la consulta escrita, como la de Google."""
+    return '<div class="buscador">%s<span>%s</span></div>' % (LUPA, texto)
 
 
 def eyebrow(texto):

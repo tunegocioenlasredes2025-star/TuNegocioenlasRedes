@@ -56,6 +56,7 @@ SPEC = [
     ('.shot',            'image', False),
     ('.shot-lg',         'image', False),
     ('.ventana',         'image', False),
+    ('.buscador',        'image', False),
     ('.brand img',       'image', False),
     ('.brand span',      'text',  False),
     ('.swipe',           'text',  False),
