@@ -2,7 +2,8 @@
 """Caso Motos Roll — 4 slides.
 
 Estilo nuevo: el slide 2 es un bloque de color a sangre, celeste pleno con una
-sola frase. El 3 reusa la captura anotada.
+sola frase. El 1 va con una foto real del taller (de la galeria del sitio) y el
+3 reusa la captura anotada.
 
 Verificado en motosroll.com.ar el 20/09/2026: la seccion "Servicio para
 aseguradoras" con presupuesto detallado, informe con fotos, respuesta rapida y
@@ -12,14 +13,16 @@ reparacion garantizada, su propio boton "Pedir presupuesto" y la linea
 import pathlib, sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))
 from build import img, render
-from sistema import page, h, anotada, cta
+from sistema import page, h, anotada, cta, fondo
 
 D = pathlib.Path(__file__).resolve().parent
 CELU = img('trabajos/motos-roll-ituzaingo-seguros-celular.webp', 'image/webp')
+TALLER = img('trabajos/motos-roll-ituzaingo-taller-foto.webp', 'image/webp')
 
 SLIDES = [
-    ('', '',
-     h('El taller ya hacía<br>un trabajo que<br><span class="mark">nadie sabía</span>.', 'lg')),
+    ('foto', '',
+     fondo(TALLER, 'Una moto sobre el elevador en el taller de Motos Roll')
+     + h('El taller ya hacía<br>un trabajo que<br><span class="mark">nadie sabía</span>.', 'lg')),
 
     ('cielo', 'Caso real · Motos Roll · Ituzaingó',
      h('Si no está<br>escrito,<br>no existe.', 'xl')),
