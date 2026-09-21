@@ -45,12 +45,11 @@ Los que sí pagaron son otros, y son los únicos que pueden salir como caso:
 | **Dani BOX** | Escuela de boxeo | Castelar | Web. Rubro visual, fácil de mostrar |
 | **Ton Cars** | Concesionaria | — | Ya tiene dos carruseles hechos |
 
-**Dos reglas que no se saltean:**
+**La regla que no se saltea:**
 
-1. **La columna "¿Autoriza mostrarlo?" está vacía para todos.** Antes de dar por
-   cerrado cualquier carrusel, preguntanos si ese cliente autoriza. Si no está
-   confirmado, no se publica.
-2. **Verificá los datos con el navegador.** Tenés acceso: abrí el sitio del
+- **Todos los clientes reales autorizan que los mostremos** (confirmado el
+  21/09/2026). No hace falta preguntar ni dejar pendientes de autorización.
+- **Verificá los datos con el navegador.** Tenés acceso: abrí el sitio del
    cliente y confirmá lo que vayas a afirmar. Si vas a decir "diez accesos a
    WhatsApp", contalos. Si no da, cambiá la frase.
 
