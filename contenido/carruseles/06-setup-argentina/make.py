@@ -1,47 +1,53 @@
 #!/usr/bin/env python3
-"""Caso Setup Argentina — 3 slides.
+"""Caso Setup Argentina — 4 slides.
 
 Angulo: la venta no termina cuando entregas la web. Es el unico caso que prueba
 el escalon mensual, que es justo lo que hay que empezar a vender.
 
-OJO CON LA FUENTE. A diferencia de MC E Bikes y Motos Roll, esto NO esta
-verificado abriendo el sitio del cliente: quien lo escribio no tenia navegador.
-Todo sale de la hoja Clientes de comercial/TNR-datos-para-el-analisis.xlsx,
-cargada desde el CRM:
+La primera version la armo una sesion sin navegador, desde la hoja Clientes del
+CRM. Esta la termino una con navegador el 21/09/2026 y verifico en el sitio:
 
-  - cierre 07/2026, ultimo movimiento 09/2026
-  - web, despues web con blog, despues mantenimiento mensual, despues Google Ads
-  - los anuncios apuntan a Estados Unidos
-  - sigue activo y muy conforme
+  - setupargentina.com esta online, en ingles por defecto, con la version en
+    espanol en /es/ y el aviso "This page is also available in Spanish"
+  - el blog existe pero TODAVIA NO TIENE NOTAS ("The first articles are on
+    their way"): por eso el copy dice que es para publicar, no que publica
+  - la campana de Google Ads apunta a Estados Unidos (publicada el 06/09/2026,
+    segun las notas del proyecto)
 
-Nada de lo que dice el carrusel menciona cuanto paga: eso es informacion del
-cliente y no se publica.
-
-ANTES DE PUBLICAR hay que cerrar dos cosas (ver el NO-PUBLICAR de esta carpeta):
-que Setup autorice, y confirmar con Mateo que los anuncios son a Estados Unidos.
+No se usa el "50+ foreign companies incorporated" del sitio: es un dato del
+cliente que no podemos verificar. Tampoco se dice cuanto paga.
 """
 import pathlib, sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))
-from build import render
-from sistema import page, h, sub, pasos, cta
+from build import img, render
+from sistema import page, h, pasos, anotada, cta
 
 D = pathlib.Path(__file__).resolve().parent
+CELU = img('trabajos/setup-argentina-sitio-ingles-celular.webp', 'image/webp')
 
 SLIDES = [
-    ('', 'Caso real · Setup Argentina',
-     h('Le entregamos<br>la web en julio.<br>En septiembre<br><span class="mark">seguimos</span>.', 'md')
-     + sub('Lo que pasó en el medio es lo que casi ninguna agencia cuenta.')),
+    ('', '',
+     h('Le entregamos<br>la web en julio.<br>En septiembre<br><span class="mark">seguimos</span>.', 'md')),
 
-    ('mist', 'Cómo siguió',
+    ('mist', 'Caso real · Setup Argentina',
      h('Una cosa<br>llevó a la otra.', 'lg')
      + pasos([('01', 'La web', 'Julio'),
-              ('02', 'Una segunda web, con blog', 'Para publicar sus propias notas'),
+              ('02', 'El sitio completo, en inglés', 'Para los clientes de afuera, con la versión en español a un click'),
               ('03', 'El mantenimiento', 'Todos los meses, sin que haya que pedirlo'),
-              ('04', 'Los anuncios', 'Campañas de Google apuntadas a Estados Unidos')])),
+              ('04', 'Los anuncios en Google', 'Apuntados a Estados Unidos')])),
+
+    ('', 'Qué construimos',
+     anotada(CELU, [
+         ('En inglés por defecto',
+          'Es un estudio de Buenos Aires que les vende a inversores del exterior.'),
+         ('El español, a un toque',
+          'Y un aviso que se lo ofrece al que entra desde Argentina, sin cambiarle el idioma a la fuerza.'),
+         ('Un blog para sus propias notas',
+          'Las escribe él; nosotros armamos el lugar para publicarlas.'),
+     ], 'Sitio de Setup Argentina en inglés, en el celular')),
 
     ('navy', '',
      h('El trabajo no<br>termina cuando<br><span class="blue">entregás</span>.', 'md')
-     + sub('Empieza ahí. Una web nuestra no es un archivo que te mandamos y chau.')
      + cta('Te hacemos la demo gratis en 72 hs')),
 ]
 
