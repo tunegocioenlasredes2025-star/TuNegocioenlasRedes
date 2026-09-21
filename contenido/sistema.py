@@ -124,6 +124,18 @@ ol.pasos .pa{font-weight:400;color:var(--ink-2);display:block;font-size:30px;mar
 .split .dato-txt{font-size:44px;margin-top:26px}
 .split .dato-pie{font-size:27px;margin-top:20px}
 
+/* la web en computadora, dentro de una ventana de navegador que se sale por la
+   derecha. Es la alternativa al celular: no todos los casos son de celular. */
+.ventana{margin-top:46px;margin-right:calc(var(--safe) * -1);border-radius:20px 0 0 20px;
+  overflow:hidden;background:#fff;border:1px solid var(--line);border-right:0;
+  box-shadow:0 34px 80px -30px rgba(10,27,51,.45)}
+.navy .ventana{border-color:rgba(255,255,255,.16);box-shadow:0 34px 80px -30px rgba(0,0,0,.6)}
+.ventana .barra{height:52px;background:#EDF1F8;display:flex;align-items:center;gap:10px;padding:0 22px}
+.ventana .barra i{width:14px;height:14px;border-radius:50%;background:#C6D1E2;flex:none}
+.ventana .barra span{margin-left:16px;font-size:19px;color:var(--muted);background:#fff;
+  border-radius:9px;padding:7px 18px}
+.ventana img{display:block;width:100%}
+
 /* captura anotada: la pantalla del cliente con notas que senalan partes */
 .annot{display:flex;gap:52px;align-items:center}
 .annot .shot-lg{flex:none;width:452px;height:904px;border-radius:30px;overflow:hidden;
@@ -223,6 +235,12 @@ def anotada(imagen, notas, alt=''):
 def fondo(imagen, alt=''):
     """Foto del cliente a sangre detras del titular. El slide va con clase 'foto'."""
     return '<div class="bgimg"><img src="%s" alt="%s"></div>' % (imagen, alt)
+
+
+def ventana(imagen, url, alt=''):
+    """Captura de escritorio en una ventana de navegador, pegada al borde derecho."""
+    return ('<div class="ventana"><div class="barra"><i></i><i></i><i></i><span>%s</span></div>'
+            '<img src="%s" alt="%s"></div>' % (url, imagen, alt))
 
 
 def eyebrow(texto):
