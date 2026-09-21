@@ -28,6 +28,15 @@ body{background:#DDE5F0;display:flex;flex-direction:column;align-items:center;ga
   color:var(--ink);font-family:var(--font);display:flex;flex-direction:column;padding:var(--safe)}
 .slide.mist{background:var(--mist)}
 .slide.navy{background:var(--navy);color:#fff}
+/* bloque de color a sangre: un solo titular gigante sobre celeste pleno.
+   El texto va en tinta oscura: celeste con texto blanco no se lee. */
+.slide.cielo{background:var(--sky);color:#062A4D}
+.cielo .eyebrow{color:#063E63}
+.cielo .dash{background:#062A4D}
+.cielo .mark{box-shadow:inset 0 -.36em 0 rgba(255,255,255,.7)}
+.cielo p.sub{color:#0B3A5B}
+.cielo .brand span,.cielo .num{color:#0B3A5B}
+.cielo .swipe{color:#062A4D}
 
 /* etiqueta superior: el eyebrow de la web, con el guion celeste */
 .eyebrow{display:flex;align-items:center;gap:16px;font-size:22px;font-weight:700;
